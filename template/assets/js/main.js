@@ -437,6 +437,49 @@
     update();
   }
 
+  function bindReferenceSectionInteractions() {
+    $(document).on("click", ".rf-41 [data-rf-program]", function () {
+      const $button = $(this);
+      const $section = $button.closest(".rf-41");
+      $button.addClass("is-active").attr("aria-pressed", "true")
+        .siblings().removeClass("is-active").attr("aria-pressed", "false");
+      $section.find("[data-rf-program-image]").attr({
+        src: $button.data("rf-program"),
+        alt: "Strongfy " + $button.text().trim().toLowerCase() + " program"
+      });
+      $section.find(".rf-program__visual b").text($button.text().trim() + " program");
+    });
+
+    $(document).on("click", ".rf-58 [data-rf-service]", function () {
+      $(this).addClass("is-active").attr("aria-pressed", "true")
+        .siblings("[data-rf-service]").removeClass("is-active").attr("aria-pressed", "false");
+    });
+
+    $(document).on("click", ".rf-class-tabs button", function () {
+      $(this).addClass("is-active").attr("aria-selected", "true")
+        .siblings().removeClass("is-active").attr("aria-selected", "false");
+    });
+
+    $(document).on("click", ".rf-65 [data-rf-trainer]", function () {
+      $(this).toggleClass("is-active");
+      const expanded = $(this).hasClass("is-active");
+      $(this).attr("aria-expanded", String(expanded));
+      $(this).find("i").toggleClass("fa-arrow-down", !expanded).toggleClass("fa-arrow-up", expanded);
+    });
+
+    $(document).on("click", ".rf-61 .rf-billing button", function () {
+      const $button = $(this);
+      const annual = $button.index() === 1;
+      const prices = annual ? ["$150", "$300", "$550"] : ["$15", "$30", "$55"];
+      $button.addClass("is-active").attr("aria-pressed", "true")
+        .siblings().removeClass("is-active").attr("aria-pressed", "false");
+      $button.closest(".rf-61").find(".rf-price-row--outline article > strong").each(function (index) {
+        $(this).contents().first()[0].nodeValue = prices[index];
+        $(this).find("small").text(annual ? "/year" : "/month");
+      });
+    });
+  }
+
   $(document).on("click", ".submenu-toggle", function (event) {
     event.preventDefault();
     event.stopPropagation();
@@ -462,5 +505,6 @@
   addBootstrapStructure();
   addReferenceLinks();
   buildStickyTopbar();
+  bindReferenceSectionInteractions();
   $("[data-day='mon']").trigger("click");
 })(jQuery);
