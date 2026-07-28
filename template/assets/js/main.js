@@ -442,12 +442,20 @@
       button.addEventListener("click", async function () {
         const status = document.getElementById("siteInteractionStatus");
         try {
-          if (multiCopyEnabled) multiCopyValue = multiCopyValue ? multiCopyValue + "," + number : String(number);
+          let alreadySelected = false;
+          if (multiCopyEnabled) {
+            const selectedNumbers = multiCopyValue ? multiCopyValue.split(",") : [];
+            alreadySelected = selectedNumbers.includes(String(number));
+            if (!alreadySelected) {
+              selectedNumbers.push(String(number));
+              multiCopyValue = selectedNumbers.join(",");
+            }
+          }
           const nextValue = multiCopyEnabled ? multiCopyValue : String(number);
           await writeClipboardValue(nextValue);
           button.textContent = "✓";
           button.setAttribute("aria-label", "Section " + number + " copied");
-          if (status) status.textContent = multiCopyEnabled ? "Copied section list: " + nextValue + "." : "Section " + number + " copied to clipboard.";
+          if (status) status.textContent = multiCopyEnabled ? (alreadySelected ? "Section " + number + " already selected. Clipboard unchanged: " + nextValue + "." : "Copied section list: " + nextValue + ".") : "Section " + number + " copied to clipboard.";
         } catch (error) {
           button.textContent = "!";
           button.setAttribute("aria-label", "Could not copy section " + number);
