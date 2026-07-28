@@ -285,7 +285,7 @@
       return;
     }
     if (event.key !== "Tab") return;
-    const focusable = [...$modal[0].querySelectorAll("button:not([disabled])")];
+    const focusable = [...$modal[0].querySelectorAll(".media-modal__dialog button:not([disabled])")];
     if (!focusable.length) return;
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
