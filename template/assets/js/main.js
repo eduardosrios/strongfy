@@ -385,6 +385,8 @@
     const base = "http://localhost/templates/Gym/referencias/references-used/";
     const originalExtensions = { 1:"jpg",2:"jpg",3:"webp",4:"webp",5:"webp",6:"webp",7:"webp",8:"webp",9:"webp",10:"webp",11:"webp",12:"webp",13:"jpg",14:"jpg",15:"jpg",16:"webp",17:"webp",18:"webp",19:"webp",20:"webp",21:"png",22:"png",23:"png",24:"png",25:"png",26:"png",27:"webp",28:"webp",29:"webp",30:"webp",31:"webp",32:"webp",33:"webp",34:"webp",35:"png",36:"jpg" };
     const inlineStyle = "position:absolute;top:50px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;border:4px solid #050806;border-radius:50%;background:#ffffff;color:#050806;font-size:24px;font-weight:800;line-height:1;opacity:.5;z-index:2600;text-decoration:none;";
+    let multiCopyEnabled = false;
+    let lastClipboardValue = "";
     function link(label, href, right, title) {
       const anchor = document.createElement("a");
       anchor.className = "reference-link";
@@ -397,12 +399,20 @@
       anchor.textContent = label;
       return anchor;
     }
-    async function copySectionNumber(number) {
+    async function readClipboardValue() {
       try {
-        await navigator.clipboard.writeText(String(number));
+        return await navigator.clipboard.readText();
+      } catch (error) {
+        return lastClipboardValue;
+      }
+    }
+    async function writeClipboardValue(value) {
+      const text = String(value);
+      try {
+        await navigator.clipboard.writeText(text);
       } catch (error) {
         const field = document.createElement("textarea");
-        field.value = String(number);
+        field.value = text;
         field.setAttribute("readonly", "");
         field.style.position = "fixed";
         field.style.opacity = "0";
@@ -412,6 +422,25 @@
         field.remove();
         if (!copied) throw error;
       }
+      lastClipboardValue = text;
+    }
+    function appendSectionNumber(currentValue, number) {
+      const current = String(currentValue || "").trim();
+      if (!/^\d+(?:\s*,\s*\d+)*$/.test(current)) return String(number);
+      return current.split(/\s*,\s*/).concat(String(number)).join(",");
+    }
+    function setMultiCopyState(enabled) {
+      multiCopyEnabled = enabled;
+      document.querySelectorAll(".reference-link--multi").forEach(function (button) {
+        button.classList.toggle("is-active", enabled);
+        button.style.backgroundColor = enabled ? "#22c55e" : "#ffffff";
+        button.style.opacity = enabled ? "1" : ".5";
+        button.title = enabled ? "Disable multiple section copy" : "Enable multiple section copy";
+        button.setAttribute("aria-label", button.title);
+        button.setAttribute("aria-pressed", String(enabled));
+      });
+      const status = document.getElementById("siteInteractionStatus");
+      if (status) status.textContent = "Multiple section copy " + (enabled ? "enabled." : "disabled.");
     }
     function sectionLink(section, number) {
       const button = document.createElement("button");
@@ -420,15 +449,17 @@
       button.title = "Copy section " + number;
       button.dataset.sectionNumber = String(number);
       button.setAttribute("aria-label", "Copy section " + number + " to clipboard");
-      button.setAttribute("style", inlineStyle + "top:120px;right:45px;padding:0;cursor:pointer;");
+      button.setAttribute("style", inlineStyle + "top:120px;right:80px;padding:0;cursor:pointer;");
       button.textContent = number;
       button.addEventListener("click", async function () {
         const status = document.getElementById("siteInteractionStatus");
         try {
-          await copySectionNumber(number);
+          const currentValue = multiCopyEnabled ? await readClipboardValue() : "";
+          const nextValue = multiCopyEnabled ? appendSectionNumber(currentValue, number) : String(number);
+          await writeClipboardValue(nextValue);
           button.textContent = "✓";
           button.setAttribute("aria-label", "Section " + number + " copied");
-          if (status) status.textContent = "Section " + number + " copied to clipboard.";
+          if (status) status.textContent = multiCopyEnabled ? "Copied section list: " + nextValue + "." : "Section " + number + " copied to clipboard.";
         } catch (error) {
           button.textContent = "!";
           button.setAttribute("aria-label", "Could not copy section " + number);
@@ -441,6 +472,18 @@
       });
       return button;
     }
+    function multiCopyButton() {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "reference-link reference-link--multi";
+      button.title = "Enable multiple section copy";
+      button.setAttribute("aria-label", button.title);
+      button.setAttribute("aria-pressed", "false");
+      button.setAttribute("style", inlineStyle + "top:120px;right:10px;padding:0;cursor:pointer;");
+      button.textContent = "C+";
+      button.addEventListener("click", function () { setMultiCopyState(!multiCopyEnabled); });
+      return button;
+    }
     const hero = document.querySelector(".hero");
     if (hero && !hero.querySelector(".reference-link")) hero.append(link("C", base + "hero/cutted-section/hero-cropped.webp", 80, "Open cropped hero reference"), link("O", base + "hero/original/hero-original.jpg", 10, "Open original hero reference"));
     document.querySelectorAll(".body-section").forEach(function (section) {
@@ -450,7 +493,7 @@
       const folder = n > 36 ? base + "body-content/0 New Sections/section " + n + "/" : base + "body-content/section " + n + "/";
       const file = "section-" + String(sourceNumber).padStart(2,"0");
       const croppedFile = n === 72 ? "fYp7zuaT7PTQ.jpg" : file + "-cropped.webp";
-      section.append(link("C", folder + "cutted-section/" + croppedFile, 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[sourceNumber], 10, "Open original reference for section " + n), sectionLink(section, n));
+      section.append(link("C", folder + "cutted-section/" + croppedFile, 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[sourceNumber], 10, "Open original reference for section " + n), sectionLink(section, n), multiCopyButton());
     });
     const footer = document.querySelector(".site-footer");
     if (footer && !footer.querySelector(".reference-link")) footer.append(link("C", base + "footer/cutted-section/footer-cropped.webp", 80, "Open cropped footer reference"), link("O", base + "footer/original/footer-original.png", 10, "Open original footer reference"));

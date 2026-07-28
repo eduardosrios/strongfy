@@ -1997,6 +1997,18 @@ body :where(blockquote,strong) {
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
+.reference-link--section,
+.reference-link--multi {
+  background: #fff !important;
+  color: #050806 !important;
+}
+
+.reference-link--multi.is-active {
+  background: #22c55e !important;
+  color: #050806 !important;
+  opacity: 1 !important;
+}
+
 .hero > .reference-link {
   top: 96px !important;
 }
@@ -2098,6 +2110,8 @@ body :where(blockquote,strong) {
   .footer-wordmark.brand .brand__mark { height: 48px; }
   .footer-wordmark .brand__word { font-size: 32px !important; }
   .reference-link { top: 12px !important; transform: scale(.72); transform-origin: top right; }
+  .reference-link--section,
+  .reference-link--multi { top: 82px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
