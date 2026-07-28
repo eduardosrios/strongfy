@@ -24,7 +24,7 @@ html {
 }
 
 body {
-  min-width: 320px;
+  min-width: 280px;
   margin: 0;
   background: var(--paper);
   color: var(--white);
@@ -1636,3 +1636,4 @@ button:disabled{cursor:not-allowed;opacity:.72}
 @media (max-width:429.98px){.testimonial-split__title h2{font-size:clamp(32px,10.5vw,42px);overflow-wrap:anywhere}.facility-tile--text{padding:18px}.facility-tile--text i{top:18px;left:18px}.facility-tile strong{font-size:18px}.facility-tile__number{font-size:clamp(28px,9vw,38px)!important}.footer-cta__content{width:100%}.footer-cta h2{max-width:100%;font-size:clamp(32px,10vw,42px);overflow-wrap:anywhere}}
 
 .coaching-steps__list h3{font-size:clamp(34px,4.2vw,60px)}
+@media (max-width:339.98px){.hero__copy h1{font-size:40px}}
