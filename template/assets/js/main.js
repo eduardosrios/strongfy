@@ -38,33 +38,37 @@
 
     $button.addClass("is-active").attr("aria-selected", "true")
       .siblings().removeClass("is-active").attr("aria-selected", "false");
-    $("#programTag").text($button.find("span").text() + " / " + $button.data("title"));
-    $("#programCopy").text($button.data("copy"));
+    $section.find(".program-selector__visual > span").text($button.find("span").text() + " / " + $button.data("title"));
+    $section.find(".program-selector__list > p").text($button.data("copy"));
     $image.attr({ src: $button.data("image"), alt: $button.data("title") + " training" });
   });
 
   $("[data-billing]").on("click", function () {
     const $button = $(this);
+    const $section = $button.closest(".pricing-matrix");
     const billing = $button.data("billing");
     $button.addClass("is-active").attr("aria-pressed", "true")
       .siblings().removeClass("is-active").attr("aria-pressed", "false");
-    $("[data-monthly][data-annual]").each(function () {
+    $section.find("[data-monthly][data-annual]").each(function () {
       const $price = $(this);
       $price.text(billing === "annual" ? $price.data("annual") : $price.data("monthly"));
     });
   });
 
   $(".story-card").on("click", function () {
-    $("#storyStatus").text($(this).data("story"));
-    $(this).attr("aria-pressed", "true").siblings().attr("aria-pressed", "false");
+    const $button = $(this);
+    const $section = $button.closest(".member-stories");
+    $section.find(".story-status").text($button.data("story"));
+    $button.attr("aria-pressed", "true").siblings().attr("aria-pressed", "false");
   });
 
   $("[data-class-filter]").on("click", function () {
     const $button = $(this);
+    const $section = $button.closest(".class-tabs");
     const filter = $button.data("class-filter");
     $button.addClass("is-active").attr("aria-selected", "true")
       .siblings().removeClass("is-active").attr("aria-selected", "false");
-    $(".class-tabs__grid [data-class]").each(function () {
+    $section.find(".class-tabs__grid [data-class]").each(function () {
       this.hidden = filter !== "all" && $(this).data("class") !== filter;
     });
   });
@@ -72,33 +76,36 @@
   const dayNames = { mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday" };
   $("[data-day]").on("click", function () {
     const $button = $(this);
+    const $section = $button.closest(".schedule-board");
     const day = $button.data("day");
     $button.addClass("is-active").attr("aria-selected", "true")
       .siblings().removeClass("is-active").attr("aria-selected", "false");
-    $("#scheduleList [data-days]").each(function () {
+    $section.find(".schedule-board__list [data-days]").each(function () {
       this.hidden = !String($(this).data("days")).split(" ").includes(day);
     });
-    $("#scheduleStatus").text("Showing " + dayNames[day] + " sessions.");
+    $section.find(".schedule-status").text("Showing " + dayNames[day] + " sessions.");
   });
 
-  $("#scheduleList article button").on("click", function () {
+  $(".schedule-board__list article button").on("click", function () {
     const $button = $(this);
+    const $section = $button.closest(".schedule-board");
     const className = $button.closest("article").find("h3").text();
     const reserved = !$button.hasClass("is-reserved");
     $button.toggleClass("is-reserved", reserved).text(reserved ? "Reserved" : "Reserve")
       .attr("aria-pressed", String(reserved));
-    $("#scheduleStatus").text(className + (reserved ? " reserved. We’ll hold your place." : " reservation removed."));
+    $section.find(".schedule-status").text(className + (reserved ? " reserved. We’ll hold your place." : " reservation removed."));
   });
 
-  $("#trialForm").on("submit", function (event) {
+  $(".trial-form").on("submit", function (event) {
     event.preventDefault();
     if (!this.checkValidity()) {
       this.reportValidity();
       return;
     }
-    const name = $("#trialName").val().trim();
-    $("#trialFormStatus").text("Thanks, " + name + ". Your Strongfy start plan is on its way.");
-    $(this).find("button[type='submit']").html("Request sent <i class='fa-solid fa-check'></i>").prop("disabled", true);
+    const $form = $(this);
+    const name = $form.find("input[name='name']").val().trim();
+    $form.find(".trial-form__status").text("Thanks, " + name + ". Your Strongfy start plan is on its way.");
+    $form.find("button[type='submit']").html("Request sent <i class='fa-solid fa-check'></i>").prop("disabled", true);
   });
 
   $("#newsletterForm").on("submit", function (event) {
@@ -395,9 +402,11 @@
     document.querySelectorAll(".body-section").forEach(function (section) {
       if (section.querySelector(".reference-link")) return;
       const n = Number(String(section.dataset.section).split("-")[0]);
-      const folder = base + "body-content/section " + n + "/";
-      const file = "section-" + String(n).padStart(2,"0");
-      section.append(link("C", folder + "cutted-section/" + file + "-cropped.webp", 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[n], 10, "Open original reference for section " + n));
+      const sourceNumber = n > 36 ? n - 36 : n;
+      const folder = n > 36 ? base + "body-content/0 New Sections/section " + n + "/" : base + "body-content/section " + n + "/";
+      const file = "section-" + String(sourceNumber).padStart(2,"0");
+      const croppedFile = n === 72 ? "fYp7zuaT7PTQ.jpg" : file + "-cropped.webp";
+      section.append(link("C", folder + "cutted-section/" + croppedFile, 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[sourceNumber], 10, "Open original reference for section " + n));
     });
     const footer = document.querySelector(".site-footer");
     if (footer && !footer.querySelector(".reference-link")) footer.append(link("C", base + "footer/cutted-section/footer-cropped.webp", 80, "Open cropped footer reference"), link("O", base + "footer/original/footer-original.png", 10, "Open original footer reference"));
