@@ -2360,3 +2360,162 @@ body :where(blockquote,strong) {
   .rf-71 .rf-news-row h3{text-transform:uppercase}
   .rf-72 .rf-stack-showcase>article>div{grid-template-columns:1fr}
 }
+
+/* Reference fidelity rebuild: structural corrections after direct source comparison */
+@media (min-width:1200px){
+  .rf-phenomenon .rf-shell{max-width:1320px!important;padding-bottom:90px}
+  .rf-phenomenon__top{margin-bottom:34px}
+  .rf-phenomenon__stage{grid-template-columns:.52fr 1.55fr .82fr;grid-template-areas:"intro intro intro" "score hero detail";gap:18px 22px;align-items:end}
+  .rf-phenomenon__intro{grid-area:intro;display:grid;grid-template-columns:1.45fr .68fr;grid-template-rows:auto auto;gap:14px 70px;padding-top:0}
+  .rf-phenomenon__intro h2{grid-row:1/3;max-width:17ch;margin:0;font-size:68px;line-height:.96}
+  .rf-phenomenon__intro p{align-self:end;max-width:30ch;margin:0}
+  .rf-phenomenon__intro .rf-pill{align-self:start;justify-self:start}
+  .rf-score{grid-area:score}.rf-phenomenon__hero{grid-area:hero;height:555px}.rf-phenomenon__detail{grid-area:detail;height:455px}
+
+  .rf-46 .rf-shell{max-width:1080px!important;padding-block:76px}
+  .rf-46 .rf-benefits{grid-template-columns:.86fr 1fr;gap:52px}
+  .rf-46 .rf-benefits>img{height:638px}
+
+  .rf-47 .rf-shell{height:760px;min-height:0;padding-top:58px;padding-bottom:0;overflow:hidden}
+  .rf-47 .rf-centered-title{margin:0;font-size:74px;line-height:.92}
+  .rf-47 .rf-member-row{grid-template-columns:1.05fr .82fr 1.08fr .74fr;gap:0;margin-top:54px;align-items:stretch}
+  .rf-47 .rf-member-row>article{display:flex;min-height:390px;flex-direction:column;justify-content:space-between;padding:42px 34px;border-top:1px solid #2d302d;border-bottom:1px solid #2d302d}
+  .rf-47 .rf-member-row blockquote{font-size:20px!important;line-height:1.45}
+  .rf-47 .rf-video-card,.rf-47 .rf-video-card--small{min-height:390px;border-radius:0}
+
+  .rf-50 .rf-shell{max-width:1120px!important}
+  .rf-50 .rf-info-strip{padding:20px;outline:1px solid #343735;outline-offset:18px;box-shadow:none}
+
+  .rf-52 .rf-shell{display:grid;min-height:267px;place-items:center;padding:0;overflow:hidden}
+  .rf-52 .rf-logo-source{display:block;width:100%;height:100%;object-fit:cover;border-radius:0}
+
+  .rf-55 .rf-trainer-lineup{gap:10px;padding:0 36px}
+  .rf-55 .rf-trainer-lineup article{background:linear-gradient(145deg,#151814 0 45%,#c7f900 45% 100%)}
+  .rf-55 .rf-trainer-lineup article:nth-child(odd){clip-path:polygon(8% 0,84% 0,100% 100%,0 100%)}
+  .rf-55 .rf-trainer-lineup article:nth-child(2){clip-path:polygon(14% 0,90% 0,96% 100%,0 100%)}
+  .rf-55 .rf-trainer-lineup img{object-fit:cover;object-position:center top;mix-blend-mode:luminosity}
+
+  .rf-56 .rf-shell{position:relative;height:1208px;min-height:0;padding-block:118px;overflow:hidden}
+  .rf-56 .rf-success-stage{position:relative;display:block;height:650px;min-height:0;margin-top:74px}
+  .rf-56 .rf-success-stage__hero{position:absolute;left:0;bottom:0;width:650px;height:650px;object-fit:cover;object-position:center top}
+  .rf-56 .rf-success-stage blockquote{position:absolute;z-index:2;left:455px;bottom:0;width:470px;min-height:300px;padding:46px;border-radius:18px;background:#151813;font-size:20px!important}
+  .rf-56 .rf-success-stage__people{position:absolute;right:0;bottom:0;display:grid;width:330px;grid-template-columns:1fr 1fr;gap:14px;padding:0}
+  .rf-56 .rf-success-stage__people img{height:360px;object-fit:cover;object-position:center top}
+
+  .rf-58 .rf-service-accordion{margin-left:0}
+  .rf-58 .rf-service-accordion button{grid-template-columns:1fr 320px 52px}
+  .rf-58 .rf-service-accordion button img{position:absolute;right:340px;width:310px;height:112px;object-fit:cover}
+
+  .rf-59 .rf-shell{position:relative;width:100%;max-width:1440px!important;height:1454px;min-height:0;padding:0;overflow:hidden}
+  .rf-59 .rf-method-title{position:absolute;z-index:2;top:26px;left:550px;max-width:none;margin:0;font-size:64px;line-height:1.02;text-align:left}
+  .rf-59 .rf-method{position:absolute;inset:0;display:block}
+  .rf-59 .rf-method>img{position:absolute;left:0;bottom:0;width:560px;height:1275px;object-fit:contain;object-position:left bottom;filter:none}
+  .rf-59 .rf-method__points{position:absolute;top:302px;right:32px;left:615px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .rf-59 .rf-method__points article{min-height:262px;padding:40px 42px;border:1px solid #151815;border-radius:10px;background:#0d0f0d}
+  .rf-59 .rf-method__points i{display:block;margin-bottom:30px;color:#cddd59;font-size:23px!important}
+  .rf-59 .rf-method__points h3{max-width:15ch;margin:0 0 14px;font-size:29px!important;line-height:1}
+  .rf-59 .rf-method__points p{max-width:31ch;margin:0;color:#777c76;font-size:15px!important;line-height:1.32}
+
+  .rf-61 .rf-plan-title{font-size:80px;line-height:.98}
+  .rf-61 .rf-price-row--outline h3{font-size:34px}.rf-61 .rf-price-row--outline strong{font-size:72px}
+  .rf-61 .rf-price-row--outline li{font-size:16px!important;line-height:1.6}
+
+  .rf-62 .rf-shell{position:relative;height:920px;min-height:0;padding:54px 0 0;overflow:hidden}
+  .rf-62 .rf-plan-title{margin:24px auto 22px;font-size:66px;line-height:.96}
+  .rf-62 .rf-transform{position:relative;display:block;height:590px;min-height:0;margin:0}
+  .rf-62 .rf-transform>img{position:absolute;left:0;bottom:0;width:590px;height:590px;object-fit:cover;object-position:center top}
+  .rf-62 .rf-transform blockquote{position:absolute;z-index:2;left:435px;bottom:0;width:480px;min-height:280px;padding:42px;border-radius:18px 18px 0 0;font-size:18px!important}
+  .rf-62 .rf-transform>div{position:absolute;right:0;bottom:0;display:grid;width:370px;grid-template-columns:1fr 1fr;gap:14px;padding:0}
+  .rf-62 .rf-transform>div img{height:310px;object-fit:cover;object-position:center top}
+
+  .rf-65 .rf-trainer-accordion>article{grid-template-columns:1fr 80px 270px}
+  .rf-65 .rf-trainer-accordion>article h2{max-width:none;font-size:58px;line-height:.9;white-space:nowrap}
+
+  .rf-70 .rf-class-heading h2,.rf-70 .rf-featured-classes h3{font-family:Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:.02em;text-transform:uppercase}
+  .rf-70 .rf-class-heading h2{font-size:64px}.rf-70 .rf-featured-classes h3{font-size:27px}
+
+  .rf-71{background-color:#0d0f0e;background-image:linear-gradient(120deg,rgba(255,255,255,.018) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.018) 50%,rgba(255,255,255,.018) 75%,transparent 75%);background-size:18px 18px}
+  .rf-71 .rf-news-head h2,.rf-71 .rf-news-row h3{font-family:Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:.025em}
+
+  .rf-72 .rf-shell{max-width:960px!important}
+  .rf-72 .rf-stack-showcase>article>div{left:38px;right:auto;bottom:38px;display:block;width:390px}
+  .rf-72 .rf-stack-showcase h3{font-size:40px;line-height:1}.rf-72 .rf-stack-showcase p{max-width:32ch;margin:16px 0 0;font-size:14px!important;line-height:1.45}
+  .rf-72 .rf-stack-showcase a{display:inline-flex;margin-top:22px;align-items:center;gap:10px}
+}
+
+@media (max-width:1199px){
+  .rf-52 .rf-logo-source{width:100%;height:auto;border-radius:0}
+  .rf-59 .rf-method__points i{display:block;margin-bottom:18px;color:#cddd59}
+}
+/* Reference fidelity rebuild 2: asset and measured-coordinate corrections */
+@media (min-width:1200px){
+  .rf-phenomenon__stage{grid-template-columns:.62fr 1.15fr .86fr;row-gap:42px}
+  .rf-phenomenon__intro{grid-template-columns:1.25fr .62fr;padding-top:38px}
+  .rf-phenomenon__intro h2{max-width:16ch;font-size:57px;line-height:1.02}
+  .rf-phenomenon__intro h2 em:last-child{display:inline-block;margin-top:12px;text-transform:none}
+  .rf-score article{min-height:170px}.rf-phenomenon__hero{height:555px}.rf-phenomenon__detail{height:410px}
+
+  .rf-41 .rf-program__visual img{object-position:center 48%}
+  .rf-41 .rf-program__visual span{left:26px;top:22px}.rf-41 .rf-program__visual b{right:28px;bottom:22px}
+
+  .rf-habits article:first-of-type img{object-position:center top}
+  .rf-habits article:last-of-type img{object-position:center 42%}
+
+  .rf-46 .rf-benefits>img{object-position:center top}
+
+  .rf-47 .rf-centered-title{font-size:58px}.rf-47 .rf-member-row>article,.rf-47 .rf-video-card,.rf-47 .rf-video-card--small{min-height:430px}
+
+  .rf-53 .rf-wellness-feature>img{object-fit:contain;object-position:center bottom;background:#10130f}
+
+  .rf-55 .rf-trainer-lineup{gap:0;padding:0}
+  .rf-55 .rf-trainer-lineup article{background:#050706;clip-path:none!important;overflow:visible}
+  .rf-55 .rf-trainer-lineup img{height:490px;object-fit:cover;object-position:center top;mix-blend-mode:normal}
+  .rf-55 .rf-trainer-lineup h3{bottom:8px}
+
+  .rf-56 .rf-success-stage__hero,.rf-62 .rf-transform>img{object-fit:contain;object-position:left bottom;background:#030504}
+
+  .rf-58 .rf-service-accordion button img{right:185px;width:340px;border-radius:14px;transform:rotate(-3deg)}
+
+  .rf-59 .rf-method-title{left:780px;font-size:78px}
+  .rf-59 .rf-method>img{left:0;width:773px;height:1454px;object-fit:fill;object-position:left top}
+  .rf-59 .rf-method__points{left:842px;right:32px}
+
+  .rf-61 .rf-price-row--outline article{min-height:620px;padding:38px}
+  .rf-61 .rf-price-row--outline h3{font-size:31px}
+  .rf-61 .rf-price-row--outline h3::after{display:block;min-height:38px;margin-top:10px;color:#8f948d;font-size:12px;font-weight:400;line-height:1.35}
+  .rf-61 .rf-price-row--outline article:nth-child(1) h3::after{content:"For beginners taking their first steps into fitness."}
+  .rf-61 .rf-price-row--outline article:nth-child(2) h3::after{content:"For consistent trainers building momentum."}
+  .rf-61 .rf-price-row--outline article:nth-child(3) h3::after{content:"For goal-driven athletes who want full support."}
+  .rf-61 .rf-price-row--outline ul::before{display:block;margin-bottom:12px;color:#fff;font-size:16px;font-weight:700;content:"Features"}
+
+  .rf-65 .rf-trainer-accordion>article h2,.rf-65 .rf-trainer-accordion>button{font-family:Impact,"Arial Narrow",sans-serif;font-weight:900;letter-spacing:.01em}
+  .rf-65 .rf-trainer-accordion>article h2{font-size:54px}.rf-65 .rf-trainer-accordion>article p{max-width:64ch}
+  .rf-65 .rf-trainer-accordion>button{min-height:138px;font-size:46px!important}
+
+  .rf-70 .rf-class-heading h2{font-size:34px}.rf-70 .rf-featured-classes{margin-top:42px}
+  .rf-70 .rf-featured-classes h3{font-size:29px;font-weight:900}
+
+  .rf-71 .rf-shell{max-width:980px!important;padding-top:152px;padding-bottom:70px}
+  .rf-71 .rf-news-head h2{font-size:76px}.rf-71 .rf-news-row{margin-top:44px}.rf-71 .rf-news-row img{height:190px}
+
+  .rf-72 .rf-stack-showcase{counter-reset:rf-card}
+  .rf-72 .rf-stack-showcase>header h2{margin-bottom:38px}
+  .rf-72 .rf-stack-showcase>article{counter-increment:rf-card}
+  .rf-72 .rf-stack-showcase>article::before{position:absolute;z-index:3;top:28px;left:38px;color:#fff;font-size:11px;content:"0" counter(rf-card)}
+}
+/* Reference fidelity rebuild 3: clean photographic extraction and final 59 alignment */
+@media (min-width:1200px){
+  .rf-59 .rf-method-title{left:550px;font-size:64px}
+  .rf-59 .rf-method>img{width:548px;height:1454px;object-fit:fill}
+  .rf-59 .rf-method__points{left:625px;right:115px}
+  .rf-70 .rf-class-heading h2{font-size:30px}
+}
+/* Reference fidelity rebuild 4: final proportional tuning */
+@media (min-width:1200px){
+  .rf-53 .rf-wellness-feature{height:420px;min-height:420px;overflow:hidden}
+  .rf-53 .rf-wellness-feature>img{height:420px}
+  .rf-56 .rf-success-stage__hero{width:480px;height:650px;object-fit:fill}
+  .rf-62 .rf-transform>img{width:430px;height:590px;object-fit:fill}
+  .rf-59 .rf-method-title{font-size:72px}
+  .rf-59 .rf-method__points{left:660px;right:35px}
+}
