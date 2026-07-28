@@ -6,13 +6,15 @@ The one-page experience presents training programs, memberships, coaches, fitnes
 
 ## Project Status
 
-The responsive hero and 36-section page body are implemented. The template is under active staged development toward its first complete release.
+The responsive hero, 36-section page body, footer, design system, and premium interaction layer are implemented. The template is in final staged optimization toward its first complete release.
 
 ## Current Features
 
 - Responsive one-page layout with 36 distinct body sections
 - Program, class, membership, schedule, coach, journal, and conversion content
 - Interactive program selector, billing toggle, class filters, schedule reservations, accordion, carousel, and trial form
+- Scroll progress, section reveals, animated metrics, active navigation, rotating hero guidance, and contextual trial CTA
+- Keyboard-accessible training gallery and member-story media viewer with focus management
 - Local Bootstrap 5.3.8, jQuery 4.0.0, and Font Awesome Free 7.2.0 assets
 - Desktop, tablet, mobile, keyboard, and reduced-motion support
 
