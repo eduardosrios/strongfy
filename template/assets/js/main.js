@@ -397,6 +397,16 @@
       anchor.textContent = label;
       return anchor;
     }
+    function sectionLink(section, number) {
+      const rawSection = String(section.dataset.section);
+      if (!section.id) section.id = "section-" + rawSection;
+      const anchor = link(String(number), "#" + section.id, 45, "Section " + number);
+      anchor.classList.add("reference-link--section");
+      anchor.removeAttribute("target");
+      anchor.removeAttribute("rel");
+      anchor.setAttribute("style", inlineStyle + "top:120px;right:45px;");
+      return anchor;
+    }
     const hero = document.querySelector(".hero");
     if (hero && !hero.querySelector(".reference-link")) hero.append(link("C", base + "hero/cutted-section/hero-cropped.webp", 80, "Open cropped hero reference"), link("O", base + "hero/original/hero-original.jpg", 10, "Open original hero reference"));
     document.querySelectorAll(".body-section").forEach(function (section) {
@@ -406,7 +416,7 @@
       const folder = n > 36 ? base + "body-content/0 New Sections/section " + n + "/" : base + "body-content/section " + n + "/";
       const file = "section-" + String(sourceNumber).padStart(2,"0");
       const croppedFile = n === 72 ? "fYp7zuaT7PTQ.jpg" : file + "-cropped.webp";
-      section.append(link("C", folder + "cutted-section/" + croppedFile, 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[sourceNumber], 10, "Open original reference for section " + n));
+      section.append(link("C", folder + "cutted-section/" + croppedFile, 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[sourceNumber], 10, "Open original reference for section " + n), sectionLink(section, n));
     });
     const footer = document.querySelector(".site-footer");
     if (footer && !footer.querySelector(".reference-link")) footer.append(link("C", base + "footer/cutted-section/footer-cropped.webp", 80, "Open cropped footer reference"), link("O", base + "footer/original/footer-original.png", 10, "Open original footer reference"));
