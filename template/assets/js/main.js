@@ -4,7 +4,7 @@
   const $trial = $("#trial-offer");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  $("a[href^='#']").on("click", function (event) {
+  $(document).on("click", "a[href^='#']", function (event) {
     const targetId = this.getAttribute("href");
     const $target = targetId && targetId !== "#" ? $(targetId) : $();
 
@@ -186,6 +186,10 @@
     const contactTop = document.querySelector("#contact").getBoundingClientRect().top;
     $("#scrollProgressBar").css("transform", "scaleX(" + progress + ")");
     $("#floatingTrial").toggleClass("is-visible", heroBottom < 0 && contactTop > window.innerHeight * 0.3);
+    $(".reveal-ready:not(.is-revealed)").each(function () {
+      const rect = this.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 1.08 && rect.bottom > -80) this.classList.add("is-revealed");
+    });
     scrollTicking = false;
   }
   window.addEventListener("scroll", function () {
@@ -298,5 +302,156 @@
     }
   });
 
+  function buildVideoVariants() {
+    const variants = [
+      ["04", "assets/videos/personal-coaching.mp4", "Personal coaching session"],
+      ["06", "assets/videos/treadmill-cardio.mp4", "Treadmill conditioning session"],
+      ["13", "assets/videos/boxing-drills.mp4", "Boxing performance drills"],
+      ["17", "assets/videos/battle-ropes.mp4", "High-intensity battle ropes session"],
+      ["29", "assets/videos/mobility-stretch.mp4", "Mobility and stretching session"],
+      ["32", "assets/videos/strength-barbell.mp4", "Barbell strength session"]
+    ];
+
+    variants.forEach(function ([sectionNumber, source, label]) {
+      const original = document.querySelector(".body-section[data-section='" + sectionNumber + "']");
+      if (!original || document.querySelector(".body-section[data-video-source='" + source + "']")) return;
+      const duplicate = original.cloneNode(true);
+      duplicate.removeAttribute("id");
+      duplicate.dataset.section = sectionNumber + "-video";
+      duplicate.dataset.videoSource = source;
+      duplicate.classList.add("video-variant");
+      duplicate.querySelectorAll("[id]").forEach(function (node) { node.removeAttribute("id"); });
+      duplicate.querySelectorAll(".reveal-ready").forEach(function (node) {
+        node.classList.remove("reveal-ready");
+        node.classList.add("is-revealed");
+      });
+      duplicate.querySelectorAll("img:not(.concept-icon):not(.brand__mark)").forEach(function (image) {
+        const video = document.createElement("video");
+        video.src = source;
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.setAttribute("aria-label", label);
+        image.replaceWith(video);
+      });
+      const index = duplicate.querySelector(".section-index");
+      if (index) index.textContent = sectionNumber + "V / 36";
+      original.insertAdjacentElement("afterend", duplicate);
+    });
+  }
+
+  function replaceComplexConceptIcons() {
+    const sources = [
+      ["assets/images/icons/kettlebell.png", "Kettlebell"],
+      ["assets/images/icons/strength-kit.png", "Strength equipment"],
+      ["assets/images/icons/trainer.png", "Personal coaching"],
+      ["assets/images/icons/stopwatch.png", "Timed performance"]
+    ];
+    const icons = document.querySelectorAll(".benefits-grid__items article > i, .amenities-index__grid article > i, .feature-manifesto__points article > i, .workout-categories__grid article > i, .power-pillars__grid article > i, .coaching-steps__list i, .journey-process__line i");
+    icons.forEach(function (icon, index) {
+      const item = sources[index % sources.length];
+      const image = document.createElement("img");
+      image.className = "concept-icon";
+      image.src = item[0];
+      image.alt = item[1];
+      image.width = 42;
+      image.height = 42;
+      icon.replaceWith(image);
+    });
+  }
+
+  function addBootstrapStructure() {
+    document.querySelectorAll(".content-wrap").forEach(function (container) { container.classList.add("container"); });
+    document.querySelectorAll("[class*='__grid'], [class*='__layout'], [class*='__cards'], [class*='__list'], [class*='__rail'], .feature-manifesto__points").forEach(function (layout) {
+      if (!layout.children.length || layout.closest(".nav-submenu")) return;
+      layout.classList.add("row", "g-4", "bootstrap-grid");
+      const count = layout.children.length;
+      layout.querySelectorAll(":scope > *").forEach(function (child) {
+        child.classList.add("col-12", count >= 4 ? "col-md-6" : "col-md");
+      });
+    });
+  }
+
+  function addReferenceLinks() {
+    const base = "http://localhost/templates/Gym/referencias/references-used/";
+    const originalExtensions = { 1:"jpg",2:"jpg",3:"webp",4:"webp",5:"webp",6:"webp",7:"webp",8:"webp",9:"webp",10:"webp",11:"webp",12:"webp",13:"jpg",14:"jpg",15:"jpg",16:"webp",17:"webp",18:"webp",19:"webp",20:"webp",21:"png",22:"png",23:"png",24:"png",25:"png",26:"png",27:"webp",28:"webp",29:"webp",30:"webp",31:"webp",32:"webp",33:"webp",34:"webp",35:"png",36:"jpg" };
+    const inlineStyle = "position:absolute;top:50px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;border:4px solid #050806;border-radius:50%;background:#ffffff;color:#050806;font-size:24px;font-weight:800;line-height:1;opacity:.5;z-index:2600;text-decoration:none;";
+    function link(label, href, right, title) {
+      const anchor = document.createElement("a");
+      anchor.className = "reference-link";
+      anchor.href = encodeURI(href);
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.title = title;
+      anchor.setAttribute("aria-label", title);
+      anchor.setAttribute("style", inlineStyle + "right:" + right + "px;");
+      anchor.textContent = label;
+      return anchor;
+    }
+    const hero = document.querySelector(".hero");
+    if (hero && !hero.querySelector(".reference-link")) hero.append(link("C", base + "hero/cutted-section/hero-cropped.webp", 80, "Open cropped hero reference"), link("O", base + "hero/original/hero-original.jpg", 10, "Open original hero reference"));
+    document.querySelectorAll(".body-section").forEach(function (section) {
+      if (section.querySelector(".reference-link")) return;
+      const n = Number(String(section.dataset.section).split("-")[0]);
+      const folder = base + "body-content/section " + n + "/";
+      const file = "section-" + String(n).padStart(2,"0");
+      section.append(link("C", folder + "cutted-section/" + file + "-cropped.webp", 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[n], 10, "Open original reference for section " + n));
+    });
+    const footer = document.querySelector(".site-footer");
+    if (footer && !footer.querySelector(".reference-link")) footer.append(link("C", base + "footer/cutted-section/footer-cropped.webp", 80, "Open cropped footer reference"), link("O", base + "footer/original/footer-original.png", 10, "Open original footer reference"));
+  }
+
+  function buildStickyTopbar() {
+    const nav = document.querySelector(".hero-nav");
+    if (!nav || document.querySelector(".scroll-topbar")) return;
+    const bar = document.createElement("header");
+    bar.className = "scroll-topbar";
+    bar.setAttribute("aria-label", "Sticky navigation");
+    const clone = nav.cloneNode(true);
+    clone.classList.add("scroll-topbar__nav");
+    const collapse = clone.querySelector("#primaryNav");
+    if (collapse) collapse.id = "stickyPrimaryNav";
+    const toggle = clone.querySelector("[data-bs-target='#primaryNav']");
+    if (toggle) { toggle.dataset.bsTarget = "#stickyPrimaryNav"; toggle.setAttribute("aria-controls", "stickyPrimaryNav"); }
+    bar.append(clone);
+    document.body.prepend(bar);
+    let previousY = window.scrollY;
+    function update() {
+      const currentY = window.scrollY;
+      const pastHero = currentY > Math.max(220, document.querySelector(".hero").offsetHeight * .65);
+      bar.classList.toggle("is-visible", pastHero && currentY < previousY);
+      previousY = currentY;
+    }
+    window.addEventListener("scroll", update, { passive:true });
+    update();
+  }
+
+  $(document).on("click", ".submenu-toggle", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const item = this.closest(".nav-item--submenu");
+    const open = !item.classList.contains("is-open");
+    this.closest(".hero-nav").querySelectorAll(".nav-item--submenu.is-open").forEach(function (other) {
+      if (other !== item) { other.classList.remove("is-open"); other.querySelector(".submenu-toggle")?.setAttribute("aria-expanded","false"); }
+    });
+    item.classList.toggle("is-open", open);
+    this.setAttribute("aria-expanded", String(open));
+    this.querySelector("i")?.classList.toggle("fa-chevron-down", !open);
+    this.querySelector("i")?.classList.toggle("fa-chevron-up", open);
+  });
+  $(document).on("click", function () {
+    document.querySelectorAll(".nav-item--submenu.is-open").forEach(function (item) {
+      item.classList.remove("is-open");
+      item.querySelector(".submenu-toggle")?.setAttribute("aria-expanded","false");
+    });
+  });
+
+  buildVideoVariants();
+  replaceComplexConceptIcons();
+  addBootstrapStructure();
+  addReferenceLinks();
+  buildStickyTopbar();
   $("[data-day='mon']").trigger("click");
 })(jQuery);
