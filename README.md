@@ -1,12 +1,24 @@
 # Strongfy
 
-Strongfy is an upcoming HTML, CSS, and JavaScript website template for gyms, fitness centers, workout studios, personal trainers, strength coaches, and performance-focused fitness brands.
+Strongfy is a responsive HTML, CSS, and JavaScript website template for gyms, fitness centers, workout studios, personal trainers, strength coaches, and performance-focused fitness brands.
 
-The project will focus on clear service presentation, training programs, memberships, coaching, fitness classes, equipment, wellness, and measurable body or performance transformation.
+The one-page experience presents training programs, memberships, coaches, fitness classes, club spaces, schedules, member stories, and measurable performance transformation.
 
 ## Project Status
 
-Strongfy is currently in the planning stage. The website template has not been implemented yet.
+The responsive hero and 36-section page body are implemented. The template is under active staged development toward its first complete release.
+
+## Current Features
+
+- Responsive one-page layout with 36 distinct body sections
+- Program, class, membership, schedule, coach, journal, and conversion content
+- Interactive program selector, billing toggle, class filters, schedule reservations, accordion, carousel, and trial form
+- Local Bootstrap 5.3.8, jQuery 4.0.0, and Font Awesome Free 7.2.0 assets
+- Desktop, tablet, mobile, keyboard, and reduced-motion support
+
+## Preview
+
+Serve the repository through any static web server, then open `template/index.html`.
 
 ## Technology
 
