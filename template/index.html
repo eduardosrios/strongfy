@@ -203,7 +203,7 @@
           <div><span class="section-kicker">Memberships</span><span class="section-index">07 / 36</span></div>
           <h2>Simple access. Serious support.</h2>
         </header>
-        <div class="billing-toggle" role="group" aria-label="Billing cycle"><button class="is-active" type="button" data-billing="monthly">Monthly</button><button type="button" data-billing="annual">Annual · save 15%</button></div>
+        <div class="billing-toggle" role="group" aria-label="Billing cycle"><button class="is-active" type="button" data-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-billing="annual" aria-pressed="false">Annual · save 15%</button></div>
         <div class="pricing-matrix__grid">
           <article class="price-plan"><span>Start</span><strong><small>$</small><b data-monthly="39" data-annual="33">39</b><em>/mo</em></strong><p>Train independently with everything you need.</p><ul><li>All training zones</li><li>Unlimited club access</li><li>Performance app</li></ul><a class="plan-button" href="#contact">Choose Start</a></article>
           <article class="price-plan price-plan--featured"><span>Progress</span><strong><small>$</small><b data-monthly="69" data-annual="59">69</b><em>/mo</em></strong><p>Programming and monthly coaching built in.</p><ul><li>Everything in Start</li><li>Custom monthly program</li><li>Coach review</li></ul><a class="plan-button" href="#contact">Choose Progress</a></article>
@@ -250,9 +250,9 @@
       <div class="content-wrap">
         <header class="section-head section-head--split"><div><span class="section-kicker">Member stories</span><span class="section-index">11 / 36</span></div><h2>Progress looks different on everyone.</h2></header>
         <div class="member-stories__grid">
-          <button class="story-card" type="button" data-story="Nora rebuilt her running strength after a knee setback."><img src="assets/images/body/runner-stretch.webp" alt="Nora training with battle ropes"><span class="play-icon"><i class="fa-solid fa-play"></i></span><div><strong>Nora · conditioning</strong><small>12 months / +31% work capacity</small></div></button>
-          <button class="story-card" type="button" data-story="Marcus found consistency through a three-day strength plan."><img src="assets/images/body/athlete-curl.webp" alt="Marcus training biceps"><span class="play-icon"><i class="fa-solid fa-play"></i></span><div><strong>Marcus · strength</strong><small>8 months / +42 kg total</small></div></button>
-          <button class="story-card" type="button" data-story="Ari returned to training with a simple mobility-first approach."><img src="assets/images/body/gym-motion.webp" alt="Ari completing a core session"><span class="play-icon"><i class="fa-solid fa-play"></i></span><div><strong>Ari · movement</strong><small>6 months / pain-free training</small></div></button>
+          <button class="story-card" type="button" data-story="Nora rebuilt her running strength after a knee setback." aria-pressed="false"><img src="assets/images/body/runner-stretch.webp" alt="Nora training with battle ropes"><span class="play-icon"><i class="fa-solid fa-play"></i></span><div><strong>Nora · conditioning</strong><small>12 months / +31% work capacity</small></div></button>
+          <button class="story-card" type="button" data-story="Marcus found consistency through a three-day strength plan." aria-pressed="false"><img src="assets/images/body/athlete-curl.webp" alt="Marcus training biceps"><span class="play-icon"><i class="fa-solid fa-play"></i></span><div><strong>Marcus · strength</strong><small>8 months / +42 kg total</small></div></button>
+          <button class="story-card" type="button" data-story="Ari returned to training with a simple mobility-first approach." aria-pressed="false"><img src="assets/images/body/gym-motion.webp" alt="Ari completing a core session"><span class="play-icon"><i class="fa-solid fa-play"></i></span><div><strong>Ari · movement</strong><small>6 months / pain-free training</small></div></button>
         </div>
         <p class="story-status" id="storyStatus" aria-live="polite">Choose a story to see the result.</p>
       </div>
@@ -383,7 +383,7 @@
     <!-- Body 27 — class tabs, inspired by D024 -->
     <section class="body-section section--ink class-tabs" data-section="27" data-source="D024">
       <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Fitness class with us</span><span class="section-index">27 / 36</span></div><h2>Pick the energy. We bring the structure.</h2></header>
-        <div class="class-tabs__nav" role="tablist" aria-label="Class categories"><button class="is-active" type="button" data-class-filter="all">All</button><button type="button" data-class-filter="strength">Strength</button><button type="button" data-class-filter="conditioning">Conditioning</button><button type="button" data-class-filter="mobility">Mobility</button></div>
+        <div class="class-tabs__nav" role="tablist" aria-label="Class categories"><button class="is-active" type="button" role="tab" aria-selected="true" data-class-filter="all">All</button><button type="button" role="tab" aria-selected="false" data-class-filter="strength">Strength</button><button type="button" role="tab" aria-selected="false" data-class-filter="conditioning">Conditioning</button><button type="button" role="tab" aria-selected="false" data-class-filter="mobility">Mobility</button></div>
         <div class="class-tabs__grid"><article data-class="strength"><img src="assets/images/body/group-training.webp" alt="Barbell strength class"><div><span>Strength</span><h3>Foundry</h3><small>Mon / Wed / Fri · 18:30</small></div></article><article data-class="conditioning"><img src="assets/images/body/runner-stretch.webp" alt="Conditioning class"><div><span>Conditioning</span><h3>Redline</h3><small>Tue / Thu · 07:00</small></div></article><article data-class="mobility"><img src="assets/images/body/gym-motion.webp" alt="Mobility class"><div><span>Mobility</span><h3>Reset</h3><small>Daily · 12:15</small></div></article><article data-class="conditioning"><img src="assets/images/body/barbell-athlete.webp" alt="Hybrid conditioning class"><div><span>Hybrid</span><h3>Work / Rest</h3><small>Sat · 09:30</small></div></article></div>
       </div>
     </section>
@@ -429,12 +429,12 @@
     <!-- Body 34 — schedule board, inspired by top01 -->
     <section class="body-section section--paper schedule-board" id="schedule" data-section="34" data-source="top01">
       <div class="content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">This week</span><span class="section-index">34 / 36</span></div><h2>Classes that fit the real shape of your day.</h2></header>
-        <div class="schedule-board__days" role="tablist" aria-label="Schedule days"><button class="is-active" type="button" data-day="mon">Mon 28</button><button type="button" data-day="tue">Tue 29</button><button type="button" data-day="wed">Wed 30</button><button type="button" data-day="thu">Thu 31</button><button type="button" data-day="fri">Fri 01</button></div>
+        <div class="schedule-board__days" role="tablist" aria-label="Schedule days"><button class="is-active" type="button" role="tab" aria-selected="true" data-day="mon">Mon 28</button><button type="button" role="tab" aria-selected="false" data-day="tue">Tue 29</button><button type="button" role="tab" aria-selected="false" data-day="wed">Wed 30</button><button type="button" role="tab" aria-selected="false" data-day="thu">Thu 31</button><button type="button" role="tab" aria-selected="false" data-day="fri">Fri 01</button></div>
         <div class="schedule-board__list" id="scheduleList">
-          <article data-days="mon wed fri"><time>06:15</time><div><span>Strength</span><h3>Foundry</h3></div><strong>Samira</strong><button type="button" aria-label="Reserve Foundry">Reserve</button></article>
-          <article data-days="mon tue thu"><time>07:30</time><div><span>Conditioning</span><h3>Redline</h3></div><strong>Theo</strong><button type="button" aria-label="Reserve Redline">Reserve</button></article>
-          <article data-days="mon wed fri"><time>12:15</time><div><span>Mobility</span><h3>Reset</h3></div><strong>Noa</strong><button type="button" aria-label="Reserve Reset">Reserve</button></article>
-          <article data-days="tue thu fri"><time>18:30</time><div><span>Hybrid</span><h3>Work / Rest</h3></div><strong>Lena</strong><button type="button" aria-label="Reserve Work Rest">Reserve</button></article>
+          <article data-days="mon wed fri"><time>06:15</time><div><span>Strength</span><h3>Foundry</h3></div><strong>Samira</strong><button type="button" aria-label="Reserve Foundry" aria-pressed="false">Reserve</button></article>
+          <article data-days="mon tue thu"><time>07:30</time><div><span>Conditioning</span><h3>Redline</h3></div><strong>Theo</strong><button type="button" aria-label="Reserve Redline" aria-pressed="false">Reserve</button></article>
+          <article data-days="mon wed fri"><time>12:15</time><div><span>Mobility</span><h3>Reset</h3></div><strong>Noa</strong><button type="button" aria-label="Reserve Reset" aria-pressed="false">Reserve</button></article>
+          <article data-days="tue thu fri"><time>18:30</time><div><span>Hybrid</span><h3>Work / Rest</h3></div><strong>Lena</strong><button type="button" aria-label="Reserve Work Rest" aria-pressed="false">Reserve</button></article>
         </div><p class="schedule-status" id="scheduleStatus" aria-live="polite">Showing Monday sessions.</p>
       </div>
     </section>
