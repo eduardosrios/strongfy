@@ -386,7 +386,7 @@
     const originalExtensions = { 1:"jpg",2:"jpg",3:"webp",4:"webp",5:"webp",6:"webp",7:"webp",8:"webp",9:"webp",10:"webp",11:"webp",12:"webp",13:"jpg",14:"jpg",15:"jpg",16:"webp",17:"webp",18:"webp",19:"webp",20:"webp",21:"png",22:"png",23:"png",24:"png",25:"png",26:"png",27:"webp",28:"webp",29:"webp",30:"webp",31:"webp",32:"webp",33:"webp",34:"webp",35:"png",36:"jpg" };
     const inlineStyle = "position:absolute;top:50px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;border:4px solid #050806;border-radius:50%;background:#ffffff;color:#050806;font-size:24px;font-weight:800;line-height:1;opacity:.5;z-index:2600;text-decoration:none;";
     let multiCopyEnabled = false;
-    let lastClipboardValue = "";
+    let multiCopyValue = "";
     function link(label, href, right, title) {
       const anchor = document.createElement("a");
       anchor.className = "reference-link";
@@ -398,13 +398,6 @@
       anchor.setAttribute("style", inlineStyle + "right:" + right + "px;");
       anchor.textContent = label;
       return anchor;
-    }
-    async function readClipboardValue() {
-      try {
-        return await navigator.clipboard.readText();
-      } catch (error) {
-        return lastClipboardValue;
-      }
     }
     async function writeClipboardValue(value) {
       const text = String(value);
@@ -422,15 +415,10 @@
         field.remove();
         if (!copied) throw error;
       }
-      lastClipboardValue = text;
-    }
-    function appendSectionNumber(currentValue, number) {
-      const current = String(currentValue || "").trim();
-      if (!/^\d+(?:\s*,\s*\d+)*$/.test(current)) return String(number);
-      return current.split(/\s*,\s*/).concat(String(number)).join(",");
     }
     function setMultiCopyState(enabled) {
       multiCopyEnabled = enabled;
+      if (enabled) multiCopyValue = "";
       document.querySelectorAll(".reference-link--multi").forEach(function (button) {
         button.classList.toggle("is-active", enabled);
         button.style.backgroundColor = enabled ? "#22c55e" : "#ffffff";
@@ -440,7 +428,7 @@
         button.setAttribute("aria-pressed", String(enabled));
       });
       const status = document.getElementById("siteInteractionStatus");
-      if (status) status.textContent = "Multiple section copy " + (enabled ? "enabled." : "disabled.");
+      if (status) status.textContent = "Multiple section copy " + (enabled ? "enabled. Selection cleared." : "disabled.");
     }
     function sectionLink(section, number) {
       const button = document.createElement("button");
@@ -454,8 +442,8 @@
       button.addEventListener("click", async function () {
         const status = document.getElementById("siteInteractionStatus");
         try {
-          const currentValue = multiCopyEnabled ? await readClipboardValue() : "";
-          const nextValue = multiCopyEnabled ? appendSectionNumber(currentValue, number) : String(number);
+          if (multiCopyEnabled) multiCopyValue = multiCopyValue ? multiCopyValue + "," + number : String(number);
+          const nextValue = multiCopyEnabled ? multiCopyValue : String(number);
           await writeClipboardValue(nextValue);
           button.textContent = "✓";
           button.setAttribute("aria-label", "Section " + number + " copied");
