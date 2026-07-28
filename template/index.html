@@ -7,7 +7,7 @@
   <title>Strongfy — Train for real life</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -20,9 +20,10 @@
       <img class="hero__image" src="assets/images/strongfy-hero-runner.webp" alt="">
       <div class="hero__veil" aria-hidden="true"></div>
 
-      <nav class="navbar navbar-expand-lg hero-nav" aria-label="Primary navigation">
-        <div class="container-fluid p-0">
+      <nav class="navbar navbar-expand-xl hero-nav" aria-label="Primary navigation">
+        <div class="container p-0">
           <a class="brand" href="#top" aria-label="Strongfy home">
+            <img class="brand__mark" src="assets/images/icons/brand-dumbbell.png" alt="">
             <span class="brand__word">STRONGFY</span>
           </a>
 
@@ -32,10 +33,16 @@
 
           <div class="collapse navbar-collapse" id="primaryNav">
             <ul class="navbar-nav mx-auto hero-nav__links">
-              <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+              <li class="nav-item nav-item--submenu">
+                <div class="nav-link-cluster"><a class="nav-link" href="#services">Services</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-label="Open Services submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></div>
+                <ul class="nav-submenu"><li><a href="#services">Training programs</a></li><li><a href="#trainer-roster">Personal coaching</a></li><li><a href="#spaces">Club spaces</a></li></ul>
+              </li>
               <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
               <li class="nav-item"><a class="nav-link" href="#spaces">Spaces</a></li>
-              <li class="nav-item"><a class="nav-link" href="#membership">Membership</a></li>
+              <li class="nav-item nav-item--submenu">
+                <div class="nav-link-cluster"><a class="nav-link" href="#membership">Membership</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-label="Open Membership submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></div>
+                <ul class="nav-submenu"><li><a href="#membership">Compare plans</a></li><li><a href="#trial-offer">14-day trial</a></li><li><a href="#contact">Talk to a coach</a></li></ul>
+              </li>
               <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
 
@@ -92,7 +99,7 @@
 
     <!-- Body 01 — editorial introduction, inspired by P062 -->
     <section class="body-section section--paper intro-editorial" id="about" data-section="01" data-source="P062">
-      <div class="content-wrap">
+      <div class="container content-wrap">
         <header class="section-head section-head--split">
           <div><span class="section-kicker">Sport center</span><span class="section-index">01 / 36</span></div>
           <h2>Built for people who want strength that carries into real life.</h2>
@@ -116,7 +123,7 @@
 
     <!-- Body 02 — facility mosaic, inspired by P062 -->
     <section class="body-section section--ink facility-mosaic" id="spaces" data-section="02" data-source="P062">
-      <div class="content-wrap">
+      <div class="container content-wrap">
         <header class="section-head section-head--light section-head--split">
           <div><span class="section-kicker">Everything under one roof</span><span class="section-index">02 / 36</span></div>
           <h2>A space engineered for better work.</h2>
@@ -135,7 +142,7 @@
 
     <!-- Body 03 — commercial metrics, inspired by top07 -->
     <section class="body-section section--lime metrics-rail" data-section="03" data-source="top07">
-      <div class="content-wrap metrics-rail__inner">
+      <div class="container content-wrap metrics-rail__inner">
         <div><span>Active members</span><strong data-count="12400">12.4K</strong></div>
         <div><span>Weekly sessions</span><strong data-count="860">860</strong></div>
         <div><span>Expert coaches</span><strong data-count="28">28</strong></div>
@@ -145,7 +152,7 @@
 
     <!-- Body 04 — coach feature, inspired by top07 -->
     <section class="body-section section--ink coach-feature" data-section="04" data-source="top07">
-      <div class="content-wrap coach-feature__grid">
+      <div class="container content-wrap coach-feature__grid">
         <div class="coach-feature__portrait"><img src="assets/images/body/coach-floor.webp" alt="Strongfy coach guiding a strength session"><span class="portrait-badge"><b>8 yrs</b> coaching</span></div>
         <div class="coach-feature__copy">
           <span class="section-kicker">Meet your edge</span><span class="section-index">04 / 36</span>
@@ -163,7 +170,7 @@
 
     <!-- Body 05 — program selector, inspired by top07 -->
     <section class="body-section section--paper program-selector" id="services" data-section="05" data-source="top07">
-      <div class="content-wrap">
+      <div class="container content-wrap">
         <header class="section-head section-head--split">
           <div><span class="section-kicker">Choose your work</span><span class="section-index">05 / 36</span></div>
           <h2>One goal. A program built around it.</h2>
@@ -183,7 +190,7 @@
 
     <!-- Body 06 — locations, inspired by top07 -->
     <section class="body-section section--ink locations-showcase" data-section="06" data-source="top07">
-      <div class="content-wrap">
+      <div class="container content-wrap">
         <header class="section-head section-head--light section-head--split">
           <div><span class="section-kicker">Train close to life</span><span class="section-index">06 / 36</span></div>
           <h2>Three clubs. One standard.</h2>
@@ -198,7 +205,7 @@
 
     <!-- Body 07 — pricing matrix, inspired by top07 -->
     <section class="body-section section--ink pricing-matrix" data-section="07" data-source="top07">
-      <div class="content-wrap">
+      <div class="container content-wrap">
         <header class="section-head section-head--light section-head--split">
           <div><span class="section-kicker">Memberships</span><span class="section-index">07 / 36</span></div>
           <h2>Simple access. Serious support.</h2>
@@ -214,7 +221,7 @@
 
     <!-- Body 08 — quote marquee, inspired by top07 -->
     <section class="body-section section--paper quote-marquee" data-section="08" data-source="top07">
-      <div class="content-wrap quote-marquee__inner">
+      <div class="container content-wrap quote-marquee__inner">
         <div class="quote-marquee__avatars"><img src="assets/images/body/runner-stretch.webp" alt="Strongfy member"><img src="assets/images/body/barbell-athlete.webp" alt="Strongfy member"><img src="assets/images/body/gym-motion.webp" alt="Strongfy member"></div>
         <blockquote>“The plan stopped feeling like punishment. I train with purpose now—and I can see the difference everywhere.”</blockquote>
         <div class="quote-marquee__meta"><strong>Maya Bennett</strong><span>Member since 2023 · 143 sessions</span></div>
@@ -223,7 +230,7 @@
 
     <!-- Body 09 — split brand story, inspired by top08 -->
     <section class="body-section section--ink story-split" data-section="09" data-source="top08">
-      <div class="content-wrap story-split__grid">
+      <div class="container content-wrap story-split__grid">
         <div class="story-split__copy"><span class="section-kicker">A better training day</span><span class="section-index">09 / 36</span><h2>Build daily habits for a body that lasts.</h2><p>Strong bodies are made between the big moments: one sound rep, one honest session, one week repeated well.</p><a class="text-link text-link--light" href="#journey">See how the process works <i class="fa-solid fa-arrow-right"></i></a></div>
         <div class="story-split__collage"><img class="story-split__main" src="assets/images/body/athlete-curl.webp" alt="Athlete training arms"><img class="story-split__small" src="assets/images/body/gym-motion.webp" alt="Athlete doing core training"><span class="story-note">Consistency beats intensity without direction.</span></div>
       </div>
@@ -231,7 +238,7 @@
 
     <!-- Body 10 — benefits grid, inspired by top08 -->
     <section class="body-section section--ink benefits-grid" data-section="10" data-source="top08">
-      <div class="content-wrap">
+      <div class="container content-wrap">
         <header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Why Strongfy</span><span class="section-index">10 / 36</span></div><h2>Every detail supports the next rep.</h2></header>
         <div class="benefits-grid__layout">
           <div class="benefits-grid__list">
@@ -247,7 +254,7 @@
 
     <!-- Body 11 — member video cards, inspired by top08 -->
     <section class="body-section section--paper member-stories" data-section="11" data-source="top08">
-      <div class="content-wrap">
+      <div class="container content-wrap">
         <header class="section-head section-head--split"><div><span class="section-kicker">Member stories</span><span class="section-index">11 / 36</span></div><h2>Progress looks different on everyone.</h2></header>
         <div class="member-stories__grid">
           <button class="story-card" type="button" data-story="Nora rebuilt her running strength after a knee setback." aria-pressed="false"><img src="assets/images/body/runner-stretch.webp" alt="Nora training with battle ropes"><span class="play-icon"><i class="fa-solid fa-play"></i></span><div><strong>Nora · conditioning</strong><small>12 months / +31% work capacity</small></div></button>
@@ -260,12 +267,12 @@
 
     <!-- Body 12 — conversion band, inspired by top08 -->
     <section class="body-section section--lime conversion-band" data-section="12" data-source="top08">
-      <div class="content-wrap conversion-band__inner"><div><span class="section-kicker">Start clean</span><h2>Stop thinking.<br>Start training.</h2></div><p>Fourteen days. A real plan. Coaches who know your name.</p><a class="conversion-band__button" href="#contact">Claim your trial <i class="fa-solid fa-arrow-right"></i></a></div>
+      <div class="container content-wrap conversion-band__inner"><div><span class="section-kicker">Start clean</span><h2>Stop thinking.<br>Start training.</h2></div><p>Fourteen days. A real plan. Coaches who know your name.</p><a class="conversion-band__button" href="#contact">Claim your trial <i class="fa-solid fa-arrow-right"></i></a></div>
     </section>
 
     <!-- Body 13 — disciplines, inspired by top10 -->
     <section class="body-section section--ink discipline-grid" data-section="13" data-source="top10">
-      <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Train your system</span><span class="section-index">13 / 36</span></div><h2>Three disciplines. One stronger athlete.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Train your system</span><span class="section-index">13 / 36</span></div><h2>Three disciplines. One stronger athlete.</h2></header>
         <div class="discipline-grid__cards">
           <article><img src="assets/images/body/strength-lift.webp" alt="Strength athlete lifting weights"><span>01</span><h3>Hardline strength</h3><p>Compound movement, progressive load, durable output.</p><a href="#schedule">View sessions <i class="fa-solid fa-arrow-right"></i></a></article>
           <article><img src="assets/images/body/runner-stretch.webp" alt="Conditioning athlete with battle ropes"><span>02</span><h3>Engine conditioning</h3><p>Intervals, carries, and pace work that expands capacity.</p><a href="#schedule">View sessions <i class="fa-solid fa-arrow-right"></i></a></article>
@@ -276,7 +283,7 @@
 
     <!-- Body 14 — coaching steps, inspired by top10 -->
     <section class="body-section section--paper coaching-steps" data-section="14" data-source="top10">
-      <div class="content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">No guesswork</span><span class="section-index">14 / 36</span></div><h2>A clear line from where you are to where you want to go.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">No guesswork</span><span class="section-index">14 / 36</span></div><h2>A clear line from where you are to where you want to go.</h2></header>
         <ol class="coaching-steps__list">
           <li><span>01</span><div><i class="fa-solid fa-chart-simple"></i><h3>Assess</h3><p>Movement, history, capacity, schedule, and goals.</p></div></li>
           <li><span>02</span><div><i class="fa-solid fa-route"></i><h3>Build</h3><p>A practical plan that fits the week you actually live.</p></div></li>
@@ -287,7 +294,7 @@
 
     <!-- Body 15 — amenities index, inspired by top10 -->
     <section class="body-section section--ink amenities-index" data-section="15" data-source="top10">
-      <div class="content-wrap"><header class="section-head section-head--light"><span class="section-kicker">The useful extras</span><span class="section-index">15 / 36</span><h2>Everything around the workout, handled.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light"><span class="section-kicker">The useful extras</span><span class="section-index">15 / 36</span><h2>Everything around the workout, handled.</h2></header>
         <div class="amenities-index__grid">
           <article><i class="fa-solid fa-shower"></i><strong>Rain showers</strong><span>7 stations</span></article><article><i class="fa-solid fa-lock"></i><strong>Smart lockers</strong><span>180 units</span></article><article><i class="fa-solid fa-bottle-water"></i><strong>Refuel bar</strong><span>Fresh daily</span></article><article><i class="fa-solid fa-person-swimming"></i><strong>Recovery room</strong><span>Compression + mobility</span></article><article><i class="fa-solid fa-car"></i><strong>Secure parking</strong><span>90 minutes included</span></article><article><i class="fa-solid fa-child-reaching"></i><strong>Kids studio</strong><span>Selected hours</span></article><article class="amenities-index__image"><img src="assets/images/body/gym-machines.webp" alt="Bright Strongfy equipment studio"></article><article class="amenities-index__number"><strong>28</strong><span>amenities across every club</span></article>
         </div>
@@ -296,19 +303,19 @@
 
     <!-- Body 16 — brand rail, inspired by top19 -->
     <section class="body-section section--paper brand-rail" data-section="16" data-source="top19">
-      <div class="content-wrap"><span class="brand-rail__label">Equipment trusted on our floors</span><div class="brand-rail__logos"><strong>ROGUE</strong><strong>Concept2</strong><strong>ELEIKO</strong><strong>ASSAULT</strong><strong>TRX</strong><strong>THERABODY</strong></div></div>
+      <div class="container content-wrap"><span class="brand-rail__label">Equipment trusted on our floors</span><div class="brand-rail__logos"><strong>ROGUE</strong><strong>Concept2</strong><strong>ELEIKO</strong><strong>ASSAULT</strong><strong>TRX</strong><strong>THERABODY</strong></div></div>
     </section>
 
     <!-- Body 17 — feature manifesto, inspired by top19 -->
     <section class="body-section section--ink feature-manifesto" data-section="17" data-source="top19">
-      <div class="content-wrap"><header class="feature-manifesto__headline"><span class="section-kicker">Why it works</span><span class="section-index">17 / 36</span><h2>Inspired to train.<br><em>Built to continue.</em></h2></header>
+      <div class="container content-wrap"><header class="feature-manifesto__headline"><span class="section-kicker">Why it works</span><span class="section-index">17 / 36</span><h2>Inspired to train.<br><em>Built to continue.</em></h2></header>
         <div class="feature-manifesto__panel"><img src="assets/images/body/personal-training.webp" alt="Athlete completing controlled strength work"><div class="feature-manifesto__points"><article><i class="fa-solid fa-circle-check"></i><strong>No random workouts</strong><p>A plan with a beginning, middle, and next block.</p></article><article><i class="fa-solid fa-circle-check"></i><strong>Expert eyes</strong><p>Technique feedback before bad patterns settle in.</p></article><article><i class="fa-solid fa-circle-check"></i><strong>Progress tracking</strong><p>Useful data, explained in plain language.</p></article><article><i class="fa-solid fa-circle-check"></i><strong>People who show up</strong><p>A focused room changes what effort feels like.</p></article></div></div>
       </div>
     </section>
 
     <!-- Body 18 — workout categories, inspired by top19 -->
     <section class="body-section section--ink workout-categories" data-section="18" data-source="top19">
-      <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Find your lane</span><span class="section-index">18 / 36</span></div><h2>Different tools. The same standard of intent.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Find your lane</span><span class="section-index">18 / 36</span></div><h2>Different tools. The same standard of intent.</h2></header>
         <div class="workout-categories__grid">
           <article><div><i class="fa-solid fa-heart-pulse"></i><span>01</span></div><h3>Cardio capacity</h3><p>Row, run, ride, and carry with purpose.</p></article><article><div><i class="fa-solid fa-dumbbell"></i><span>02</span></div><h3>Strength build</h3><p>Progressive programs for durable force.</p></article><article><div><i class="fa-solid fa-person-running"></i><span>03</span></div><h3>Athletic speed</h3><p>Explosive work, mechanics, and agility.</p></article><article><div><i class="fa-solid fa-spa"></i><span>04</span></div><h3>Mobility reset</h3><p>Control, range, and active recovery.</p></article>
         </div>
@@ -317,7 +324,7 @@
 
     <!-- Body 19 — trainer roster, inspired by top19 -->
     <section class="body-section section--paper trainer-roster" id="trainer-roster" data-section="19" data-source="top19">
-      <div class="content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Your fitness. Their expertise.</span><span class="section-index">19 / 36</span></div><h2>Specialists who coach the whole person.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Your fitness. Their expertise.</span><span class="section-index">19 / 36</span></div><h2>Specialists who coach the whole person.</h2></header>
         <div class="trainer-roster__grid">
           <article><img src="assets/images/body/athlete-curl.webp" alt="Strength coach Theo Grant"><div><span>Strength / power</span><h3>Theo Grant</h3><p>CSCS · 9 years</p><a href="#contact" aria-label="Book with Theo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
           <article><img src="assets/images/body/coach-floor.webp" alt="Performance coach Samira Cole"><div><span>Performance / return</span><h3>Samira Cole</h3><p>DPT · 7 years</p><a href="#contact" aria-label="Book with Samira"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
@@ -328,7 +335,7 @@
 
     <!-- Body 20 — success carousel, inspired by top19 -->
     <section class="body-section section--ink success-carousel" data-section="20" data-source="top19">
-      <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Your success. Our inspiration.</span><span class="section-index">20 / 36</span></div><h2>Proof that patient work compounds.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Your success. Our inspiration.</span><span class="section-index">20 / 36</span></div><h2>Proof that patient work compounds.</h2></header>
         <div id="successCarousel" class="carousel slide success-carousel__frame" data-bs-ride="false">
           <div class="carousel-inner">
             <div class="carousel-item active"><div class="success-slide"><img src="assets/images/body/barbell-athlete.webp" alt="Strongfy member Devon training"><blockquote>“I came in chasing a number. I stayed because training finally became something I could sustain.”<footer><strong>Devon Lee</strong><span>+54 kg total · 18 months</span></footer></blockquote></div></div>
@@ -341,12 +348,12 @@
 
     <!-- Body 21 — editorial about, inspired by top24 -->
     <section class="body-section section--paper about-editorial" data-section="21" data-source="top24">
-      <div class="content-wrap"><span class="section-kicker">About Strongfy</span><span class="section-index">21 / 36</span><div class="about-editorial__grid"><h2>Empowering every body to move stronger, live better, and go further.</h2><div class="about-editorial__copy"><p>We believe fitness is less about chasing confidence and more about earning it. The room matters. The plan matters. The people beside you matter.</p><div class="about-editorial__fact"><strong>2018</strong><span>Founded around one simple rule: coach what matters.</span></div></div><img src="assets/images/body/boxing-training.webp" alt="Coach spotting an athlete during a dumbbell press"></div></div>
+      <div class="container content-wrap"><span class="section-kicker">About Strongfy</span><span class="section-index">21 / 36</span><div class="about-editorial__grid"><h2>Empowering every body to move stronger, live better, and go further.</h2><div class="about-editorial__copy"><p>We believe fitness is less about chasing confidence and more about earning it. The room matters. The plan matters. The people beside you matter.</p><div class="about-editorial__fact"><strong>2018</strong><span>Founded around one simple rule: coach what matters.</span></div></div><img src="assets/images/body/boxing-training.webp" alt="Coach spotting an athlete during a dumbbell press"></div></div>
     </section>
 
     <!-- Body 22 — services accordion, inspired by top24 -->
     <section class="body-section section--ink service-accordion" data-section="22" data-source="top24">
-      <div class="content-wrap"><header class="section-head section-head--light"><span class="section-kicker">What we do</span><span class="section-index">22 / 36</span><h2>Turn your workout into a lifestyle that moves.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light"><span class="section-kicker">What we do</span><span class="section-index">22 / 36</span><h2>Turn your workout into a lifestyle that moves.</h2></header>
         <div class="accordion service-accordion__list" id="serviceAccordion">
           <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#serviceOne" aria-expanded="true" aria-controls="serviceOne"><span>01</span>Personal training</button></h3><div id="serviceOne" class="accordion-collapse collapse show" data-bs-parent="#serviceAccordion"><div class="accordion-body"><p>One-to-one programming, technical coaching, and direct accountability.</p><img src="assets/images/body/personal-training.webp" alt="Personal training session"></div></div></div>
           <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#serviceTwo" aria-expanded="false" aria-controls="serviceTwo"><span>02</span>Group performance</button></h3><div id="serviceTwo" class="accordion-collapse collapse" data-bs-parent="#serviceAccordion"><div class="accordion-body"><p>Small teams, structured sessions, individual standards.</p><img src="assets/images/body/group-training.webp" alt="Group performance training"></div></div></div>
@@ -363,26 +370,26 @@
 
     <!-- Body 24 — coach carousel, inspired by top24 -->
     <section class="body-section section--paper coach-carousel" data-section="24" data-source="top24">
-      <div class="content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Meet your coaches</span><span class="section-index">24 / 36</span></div><h2>Smart coaching. Real strength. Visible progress.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Meet your coaches</span><span class="section-index">24 / 36</span></div><h2>Smart coaching. Real strength. Visible progress.</h2></header>
         <div class="coach-carousel__rail"><article><img src="assets/images/body/athlete-curl.webp" alt="Coach Theo"><span>Theo Grant</span><small>Strength</small></article><article><img src="assets/images/body/coach-floor.webp" alt="Coach Samira"><span>Samira Cole</span><small>Performance</small></article><article><img src="assets/images/body/training-pushup.webp" alt="Coach Lena"><span>Lena Ward</span><small>Conditioning</small></article><article><img src="assets/images/body/gym-motion.webp" alt="Coach Noa"><span>Noa Ellis</span><small>Mobility</small></article></div>
       </div>
     </section>
 
     <!-- Body 25 — pricing cards, inspired by top24 -->
     <section class="body-section section--ink pricing-cards" id="membership" data-section="25" data-source="top24">
-      <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Flexible options</span><span class="section-index">25 / 36</span></div><h2>For beginners, regulars, and people who mean it.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Flexible options</span><span class="section-index">25 / 36</span></div><h2>For beginners, regulars, and people who mean it.</h2></header>
         <div class="pricing-cards__grid"><article><span>Move</span><strong>$15<small>/week</small></strong><p>Flexible floor access for a clean start.</p><ul><li>2 club visits</li><li>Open gym zones</li><li>Strongfy app</li></ul><a href="#contact">Start Move</a></article><article class="is-featured"><span>Train</span><strong>$30<small>/week</small></strong><p>Unlimited training with structured support.</p><ul><li>Unlimited club visits</li><li>All group sessions</li><li>Monthly coach review</li></ul><a href="#contact">Start Train</a></article><article><span>Elite</span><strong>$55<small>/week</small></strong><p>Individual guidance for high-demand goals.</p><ul><li>Everything in Train</li><li>Weekly one-to-one</li><li>Recovery room</li></ul><a href="#contact">Start Elite</a></article></div>
       </div>
     </section>
 
     <!-- Body 26 — testimonial split, inspired by top24 -->
     <section class="body-section section--paper testimonial-split" data-section="26" data-source="top24">
-      <div class="content-wrap testimonial-split__grid"><div class="testimonial-split__title"><span class="section-kicker">What members say</span><span class="section-index">26 / 36</span><h2>Real stories.<br>Real people.<br>Real transformations.</h2></div><img src="assets/images/body/strength-lift.webp" alt="Member training with dumbbells"><blockquote>“Strongfy gave me a way to be ambitious without burning out. The coaches keep the standard high and the plan realistic.”<footer><strong>Jordan Price</strong><span>Member · 21 months</span></footer></blockquote></div>
+      <div class="container content-wrap testimonial-split__grid"><div class="testimonial-split__title"><span class="section-kicker">What members say</span><span class="section-index">26 / 36</span><h2>Real stories.<br>Real people.<br>Real transformations.</h2></div><img src="assets/images/body/strength-lift.webp" alt="Member training with dumbbells"><blockquote>“Strongfy gave me a way to be ambitious without burning out. The coaches keep the standard high and the plan realistic.”<footer><strong>Jordan Price</strong><span>Member · 21 months</span></footer></blockquote></div>
     </section>
 
     <!-- Body 27 — class tabs, inspired by D024 -->
     <section class="body-section section--ink class-tabs" data-section="27" data-source="D024">
-      <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Fitness class with us</span><span class="section-index">27 / 36</span></div><h2>Pick the energy. We bring the structure.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Fitness class with us</span><span class="section-index">27 / 36</span></div><h2>Pick the energy. We bring the structure.</h2></header>
         <div class="class-tabs__nav" role="tablist" aria-label="Class categories"><button class="is-active" type="button" role="tab" aria-selected="true" data-class-filter="all">All</button><button type="button" role="tab" aria-selected="false" data-class-filter="strength">Strength</button><button type="button" role="tab" aria-selected="false" data-class-filter="conditioning">Conditioning</button><button type="button" role="tab" aria-selected="false" data-class-filter="mobility">Mobility</button></div>
         <div class="class-tabs__grid"><article data-class="strength"><img src="assets/images/body/group-training.webp" alt="Barbell strength class"><div><span>Strength</span><h3>Foundry</h3><small>Mon / Wed / Fri · 18:30</small></div></article><article data-class="conditioning"><img src="assets/images/body/runner-stretch.webp" alt="Conditioning class"><div><span>Conditioning</span><h3>Redline</h3><small>Tue / Thu · 07:00</small></div></article><article data-class="mobility"><img src="assets/images/body/gym-motion.webp" alt="Mobility class"><div><span>Mobility</span><h3>Reset</h3><small>Daily · 12:15</small></div></article><article data-class="conditioning"><img src="assets/images/body/barbell-athlete.webp" alt="Hybrid conditioning class"><div><span>Hybrid</span><h3>Work / Rest</h3><small>Sat · 09:30</small></div></article></div>
       </div>
@@ -390,45 +397,45 @@
 
     <!-- Body 28 — journey process, inspired by D024 -->
     <section class="body-section section--paper journey-process" id="journey" data-section="28" data-source="D024">
-      <div class="content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Your fitness journey</span><span class="section-index">28 / 36</span></div><h2>A path that stays clear when motivation gets noisy.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Your fitness journey</span><span class="section-index">28 / 36</span></div><h2>A path that stays clear when motivation gets noisy.</h2></header>
         <div class="journey-process__line"><article><span>01</span><i class="fa-solid fa-clipboard-check"></i><h3>First session</h3><p>Assessment, goals, and a useful starting point.</p></article><article><span>02</span><i class="fa-solid fa-calendar-check"></i><h3>First block</h3><p>Four weeks of repeatable training and clean technique.</p></article><article><span>03</span><i class="fa-solid fa-chart-line"></i><h3>First review</h3><p>Measure what changed, then sharpen the next block.</p></article><article><span>04</span><i class="fa-solid fa-medal"></i><h3>Long game</h3><p>Capability that grows without taking over your life.</p></article></div>
       </div>
     </section>
 
     <!-- Body 29 — trainer spotlight, inspired by D024 -->
     <section class="body-section section--lime trainer-spotlight" data-section="29" data-source="D024">
-      <div class="content-wrap trainer-spotlight__grid"><div><span class="section-kicker">Professional trainer</span><span class="section-index">29 / 36</span><h2>Technique first. Intensity earned.</h2><p>Samira specializes in rebuilding strong movement after setbacks and turning it into confident performance.</p><div class="trainer-spotlight__tags"><span>Return to sport</span><span>Strength</span><span>Mobility</span></div><a class="pill pill--light" href="#contact">Book a consult</a></div><img src="assets/images/body/coach-floor.webp" alt="Strongfy performance coach Samira Cole"></div>
+      <div class="container content-wrap trainer-spotlight__grid"><div><span class="section-kicker">Professional trainer</span><span class="section-index">29 / 36</span><h2>Technique first. Intensity earned.</h2><p>Samira specializes in rebuilding strong movement after setbacks and turning it into confident performance.</p><div class="trainer-spotlight__tags"><span>Return to sport</span><span>Strength</span><span>Mobility</span></div><a class="pill pill--light" href="#contact">Book a consult</a></div><img src="assets/images/body/coach-floor.webp" alt="Strongfy performance coach Samira Cole"></div>
     </section>
 
     <!-- Body 30 — coaching choice, inspired by D024 -->
     <section class="body-section section--ink coaching-choice" data-section="30" data-source="D024">
-      <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">How we can help</span><span class="section-index">30 / 36</span></div><h2>Choose the format. Keep the standard.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">How we can help</span><span class="section-index">30 / 36</span></div><h2>Choose the format. Keep the standard.</h2></header>
         <div class="coaching-choice__grid"><article><img src="assets/images/body/personal-training.webp" alt="In-person coaching"><div><span>01</span><h3>In-person coaching</h3><p>Hands-on technique, real-time adjustment, focused accountability.</p><a href="#contact">Train in club <i class="fa-solid fa-arrow-right"></i></a></div></article><article><img src="assets/images/body/barbell-athlete.webp" alt="Online coaching"><div><span>02</span><h3>Online coaching</h3><p>A precise program, video review, and weekly coach feedback anywhere.</p><a href="#contact">Train anywhere <i class="fa-solid fa-arrow-right"></i></a></div></article></div>
       </div>
     </section>
 
     <!-- Body 31 — power pillars, inspired by D027 -->
     <section class="body-section section--ink power-pillars" data-section="31" data-source="D027">
-      <div class="content-wrap"><header class="section-head section-head--light"><span class="section-kicker">PowerBlast method</span><span class="section-index">31 / 36</span><h2>Everything you need to train smarter, build strength, and perform better.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light"><span class="section-kicker">PowerBlast method</span><span class="section-index">31 / 36</span><h2>Everything you need to train smarter, build strength, and perform better.</h2></header>
         <div class="power-pillars__grid"><article><span>01</span><i class="fa-solid fa-bolt"></i><h3>Power</h3><p>Produce force quickly and control it completely.</p></article><article><span>02</span><i class="fa-solid fa-fire-flame-curved"></i><h3>Engine</h3><p>Repeat hard efforts without losing movement quality.</p></article><article><span>03</span><i class="fa-solid fa-crosshairs"></i><h3>Skill</h3><p>Make technique reliable when pressure rises.</p></article><article><span>04</span><i class="fa-solid fa-shield-heart"></i><h3>Recovery</h3><p>Protect the capacity you work so hard to build.</p></article></div>
       </div>
     </section>
 
     <!-- Body 32 — training gallery, inspired by D027 -->
     <section class="body-section section--paper training-gallery" data-section="32" data-source="D027">
-      <div class="content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Inside the work</span><span class="section-index">32 / 36</span></div><h2>No staged perfection. Just strong sessions.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Inside the work</span><span class="section-index">32 / 36</span></div><h2>No staged perfection. Just strong sessions.</h2></header>
         <div class="training-gallery__grid"><figure class="training-gallery__wide"><img src="assets/images/body/training-floor.webp" alt="Strongfy training floor"><figcaption>05:47 / club opens</figcaption></figure><figure><img src="assets/images/body/athlete-curl.webp" alt="Athlete training arms"><figcaption>Strength block</figcaption></figure><figure><img src="assets/images/body/runner-stretch.webp" alt="Athlete conditioning"><figcaption>Engine room</figcaption></figure><figure><img src="assets/images/body/woman-training.webp" alt="Dumbbell rack"><figcaption>Open floor</figcaption></figure><figure class="training-gallery__wide"><img src="assets/images/body/boxing-training.webp" alt="Coach spotting athlete"><figcaption>Coach-led precision</figcaption></figure></div>
       </div>
     </section>
 
     <!-- Body 33 — membership feature, inspired by D027 -->
     <section class="body-section section--ink membership-feature" data-section="33" data-source="D027">
-      <div class="content-wrap membership-feature__grid"><img src="assets/images/body/athlete-curl.webp" alt="Strongfy athlete training"><div><span class="section-kicker">Pro Fitness membership</span><span class="section-index">33 / 36</span><h2>The room, the plan, and the people to keep you moving.</h2><p>Join with a 14-day start plan, movement screen, and two coached sessions. Know exactly what to do from day one.</p><ul class="check-list"><li><i class="fa-solid fa-check"></i> No joining fee</li><li><i class="fa-solid fa-check"></i> Cancel with 30 days notice</li><li><i class="fa-solid fa-check"></i> Train at all Strongfy clubs</li></ul><div class="membership-feature__price"><strong>$69</strong><span>monthly<br>Progress membership</span></div><a class="pill pill--lime" href="#contact">Join Strongfy<span class="pill__icon"><i class="fa-solid fa-arrow-right"></i></span></a></div></div>
+      <div class="container content-wrap membership-feature__grid"><img src="assets/images/body/athlete-curl.webp" alt="Strongfy athlete training"><div><span class="section-kicker">Pro Fitness membership</span><span class="section-index">33 / 36</span><h2>The room, the plan, and the people to keep you moving.</h2><p>Join with a 14-day start plan, movement screen, and two coached sessions. Know exactly what to do from day one.</p><ul class="check-list"><li><i class="fa-solid fa-check"></i> No joining fee</li><li><i class="fa-solid fa-check"></i> Cancel with 30 days notice</li><li><i class="fa-solid fa-check"></i> Train at all Strongfy clubs</li></ul><div class="membership-feature__price"><strong>$69</strong><span>monthly<br>Progress membership</span></div><a class="pill pill--lime" href="#contact">Join Strongfy<span class="pill__icon"><i class="fa-solid fa-arrow-right"></i></span></a></div></div>
     </section>
 
     <!-- Body 34 — schedule board, inspired by top01 -->
     <section class="body-section section--paper schedule-board" id="schedule" data-section="34" data-source="top01">
-      <div class="content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">This week</span><span class="section-index">34 / 36</span></div><h2>Classes that fit the real shape of your day.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">This week</span><span class="section-index">34 / 36</span></div><h2>Classes that fit the real shape of your day.</h2></header>
         <div class="schedule-board__days" role="tablist" aria-label="Schedule days"><button class="is-active" type="button" role="tab" aria-selected="true" data-day="mon">Mon 28</button><button type="button" role="tab" aria-selected="false" data-day="tue">Tue 29</button><button type="button" role="tab" aria-selected="false" data-day="wed">Wed 30</button><button type="button" role="tab" aria-selected="false" data-day="thu">Thu 31</button><button type="button" role="tab" aria-selected="false" data-day="fri">Fri 01</button></div>
         <div class="schedule-board__list" id="scheduleList">
           <article data-days="mon wed fri"><time>06:15</time><div><span>Strength</span><h3>Foundry</h3></div><strong>Samira</strong><button type="button" aria-label="Reserve Foundry" aria-pressed="false">Reserve</button></article>
@@ -441,14 +448,14 @@
 
     <!-- Body 35 — journal grid, inspired by B080 -->
     <section class="body-section section--ink journal-grid" data-section="35" data-source="B080">
-      <div class="content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Strongfy journal</span><span class="section-index">35 / 36</span></div><h2>Useful ideas for training beyond today.</h2></header>
+      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Strongfy journal</span><span class="section-index">35 / 36</span></div><h2>Useful ideas for training beyond today.</h2></header>
         <div class="journal-grid__cards"><article><img src="assets/images/body/woman-training.webp" alt="Dumbbell rack"><div><span>Training · 6 min</span><h3>How to choose a load that actually moves you forward</h3><a href="#contact">Read article <i class="fa-solid fa-arrow-right"></i></a></div></article><article><img src="assets/images/body/gym-motion.webp" alt="Athlete performing core training"><div><span>Recovery · 4 min</span><h3>The quiet signals that your program needs a lighter week</h3><a href="#contact">Read article <i class="fa-solid fa-arrow-right"></i></a></div></article><article><img src="assets/images/body/group-training.webp" alt="Barbell training"><div><span>Performance · 8 min</span><h3>Why consistency gets easier when the plan gets clearer</h3><a href="#contact">Read article <i class="fa-solid fa-arrow-right"></i></a></div></article></div>
       </div>
     </section>
 
     <!-- Body 36 — final body CTA, inspired by top09 and P068 -->
     <section class="body-section section--lime final-body-cta" id="contact" data-section="36" data-source="top09-P068">
-      <div class="content-wrap final-body-cta__grid"><div><span class="section-kicker">One decision away</span><span class="section-index">36 / 36</span><h2>Ready to train for real life?</h2><p>Tell us what you want to change. We’ll recommend the simplest useful place to start.</p></div><form class="trial-form" id="trialForm"><div><label for="trialName">Name</label><input id="trialName" name="name" type="text" autocomplete="name" required placeholder="Your name"></div><div><label for="trialEmail">Email</label><input id="trialEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div><div><label for="trialGoal">Primary goal</label><select id="trialGoal" name="goal"><option>Build strength</option><option>Improve conditioning</option><option>Move without pain</option><option>Train for performance</option></select></div><button type="submit">Start my 14-day trial <i class="fa-solid fa-arrow-right"></i></button><p class="trial-form__status" id="trialFormStatus" aria-live="polite">No payment details required.</p></form></div>
+      <div class="container content-wrap final-body-cta__grid"><div><span class="section-kicker">One decision away</span><span class="section-index">36 / 36</span><h2>Ready to train for real life?</h2><p>Tell us what you want to change. We’ll recommend the simplest useful place to start.</p></div><form class="trial-form" id="trialForm"><div><label for="trialName">Name</label><input id="trialName" name="name" type="text" autocomplete="name" required placeholder="Your name"></div><div><label for="trialEmail">Email</label><input id="trialEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div><div><label for="trialGoal">Primary goal</label><select id="trialGoal" name="goal"><option>Build strength</option><option>Improve conditioning</option><option>Move without pain</option><option>Train for performance</option></select></div><button type="submit">Start my 14-day trial <i class="fa-solid fa-arrow-right"></i></button><p class="trial-form__status" id="trialFormStatus" aria-live="polite">No payment details required.</p></form></div>
     </section>
 
   </main>
@@ -479,12 +486,13 @@
     <div class="footer-shell">
       <div class="footer-identity">
         <div class="footer-legal"><p>© 2026 Strongfy.<br>All rights reserved.</p><nav aria-label="Social links"><a href="https://www.instagram.com/" rel="noopener noreferrer">Instagram <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a href="https://www.facebook.com/" rel="noopener noreferrer">Facebook <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><a href="https://www.youtube.com/" rel="noopener noreferrer">YouTube <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></nav></div>
-        <div class="footer-brand"><a class="footer-wordmark" href="#top" aria-label="Strongfy home">Strongfy</a><nav class="footer-nav" aria-label="Footer navigation"><a href="#top">Home</a><a href="#services">Programs</a><a href="#membership">Membership plans</a><a href="#trainer-roster">Personal training</a></nav></div>
+        <div class="footer-brand"><a class="footer-wordmark brand" href="#top" aria-label="Strongfy home"><img class="brand__mark" src="assets/images/icons/brand-dumbbell.png" alt=""><span class="brand__word">STRONGFY</span></a><nav class="footer-nav" aria-label="Footer navigation"><a href="#top">Home</a><a href="#services">Programs</a><a href="#membership">Membership plans</a><a href="#trainer-roster">Personal training</a></nav></div>
       </div>
       <div class="footer-newsletter">
         <div><h3>Stay updated</h3><p>Get training tips, offers, and club events straight to your inbox.</p></div>
         <form id="newsletterForm"><label class="visually-hidden" for="newsletterEmail">Email address</label><input id="newsletterEmail" name="email" type="email" autocomplete="email" required placeholder="Email address"><button type="submit">Subscribe <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button><p id="newsletterStatus" aria-live="polite">No spam. Unsubscribe anytime.</p></form>
       </div>
+      <p class="asset-credits">Workout footage from <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a>. Icons designed by Smashicons, Freepik, iconfield and Fliqqer from <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">Flaticon</a>.</p>
     </div>
   </footer>
 
