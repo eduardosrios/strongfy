@@ -27,6 +27,13 @@ Serve the repository through any static web server, then open `template/index.ht
 - Vanilla JavaScript
 - No React or other JavaScript framework
 
+## Design System
+
+- Manrope for display typography
+- DM Sans for body copy and controls
+- Near-black and warm-white surfaces
+- Strongfy acid lime (`#baff00`) as the single brand accent
+
 ## Project Resources
 
 - [Code of Conduct](CODE_OF_CONDUCT.md)
