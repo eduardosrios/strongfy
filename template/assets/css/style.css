@@ -1637,3 +1637,11 @@ button:disabled{cursor:not-allowed;opacity:.72}
 
 .coaching-steps__list h3{font-size:clamp(34px,4.2vw,60px)}
 @media (max-width:339.98px){.hero__copy h1{font-size:40px}}
+
+@media (max-width:767.98px){
+  .gallery-marquee__track{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(82vw,280px);width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin}
+  .gallery-marquee figure{scroll-snap-align:start}
+  .class-tabs__nav,.schedule-board__days,.coach-carousel__rail{overscroll-behavior-inline:contain;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .class-tabs__nav button,.schedule-board__days button,.coach-carousel__rail article{scroll-snap-align:start}
+  :where(a,button,[role="button"]){touch-action:manipulation}
+}
