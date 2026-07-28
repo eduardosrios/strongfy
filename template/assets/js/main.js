@@ -101,5 +101,15 @@
     $(this).find("button[type='submit']").html("Request sent <i class='fa-solid fa-check'></i>").prop("disabled", true);
   });
 
+  $("#newsletterForm").on("submit", function (event) {
+    event.preventDefault();
+    if (!this.checkValidity()) {
+      this.reportValidity();
+      return;
+    }
+    $("#newsletterStatus").text("You’re in. Your first Strongfy update is on the way.");
+    $(this).find("button[type='submit']").html("Subscribed <i class='fa-solid fa-check'></i>").prop("disabled", true);
+  });
+
   $("[data-day='mon']").trigger("click");
 })(jQuery);
