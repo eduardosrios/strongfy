@@ -397,15 +397,49 @@
       anchor.textContent = label;
       return anchor;
     }
+    async function copySectionNumber(number) {
+      try {
+        await navigator.clipboard.writeText(String(number));
+      } catch (error) {
+        const field = document.createElement("textarea");
+        field.value = String(number);
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.append(field);
+        field.select();
+        const copied = document.execCommand("copy");
+        field.remove();
+        if (!copied) throw error;
+      }
+    }
     function sectionLink(section, number) {
-      const rawSection = String(section.dataset.section);
-      if (!section.id) section.id = "section-" + rawSection;
-      const anchor = link(String(number), "#" + section.id, 45, "Section " + number);
-      anchor.classList.add("reference-link--section");
-      anchor.removeAttribute("target");
-      anchor.removeAttribute("rel");
-      anchor.setAttribute("style", inlineStyle + "top:120px;right:45px;");
-      return anchor;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "reference-link reference-link--section";
+      button.title = "Copy section " + number;
+      button.dataset.sectionNumber = String(number);
+      button.setAttribute("aria-label", "Copy section " + number + " to clipboard");
+      button.setAttribute("style", inlineStyle + "top:120px;right:45px;padding:0;cursor:pointer;");
+      button.textContent = number;
+      button.addEventListener("click", async function () {
+        const status = document.getElementById("siteInteractionStatus");
+        try {
+          await copySectionNumber(number);
+          button.textContent = "✓";
+          button.setAttribute("aria-label", "Section " + number + " copied");
+          if (status) status.textContent = "Section " + number + " copied to clipboard.";
+        } catch (error) {
+          button.textContent = "!";
+          button.setAttribute("aria-label", "Could not copy section " + number);
+          if (status) status.textContent = "Could not copy section " + number + ".";
+        }
+        window.setTimeout(function () {
+          button.textContent = number;
+          button.setAttribute("aria-label", "Copy section " + number + " to clipboard");
+        }, 900);
+      });
+      return button;
     }
     const hero = document.querySelector(".hero");
     if (hero && !hero.querySelector(".reference-link")) hero.append(link("C", base + "hero/cutted-section/hero-cropped.webp", 80, "Open cropped hero reference"), link("O", base + "hero/original/hero-original.jpg", 10, "Open original hero reference"));
