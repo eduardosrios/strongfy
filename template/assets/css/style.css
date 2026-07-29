@@ -3675,13 +3675,20 @@ html body .hero .hero-title .hero-title__accent{
 .hero-feature-cards.is-expanded{
   width:100%;
   padding:0;
-  grid-template-columns:repeat(auto-fill,var(--hero-feature-card-width,230px));
-  justify-content:space-between;
+  grid-template-columns:repeat(var(--hero-feature-columns,1),var(--hero-feature-card-width,230px));
+  justify-content:start;
+  gap:0;
 }
 .hero-feature-cards.is-expanded > .hero-feature-card:nth-child(n){
   box-sizing:border-box;
   margin:0;
   border:1px solid #050505;
+}
+.hero-feature-cards.is-expanded > .hero-feature-card:not(.is-row-start){
+  border-left:0;
+}
+.hero-feature-cards.is-expanded > .hero-feature-card:not(.is-first-row){
+  border-top:0;
 }
 .hero:has(.hero-feature-cards.is-expanded){
   height:1150px;

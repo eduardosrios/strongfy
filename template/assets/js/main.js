@@ -616,20 +616,39 @@
     document.querySelectorAll(".hero-feature-more").forEach(function (button) {
       const grid = button.closest(".hero-feature-cards");
       const cards = [...grid.querySelectorAll(".hero-feature-card--extra")];
+      const allCards = [...grid.querySelectorAll(".hero-feature-card")];
+      let cardWidth = 0;
+
+      function layoutExpandedCards() {
+        const availableWidth = grid.parentElement.getBoundingClientRect().width;
+        const columns = Math.max(1, Math.floor((availableWidth + 0.5) / cardWidth));
+
+        grid.style.setProperty("--hero-feature-columns", String(columns));
+        allCards.forEach(function (card, index) {
+          card.classList.toggle("is-row-start", index % columns === 0);
+          card.classList.toggle("is-first-row", index < columns);
+        });
+      }
 
       button.addEventListener("click", function () {
         const sourceCard = grid.querySelector(".hero-feature-card:not(.hero-feature-card--extra)");
-        const cardWidth = sourceCard?.getBoundingClientRect().width;
+        cardWidth = sourceCard?.getBoundingClientRect().width || 230;
 
-        if (cardWidth) {
-          grid.style.setProperty("--hero-feature-card-width", cardWidth + "px");
-        }
+        grid.style.setProperty("--hero-feature-card-width", cardWidth + "px");
         button.setAttribute("aria-expanded", "true");
         cards.forEach(function (card) {
           card.hidden = false;
         });
         grid.classList.add("is-expanded");
         button.hidden = true;
+        layoutExpandedCards();
+
+        if ("ResizeObserver" in window) {
+          const observer = new ResizeObserver(layoutExpandedCards);
+          observer.observe(grid.parentElement);
+        } else {
+          window.addEventListener("resize", layoutExpandedCards);
+        }
       }, { once: true });
     });
   }
