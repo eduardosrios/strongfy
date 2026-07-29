@@ -1,7 +1,6 @@
 (function ($) {
   "use strict";
 
-  const $trial = $("#trial-offer");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   $(document).on("click", "a[href^='#']", function (event) {
@@ -15,15 +14,9 @@
     event.preventDefault();
     $target.get(0).scrollIntoView({
       behavior: reducedMotion ? "auto" : "smooth",
-      block: targetId === "#trial-offer" ? "center" : "start"
+      block: "start"
     });
 
-    if (targetId === "#trial-offer") {
-      $trial.addClass("is-highlighted").trigger("focus");
-      window.setTimeout(function () {
-        $trial.removeClass("is-highlighted");
-      }, 1200);
-    }
 
     const nav = document.getElementById("primaryNav");
     if (nav && nav.classList.contains("show")) {
@@ -118,38 +111,6 @@
     $(this).find("button[type='submit']").html("Subscribed <i class='fa-solid fa-check'></i>").prop("disabled", true);
   });
 
-  const heroInsights = [
-    { quote: "“Your muscles grow while you sleep. Make 7–9 hours your secret weapon for maximum progress.”", location: "Brooklyn, NY", date: "Jul. 28" },
-    { quote: "“The best program is the one you can repeat with intent. Build the week before you chase the year.”", location: "Austin, TX", date: "Aug. 04" },
-    { quote: "“Train the movement you want to trust under pressure. Strength is confidence you can use.”", location: "Portland, OR", date: "Aug. 11" }
-  ];
-  let insightIndex = 0;
-  let insightTimer;
-
-  function showInsight(nextIndex) {
-    const $quote = $("#heroQuote");
-    insightIndex = (nextIndex + heroInsights.length) % heroInsights.length;
-    $quote.addClass("is-changing");
-    window.setTimeout(function () {
-      const insight = heroInsights[insightIndex];
-      $quote.text(insight.quote).removeClass("is-changing");
-      $("#heroQuoteLocation").text(insight.location);
-      $("#heroQuoteDate").text(insight.date);
-    }, reducedMotion ? 0 : 160);
-  }
-
-  function restartInsightTimer() {
-    window.clearInterval(insightTimer);
-    if (!reducedMotion) {
-      insightTimer = window.setInterval(function () { showInsight(insightIndex + 1); }, 7000);
-    }
-  }
-
-  $("[data-quote-direction]").on("click", function () {
-    showInsight(insightIndex + ($(this).data("quote-direction") === "next" ? 1 : -1));
-    restartInsightTimer();
-  });
-  restartInsightTimer();
 
   const counterObserver = "IntersectionObserver" in window ? new IntersectionObserver(function (entries, observer) {
     entries.forEach(function (entry) {

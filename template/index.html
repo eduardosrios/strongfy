@@ -10,21 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260729-etapa-completion12">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260729-hero-reference8">
 </head>
 <body>
   <a class="skip-link" href="#hero-title">Skip to main content</a>
 
   <main class="page-shell" id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <img class="hero__image" src="assets/images/strongfy-hero-runner.webp" alt="">
-      <div class="hero__veil" aria-hidden="true"></div>
-
-      <nav class="navbar navbar-expand-xl hero-nav" aria-label="Primary navigation">
-        <div class="container">
-          <a class="brand" href="#top" aria-label="Strongfy home">
-            <img class="brand__mark" src="assets/images/icons/brand-dumbbell.png" alt="">
-            <span class="brand__word">STRONGFY</span>
+      <nav class="navbar navbar-expand-lg hero-nav" aria-label="Primary navigation">
+        <div class="container hero-nav__frame">
+          <a class="hero-brand" href="#top" aria-label="Strongfy home">
+            <img src="assets/images/icons/brand-dumbbell.png" alt="">
+            <span>Strongfy</span>
           </a>
 
           <button class="navbar-toggler hero-nav__toggle" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,73 +29,37 @@
           </button>
 
           <div class="collapse navbar-collapse" id="primaryNav">
-            <ul class="navbar-nav mx-auto hero-nav__links">
-              <li class="nav-item nav-item--submenu">
-                <div class="nav-link-cluster"><a class="nav-link" href="#services">Services</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-label="Open Services submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></div>
-                <ul class="nav-submenu"><li><a href="#services">Training programs</a></li><li><a href="#trainer-roster">Personal coaching</a></li><li><a href="#spaces">Club spaces</a></li></ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
-              <li class="nav-item"><a class="nav-link" href="#spaces">Spaces</a></li>
-              <li class="nav-item nav-item--submenu">
-                <div class="nav-link-cluster"><a class="nav-link" href="#membership">Membership</a><button class="submenu-toggle" type="button" aria-expanded="false" aria-label="Open Membership submenu"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></div>
-                <ul class="nav-submenu"><li><a href="#membership">Compare plans</a></li><li><a href="#trial-offer">14-day trial</a></li><li><a href="#contact">Talk to a coach</a></li></ul>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <ul class="navbar-nav hero-nav__links">
+              <li class="nav-item"><a class="nav-link" href="#top">Home <i class="fa-solid fa-angles-right" aria-hidden="true"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">Pages <i class="fa-solid fa-angles-right" aria-hidden="true"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#spaces">Portfolio <i class="fa-solid fa-angles-right" aria-hidden="true"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#news">Blog <i class="fa-solid fa-angles-right" aria-hidden="true"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#membership">Shop <i class="fa-solid fa-angles-right" aria-hidden="true"></i></a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contacts</a></li>
             </ul>
-
-            <div class="hero-nav__actions">
-              <a class="hero-nav__login" href="#membership">Log in</a>
-              <a class="pill pill--light pill--compact" href="#trial-offer">Try for free</a>
-            </div>
+            <a class="hero-nav__contact" href="#contact">Get in touch</a>
           </div>
         </div>
       </nav>
 
-      <div class="container hero__container">
+      <div class="container hero__frame">
+        <ul class="hero-keywords" aria-label="Strongfy principles">
+          <li>( Your )</li>
+          <li>( Strength )</li>
+          <li>( With )</li>
+          <li>( Redefine )</li>
+          <li>( CrossFit )</li>
+        </ul>
+
         <div class="hero__copy">
-        <h1 id="hero-title">Be healthier.<br>Be stronger.<br>Be confident.</h1>
-        <div class="hero__buttons">
-          <a class="pill pill--lime" href="#trial-offer">
-            Try for free
-            <span class="pill__icon" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-          <a class="pill pill--ghost" href="#about">More about Strongfy</a>
-        </div>
-        </div>
-
-        <div class="hero__cards">
-        <article class="hero-card hero-card--members">
-          <div class="member-stat">
-            <span class="member-stat__icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
-            <div>
-              <strong>10,000+</strong>
-              <span>satisfied clients</span>
-            </div>
+          <h1 id="hero-title">Your CrossFit Training</h1>
+          <div class="hero__actions">
+            <a class="hero__cta" href="#services">Explore the workout <i class="fa-solid fa-angles-right" aria-hidden="true"></i></a>
+            <p>Train with the Best with Professional Guidance</p>
           </div>
-          <p>They arrive with different goals, yet find the support and motivation they need. Their success validates our method.</p>
-        </article>
-
-        <article class="hero-card hero-card--quote">
-          <div class="quote-arrows">
-            <button type="button" data-quote-direction="prev" aria-label="Previous training insight" aria-controls="heroQuote"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
-            <button type="button" data-quote-direction="next" aria-label="Next training insight" aria-controls="heroQuote"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
-          </div>
-          <blockquote id="heroQuote" aria-live="polite">“Your muscles grow while you sleep. Make 7–9 hours your secret weapon for maximum progress.”</blockquote>
-          <div class="quote-meta"><span id="heroQuoteLocation">Brooklyn, NY</span><span id="heroQuoteDate">Jul. 28</span></div>
-        </article>
-
-        <article class="hero-card hero-card--trial" id="trial-offer" tabindex="-1">
-          <span class="trial-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-          <div>
-            <strong>Get 14 days for free</strong>
-            <p>Just give us a call or message us to start.</p>
-          </div>
-          <a class="trial-link" href="mailto:hello@strongfy.com?subject=My%2014-day%20Strongfy%20trial">Start your trial</a>
-        </article>
         </div>
       </div>
     </section>
-
     <!-- Body 01 — editorial introduction, inspired by P062 -->
     <section class="body-section section--paper intro-editorial" id="about" data-section="01" data-source="P062">
       <div class="container content-wrap">
@@ -672,7 +633,7 @@
     </section>
 
     <!-- Body 71 — articles and news -->
-    <section class="body-section rf-section rf-71" data-section="71" data-source="section-71">
+    <section class="body-section rf-section rf-71" id="news" data-section="71" data-source="section-71">
       <div class="container rf-shell"><header class="rf-news-head"><h2>ARTICLES &amp; NEWS</h2><a href="#contact">All articles</a></header><div class="rf-news-row"><article><img src="assets/images/body/runner-stretch.webp" alt="Daily exercise"><time>01 SEP</time><h3>Five ideas to develop a daily exercise plan</h3><a href="#contact">Read more</a></article><article><img src="assets/images/body/training-floor.webp" alt="Lifting weights"><time>01 SEP</time><h3>The complete guide to lifting weights</h3><a href="#contact">Read more</a></article><article><img src="assets/images/body/woman-training.webp" alt="Breathwork training"><time>01 SEP</time><h3>The value of breathwork in your exercise</h3><a href="#contact">Read more</a></article></div></div>
     </section>
 
@@ -721,6 +682,6 @@
 
   <script src="assets/vendor/jquery/jquery-4.0.0.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js?v=20260729-etapa-completion12"></script>
+  <script src="assets/js/main.js?v=20260729-hero-reference1"></script>
 </body>
 </html>
