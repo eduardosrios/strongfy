@@ -3674,23 +3674,20 @@ html body .hero .hero-title .hero-title__accent{
 }
 .hero-feature-cards.is-expanded{
   width:100%;
-  grid-template-columns:repeat(11,minmax(0,1fr));
+  padding:1px 0 0 1px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));
 }
-.hero-feature-cards.is-expanded > .hero-feature-card{
-  border-top:1px solid #050505;
-  border-left:0;
-  padding:clamp(8px,1vw,14px);
+.hero-feature-cards.is-expanded > .hero-feature-card:nth-child(n){
+  margin:-1px 0 0 -1px;
+  border:1px solid #050505;
 }
-.hero-feature-cards.is-expanded > .hero-feature-card:first-child{
-  border-left:1px solid #050505;
+.hero:has(.hero-feature-cards.is-expanded){
+  height:1150px;
+  min-height:1150px;
 }
-.hero-feature-cards.is-expanded > .hero-feature-card img{
-  width:clamp(26px,2.4vw,36px);
-  height:clamp(26px,2.4vw,36px);
-}
-.hero-feature-cards.is-expanded > .hero-feature-card h3{
-  max-width:100%;
-  font-size:clamp(10px,.95vw,14px);
+.hero--comparison:has(.hero-feature-cards.is-expanded){
+  height:1350px;
+  min-height:1350px;
 }
 @media (max-width:767.98px){
   .hero-keywords{
@@ -3755,8 +3752,7 @@ html body .hero .hero-title .hero-title__accent{
   .hero-feature-card:nth-child(3),
   .hero-feature-card:nth-child(5),
   .hero-feature-card:nth-child(n + 7){border-top:0}
-  .hero-feature-cards.is-expanded > .hero-feature-card:nth-child(n){border-top:1px solid #050505;border-left:0}
-  .hero-feature-cards.is-expanded > .hero-feature-card:first-child{border-left:1px solid #050505}
+  .hero-feature-cards.is-expanded{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr))}
   .hero{height:clamp(760px,150vw,900px);min-height:760px}
   .hero--comparison{height:clamp(780px,155vw,920px);min-height:780px}
 
@@ -3765,4 +3761,12 @@ html body .hero .hero-title .hero-title__accent{
   .hero{height:760px;min-height:760px}
   .hero--comparison{height:780px;min-height:780px}
 
+}
+@media (max-width:991.98px){
+  .hero:has(.hero-feature-cards.is-expanded){height:1350px;min-height:1350px}
+  .hero--comparison:has(.hero-feature-cards.is-expanded){height:1550px;min-height:1550px}
+}
+@media (max-width:575.98px){
+  .hero:has(.hero-feature-cards.is-expanded){height:1350px;min-height:1350px}
+  .hero--comparison:has(.hero-feature-cards.is-expanded){height:1500px;min-height:1500px}
 }
