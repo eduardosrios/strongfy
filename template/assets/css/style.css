@@ -2835,7 +2835,6 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 
 .hero-nav__contact {
   display: inline-flex;
-  width: 120px;
   height: 42px;
   min-height: 42px;
   align-items: center;
@@ -2848,7 +2847,6 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   font-size: 10px !important;
   font-weight: 700;
   line-height: 1 !important;
-  text-transform: uppercase;
   transition: background-color 160ms ease, color 160ms ease;
 }
 
@@ -3069,11 +3067,6 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   .hero-nav .nav-link {
     padding: 10px 0 !important;
     font-size: 12px !important;
-  }
-
-  .hero-nav__contact {
-    width: 100%;
-    justify-self: stretch;
   }
 
   .hero-keywords {
@@ -3417,15 +3410,14 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   font-size:16px!important;
   font-weight:700;
   line-height:1;
+  text-transform:none;
   white-space:nowrap;
 }
 .hero-nav__contact{
-  width:154px;
   background:#fff;
   color:#050505;
 }
 .hero-nav__join{
-  width:154px;
   margin-left:-1px;
   background:#050505;
   color:#fff;
