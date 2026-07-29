@@ -3541,7 +3541,7 @@ html body .hero #hero-title{
 }
 html body .hero #hero-title .hero-title__letter-icon{
   display:inline-block;
-  width:95px!important;
+  width:105px!important;
   max-width:none;
   height:auto;
   object-fit:contain;
