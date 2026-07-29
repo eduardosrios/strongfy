@@ -3562,7 +3562,7 @@ html body .hero .hero-title .hero-title__accent{
   border-bottom:0;
 }
 .hero-title-options + .hero-feature-cards{
-  margin-top:40px;
+  margin-top:64px;
 }
 .hero-feature-cards{
   display:grid;
@@ -3682,7 +3682,7 @@ html body .hero .hero-title .hero-title__accent{
   .hero--comparison .hero__copy{top:100px}
   .hero-title-options{gap:10px}
   .hero-title-option{padding-bottom:10px}
-  .hero-title-options + .hero-feature-cards{margin-top:30px}
+  .hero-title-options + .hero-feature-cards{margin-top:44px}
   .hero-feature-card{padding:12px}
   .hero-feature-card h3{font-size:clamp(12px,3.4vw,16px)}
 }
