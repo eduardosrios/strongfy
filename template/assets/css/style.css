@@ -3613,7 +3613,7 @@ html body .hero .hero-title .hero-title__accent{
   position:relative;
   min-width:0;
   aspect-ratio:1.15;
-  padding:clamp(16px,2vw,24px);
+  padding:0;
   border:0;
   border-radius:0;
   appearance:none;
@@ -3621,8 +3621,8 @@ html body .hero .hero-title .hero-title__accent{
   color:#050505;
   cursor:pointer;
   display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
+  align-items:center;
+  justify-content:center;
 }
 .hero-feature-more img{
   display:block;
