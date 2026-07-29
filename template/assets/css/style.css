@@ -3519,7 +3519,7 @@ html body .hero .hero__copy .hero-title{
   max-width:100%;
   margin:0;
   color:#050505;
-  font-family:Arial,Helvetica,sans-serif!important;
+  font-family:var(--font-display)!important;
   font-size:var(--hero-title-fit,clamp(28px,10.75vw,154px))!important;
   font-weight:400;
   letter-spacing:-.3px;
