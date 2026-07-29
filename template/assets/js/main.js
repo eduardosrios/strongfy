@@ -123,13 +123,15 @@
       if (!entry.isIntersecting) return;
       const element = entry.target;
       const target = Number(element.dataset.count);
+      const prefix = element.dataset.countPrefix || "";
+      const suffix = element.dataset.countSuffix || "";
       const duration = reducedMotion ? 0 : 950;
       const start = performance.now();
       function render(now) {
         const progress = duration ? Math.min((now - start) / duration, 1) : 1;
         const eased = 1 - Math.pow(1 - progress, 3);
         const value = Math.round(target * eased);
-        element.textContent = target >= 10000 ? (value / 1000).toFixed(1) + "K" : value.toLocaleString("en-US");
+        element.textContent = prefix + (target >= 10000 ? (value / 1000).toFixed(1) + "K" : value.toLocaleString("en-US")) + suffix;
         if (progress < 1) requestAnimationFrame(render);
       }
       requestAnimationFrame(render);
@@ -292,16 +294,23 @@
       ["45", "assets/videos/boxing-drills.mp4", "Boxing habit session"],
       ["46", "assets/videos/battle-ropes.mp4", "High-intensity gym training"],
       ["66", "assets/videos/mobility-stretch.mp4", "Mobility coaching session"],
-      ["72", "assets/videos/strength-barbell.mp4", "Purposeful strength training"]
+      ["72", "assets/videos/strength-barbell.mp4", "Purposeful strength training"],
+      ["78", "assets/videos/personal-coaching.mp4", "Private training service"],
+      ["82", "assets/videos/treadmill-cardio.mp4", "Performance comparison"],
+      ["84", "assets/videos/boxing-drills.mp4", "Transformation coaching"],
+      ["87", "assets/videos/battle-ropes.mp4", "Coach directory"],
+      ["89", "assets/videos/mobility-stretch.mp4", "Strongfy member event"],
+      ["80", "assets/videos/strength-barbell.mp4", "Kinetic training manifesto"]
     ];
 
     variants.forEach(function ([sectionNumber, source, label]) {
       const original = document.querySelector(".body-section[data-section='" + sectionNumber + "']");
-      if (!original || document.querySelector(".body-section[data-video-source='" + source + "']")) return;
+      if (!original || document.querySelector(".body-section[data-video-section='" + sectionNumber + "']")) return;
       const duplicate = original.cloneNode(true);
       duplicate.removeAttribute("id");
       duplicate.dataset.section = sectionNumber + "-video";
       duplicate.dataset.videoSource = source;
+      duplicate.dataset.videoSection = sectionNumber;
       duplicate.classList.add("video-variant");
       duplicate.querySelectorAll("[id]").forEach(function (node) { node.removeAttribute("id"); });
       duplicate.querySelectorAll(".reveal-ready").forEach(function (node) {
@@ -376,6 +385,7 @@
 
   function addReferenceLinks() {
     const base = "http://localhost/templates/Gym/referencias/references-used/";
+    const finalBase = "http://localhost/templates/Gym/referencias/final-references/Corpo/";
     const originalExtensions = { 1:"jpg",2:"jpg",3:"webp",4:"webp",5:"webp",6:"webp",7:"webp",8:"webp",9:"webp",10:"webp",11:"webp",12:"webp",13:"jpg",14:"jpg",15:"jpg",16:"webp",17:"webp",18:"webp",19:"webp",20:"webp",21:"png",22:"png",23:"png",24:"png",25:"png",26:"png",27:"webp",28:"webp",29:"webp",30:"webp",31:"webp",32:"webp",33:"webp",34:"webp",35:"png",36:"jpg" };
     const inlineStyle = "position:absolute;top:50px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;border:4px solid #050806;border-radius:50%;background:#ffffff;color:#050806;font-size:24px;font-weight:800;line-height:1;opacity:.5;z-index:2600;text-decoration:none;";
     let multiCopyEnabled = false;
@@ -478,6 +488,19 @@
     document.querySelectorAll(".body-section").forEach(function (section) {
       if (section.querySelector(".reference-link")) return;
       const n = Number(String(section.dataset.section).split("-")[0]);
+      if (n >= 73 && n <= 96) {
+        const part = n - 72;
+        const suffix = n === 76 || n === 83 ? "-a" : "";
+        const suppliedFile = part === 19 ? "categories.jpg" : "Untitled-1.jpg";
+        const folder = base + "body-content/0 New Sections/section " + n + "/";
+        section.append(
+          link("C", folder + "cutted-section/section-" + n + "-reference" + suffix + ".jpg", 80, "Open cropped reference for section " + n),
+          link("O", finalBase + "parte " + part + "/" + suppliedFile, 10, "Open original supplied reference for section " + n),
+          sectionLink(section, n),
+          multiCopyButton()
+        );
+        return;
+      }
       const sourceNumber = n > 36 ? n - 36 : n;
       const folder = n > 36 ? base + "body-content/0 New Sections/section " + n + "/" : base + "body-content/section " + n + "/";
       const file = "section-" + String(sourceNumber).padStart(2,"0");
@@ -578,7 +601,7 @@
       openModal([{ video:storyVideos[index % storyVideos.length], src:image.src, alt:image.alt, kicker:"Member story", title:this.querySelector("span")?.childNodes[0]?.textContent.trim() || "Strongfy member", copy:"A real Strongfy training story." }], 0, this);
     });
 
-    const referenceMedia = [...document.querySelectorAll(".rf-55 .rf-trainer-lineup img, .rf-60 .rf-coach-row img, .rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img")];
+    const referenceMedia = [...document.querySelectorAll(".rf-55 .rf-trainer-lineup img, .rf-60 .rf-coach-row img, .rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-product-rail article>img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
     const referenceItems = referenceMedia.map(function (image) {
       image.tabIndex = 0;
       image.setAttribute("role", "button");
@@ -811,10 +834,177 @@
     }
   }
 
+  function bindNewSectionInteractions() {
+    const status = document.getElementById("siteInteractionStatus");
+    function announce(message) { if (status) status.textContent = message; }
+
+    const journeyCopy = {
+      foundation: "Learn safe movement patterns, build confidence, and create a training rhythm that lasts.",
+      performance: "Turn solid technique into measurable strength, speed, and athletic capacity.",
+      strength: "Build durable muscle and power while protecting the joints that make training possible.",
+      longevity: "Keep performance high with intelligent loading, mobility, and recovery built into every week.",
+      vitality: "Train balance, strength, and confidence for an active life with fewer limitations."
+    };
+    document.querySelectorAll("[data-journey-tabs]").forEach(function (journey) {
+      const tabs = [...journey.querySelectorAll("[data-journey]")];
+      const dots = [...journey.querySelectorAll(".nf-journey__track i")];
+      const progress = journey.querySelector(".nf-journey__track span");
+      tabs.forEach(function (tab, index) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (item) { item.classList.toggle("is-active", item === tab); item.setAttribute("aria-selected", String(item === tab)); });
+          dots.forEach(function (dot, dotIndex) { dot.classList.toggle("is-active", dotIndex <= index); });
+          if (progress) progress.style.width = (index * 20 + 10) + "%";
+          const copy = journey.querySelector("[data-journey-copy]");
+          if (copy) copy.textContent = journeyCopy[tab.dataset.journey];
+          announce(tab.textContent.trim() + " training stage selected.");
+        });
+      });
+    });
+
+    document.querySelectorAll(".nf-discipline [data-discipline]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const group = button.closest(".nf-discipline");
+        group.querySelectorAll("[data-discipline]").forEach(function (item) { item.classList.toggle("is-active", item === button); item.setAttribute("aria-selected", String(item === button)); });
+        const copy = group.parentElement.querySelector(".nf-discipline__status");
+        if (copy) copy.textContent = button.dataset.discipline + " programming selected.";
+      });
+    });
+
+    document.querySelectorAll("[data-commerce-rail]").forEach(function (rail) {
+      const track = rail.querySelector("[data-rail-track]");
+      rail.querySelectorAll("[data-rail-direction]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          if (!track || track.children.length < 2) return;
+          if (button.dataset.railDirection === "next") track.append(track.firstElementChild);
+          else track.prepend(track.lastElementChild);
+          announce("Collection rail moved " + button.dataset.railDirection + ".");
+        });
+      });
+    });
+
+    document.querySelectorAll(".nf-product-rail article>button").forEach(function (button) {
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", function () {
+        const active = button.getAttribute("aria-pressed") !== "true";
+        button.setAttribute("aria-pressed", String(active));
+        button.classList.toggle("is-active", active);
+        button.querySelector("i")?.classList.toggle("fa-regular", !active);
+        button.querySelector("i")?.classList.toggle("fa-solid", active);
+        announce(active ? "Equipment saved to favorites." : "Equipment removed from favorites.");
+      });
+    });
+
+    document.querySelectorAll("[data-product-filter]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const section = button.closest(".nf-77");
+        const filter = button.dataset.productFilter;
+        section.querySelectorAll("[data-product-filter]").forEach(function (item) { item.classList.toggle("is-active", item === button); item.setAttribute("aria-pressed", String(item === button)); });
+        section.querySelectorAll("[data-product-category]").forEach(function (card) { card.hidden = filter !== "all" && card.dataset.productCategory !== filter; });
+        announce((filter === "all" ? "All" : button.textContent.trim()) + " equipment shown.");
+      });
+    });
+
+    const processNotes = [
+      "We start with your goals, movement history, and real schedule.",
+      "A focused movement and capacity screen establishes the right starting point.",
+      "Your coach turns evidence into a progressive plan with clear milestones.",
+      "Every session combines technical feedback, intent, and useful accountability.",
+      "We review outcomes, adjust intelligently, and keep progress moving."
+    ];
+    document.querySelectorAll("[data-process-step]").forEach(function (button, index) {
+      button.addEventListener("click", function () {
+        const section = button.closest(".nf-79");
+        section.querySelectorAll("[data-process-step]").forEach(function (item) { item.classList.toggle("is-active", item === button); });
+        section.querySelector("[data-process-note]").textContent = processNotes[index];
+        announce("Process step " + (index + 1) + " selected.");
+      });
+    });
+
+    document.querySelectorAll("[data-before-after]").forEach(function (comparison) {
+      const range = comparison.querySelector("[data-compare-range]");
+      if (!range) return;
+      range.addEventListener("input", function () { comparison.style.setProperty("--compare-position", range.value + "%"); });
+    });
+
+    const quotes = [
+      ["Strongfy made training clear. I move better, lift with confidence, and never waste a session.", "— Maya, member since 2024"],
+      ["The coaching is detailed without being overwhelming. Every week has a purpose I can feel.", "— Elliot, performance member"],
+      ["I came for strength and stayed for the community. Progress here feels demanding and sustainable.", "— Jordan, group training member"]
+    ];
+    document.querySelectorAll("[data-quote-stage]").forEach(function (stage) {
+      stage.querySelectorAll("[data-quote]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const index = Number(button.dataset.quote);
+          stage.querySelector("[data-quote-copy]").textContent = quotes[index][0];
+          stage.querySelector("[data-quote-author]").textContent = quotes[index][1];
+          stage.querySelectorAll("[data-quote]").forEach(function (dot) { dot.classList.toggle("is-active", dot === button); });
+          announce("Member quote " + (index + 1) + " shown.");
+        });
+      });
+    });
+
+    document.querySelectorAll("[data-coach-directory]").forEach(function (directory) {
+      directory.querySelectorAll("[data-coach-name]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          directory.querySelectorAll("[data-coach-name]").forEach(function (item) { item.classList.toggle("is-active", item === button); item.setAttribute("aria-selected", String(item === button)); });
+          const photo = directory.querySelector("[data-coach-photo]");
+          photo.src = button.dataset.coachImage;
+          photo.alt = button.dataset.coachName + ", Strongfy coach";
+          directory.querySelector("[data-coach-title]").textContent = button.dataset.coachName;
+          directory.querySelector("[data-coach-specialty]").textContent = button.dataset.coachRole;
+          announce(button.dataset.coachName + " profile shown.");
+        });
+      });
+    });
+
+    document.querySelectorAll(".nf-class-library article").forEach(function (card) {
+      card.addEventListener("click", function () {
+        card.parentElement.querySelectorAll("article").forEach(function (item) { item.classList.toggle("is-active", item === card); });
+      });
+    });
+
+    document.querySelectorAll("[data-event-carousel]").forEach(function (carousel) {
+      const slides = [...carousel.querySelectorAll("[data-event-slide]")];
+      const count = carousel.querySelector("[data-event-count]");
+      let index = 0;
+      function show(next) {
+        index = (next + slides.length) % slides.length;
+        slides.forEach(function (slide, slideIndex) { slide.hidden = slideIndex !== index; slide.classList.toggle("is-active", slideIndex === index); });
+        if (count) count.textContent = String(index + 1).padStart(2, "0") + " / " + String(slides.length).padStart(2, "0");
+        announce("Event " + (index + 1) + " of " + slides.length + " shown.");
+      }
+      carousel.querySelectorAll("[data-event-direction]").forEach(function (button) { button.addEventListener("click", function () { show(index + (button.dataset.eventDirection === "next" ? 1 : -1)); }); });
+    });
+
+    document.querySelectorAll("[data-schedule-day]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const section = button.closest(".nf-90");
+        const day = button.dataset.scheduleDay;
+        section.querySelectorAll("[data-schedule-day]").forEach(function (item) { item.classList.toggle("is-active", item === button); item.setAttribute("aria-selected", String(item === button)); });
+        section.querySelectorAll("[data-class-day]").forEach(function (card) { card.hidden = day !== "all" && card.dataset.classDay !== day; });
+        announce((day === "all" ? "Full week" : button.textContent.trim()) + " schedule shown.");
+      });
+    });
+
+    document.querySelectorAll(".nf-timetable button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        button.classList.toggle("is-selected");
+        button.setAttribute("aria-pressed", String(button.classList.contains("is-selected")));
+        announce(button.textContent.trim() + (button.classList.contains("is-selected") ? " class selected." : " class unselected."));
+      });
+    });
+
+    document.querySelectorAll("[data-play-callout]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        openModal([{ video:"assets/videos/strength-barbell.mp4", src:"assets/images/body/strength-lift.webp", alt:"Strongfy strength training", kicker:"Inside Strongfy", title:"Play Strong", copy:"Focused coaching, purposeful movement, and strength that carries into real life." }], 0, button);
+      });
+    });
+  }
   buildVideoVariants();
   replaceComplexConceptIcons();
   addBootstrapStructure();
   addReferenceLinks();
+  bindNewSectionInteractions();
   buildStickyTopbar();
   bindReferenceSectionInteractions();
   bindHeroFeatureCardToggles();
