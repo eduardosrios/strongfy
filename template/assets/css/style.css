@@ -3572,6 +3572,12 @@ html body .hero .hero-title .hero-title__accent{
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:0;
 }
+@media (min-width:992px){
+  .hero-feature-cards:not(.is-expanded){
+    width:min(100%,780px);
+    grid-template-columns:repeat(3,var(--hero-feature-card-width));
+  }
+}
 .hero-feature-card{
   display:flex;
   min-width:0;
