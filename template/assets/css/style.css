@@ -3568,12 +3568,12 @@ html body .hero .hero-title .hero-title__accent{
   display:grid;
   width:min(100%,690px);
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px;
+  gap:0;
 }
 .hero-feature-card{
   display:flex;
   min-width:0;
-  aspect-ratio:1;
+  aspect-ratio:1.15;
   align-items:flex-start;
   justify-content:space-between;
   flex-direction:column;
@@ -3583,6 +3583,9 @@ html body .hero .hero-title .hero-title__accent{
   background:#fff;
   color:#050505;
   text-align:left;
+}
+.hero-feature-card + .hero-feature-card{
+  border-left:0;
 }
 .hero-feature-card img{
   display:block;
@@ -3634,7 +3637,6 @@ html body .hero .hero-title .hero-title__accent{
   .hero-title-options{gap:10px}
   .hero-title-option{padding-bottom:10px}
   .hero-title-options + .hero-feature-cards{margin-top:30px}
-  .hero-feature-cards{gap:8px}
   .hero-feature-card{padding:12px}
   .hero-feature-card h3{font-size:clamp(12px,3.4vw,16px)}
 }
