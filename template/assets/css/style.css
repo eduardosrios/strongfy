@@ -1659,14 +1659,6 @@ body {
   border-radius: 4px !important;
 }
 
-html {
-  scrollbar-color: var(--lime) var(--ink);
-  scrollbar-width: thin;
-}
-
-html::-webkit-scrollbar { width: 12px; }
-html::-webkit-scrollbar-track { background: var(--ink); }
-html::-webkit-scrollbar-thumb { border: 3px solid var(--ink); border-radius: 4px; background: var(--lime); }
 
 body,
 body *:not(.fa):not(.fa-solid):not(.fa-regular):not(.fa-brands) {
