@@ -3589,10 +3589,16 @@ html body .hero .hero-title .hero-title__accent{
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:0;
 }
-@media (min-width:992px){
+@media (min-width:992px) and (max-width:1199.98px){
   .hero-feature-cards:not(.is-expanded){
-    width:min(100%,780px);
-    grid-template-columns:repeat(3,var(--hero-feature-card-width));
+    width:100%;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+}
+@media (min-width:1200px){
+  .hero-feature-cards:not(.is-expanded){
+    width:min(100%,1040px);
+    grid-template-columns:repeat(4,var(--hero-feature-card-width));
   }
 }
 .hero-feature-card{
@@ -3790,7 +3796,7 @@ html body .hero .hero-feature-more .hero-feature-more__label{
 
 @media (max-width:575.98px){
   .hero-feature-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .hero-feature-more{margin:0;border-top:0;border-left:1px solid #050505}
+  .hero-feature-more{margin:0;border-top:0;border-left:0}
   .hero-feature-cards > .hero-feature-card:nth-child(n){
     border-top:1px solid #050505;
     border-left:1px solid #050505;
