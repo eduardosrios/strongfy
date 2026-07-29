@@ -3508,6 +3508,7 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 .rf-brutal-bar span:first-child,
 .footer-wordmark,
 .footer-wordmark .brand__word{font-style:normal!important}
+.footer-wordmark .brand__word{transform:none!important}
 @media (min-width:1200px){
   .rf-56 .rf-success-stage{margin-top:120px}
   .rf-57 .rf-about>div:first-child>img{width:360px;height:470px}
