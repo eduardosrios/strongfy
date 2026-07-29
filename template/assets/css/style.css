@@ -3513,6 +3513,14 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 .hero-keywords li:nth-child(2){text-align:center}
 .hero-keywords li:last-child{text-align:right}
 
+/* Keep hero slogan on one measured, full-width line. */
+.hero__copy h1{
+  width:100%;
+  max-width:100%;
+  font-size:var(--hero-title-fit,clamp(28px,10.75vw,154px));
+  white-space:nowrap;
+}
+
 @media (max-width:767.98px){
   .hero-keywords{
     gap:10px;
