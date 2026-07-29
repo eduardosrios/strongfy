@@ -3532,7 +3532,7 @@ html body .hero .hero-title .hero-title__accent{
   color:inherit;
   font-family:inherit!important;
   font-size:1em!important;
-  font-weight:700!important;
+  font-weight:inherit!important;
   letter-spacing:inherit;
   line-height:inherit!important;
   text-shadow:.085em .115em 0 #fff!important;
