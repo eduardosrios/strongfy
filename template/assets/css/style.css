@@ -3528,6 +3528,14 @@ html body .hero .hero__copy .hero-title{
   transform:scaleY(.914);
   transform-origin:left top;
 }
+html body .hero #hero-title{
+  position:relative;
+  left:50%;
+  width:max-content;
+  max-width:none;
+  transform:translateX(-50%) scaleY(.914);
+  transform-origin:center top;
+}
 html body .hero .hero-title .hero-title__accent{
   color:inherit;
   font-family:inherit!important;
