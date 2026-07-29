@@ -3541,7 +3541,6 @@ html body .hero #hero-title .hero-title__letter-icon{
   width:120px!important;
   max-width:none;
   height:auto;
-  vertical-align:-.08em;
   object-fit:contain;
 }
 html body .hero .hero-title .hero-title__accent{
