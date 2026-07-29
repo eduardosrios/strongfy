@@ -3429,10 +3429,10 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   background:#fff;
   color:#050505;
 }
-.hero-nav__contact:hover,
-.hero-nav__contact:focus-visible,
-.hero-nav__join:hover,
-.hero-nav__join:focus-visible{
+.hero-nav__actions:hover .hero-nav__contact:hover,
+.hero-nav__actions:hover .hero-nav__join:hover,
+.hero-nav__actions:focus-within .hero-nav__contact:focus-visible,
+.hero-nav__actions:focus-within .hero-nav__join:focus-visible{
   z-index:1;
   background:#050505;
   color:#fff;
