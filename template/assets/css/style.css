@@ -3607,6 +3607,26 @@ html body .hero .hero-title .hero-title__accent{
 .hero-feature-cards > .hero-feature-card:first-child img{
   filter:invert(1);
 }
+.hero-feature-cards > .hero-feature-card:nth-child(-n + 3){
+  transition:background-color .2s ease,color .2s ease;
+}
+.hero-feature-cards > .hero-feature-card:nth-child(-n + 3) h3{
+  font-weight:400;
+}
+.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3){
+  background:#fff;
+  color:#050505;
+}
+.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3) img{
+  filter:none;
+}
+.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3):hover{
+  background:#050505;
+  color:#fff;
+}
+.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3):hover img{
+  filter:invert(1);
+}
 .hero-feature-card h3{
   max-width:11ch;
   margin:0;
