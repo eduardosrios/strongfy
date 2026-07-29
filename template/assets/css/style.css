@@ -3399,12 +3399,13 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  gap:10px;
+  gap:0;
   margin-left:30px;
 }
 .hero-nav__contact,
 .hero-nav__join{
   display:inline-flex;
+  position:relative;
   height:50px;
   min-height:50px;
   align-items:center;
@@ -3425,18 +3426,24 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 }
 .hero-nav__join{
   width:154px;
+  margin-left:-1px;
   background:#050505;
   color:#fff;
 }
-.hero-nav__contact:hover,
-.hero-nav__contact:focus-visible{
-  background:#050505;
-  color:#fff;
-}
-.hero-nav__join:hover,
-.hero-nav__join:focus-visible{
+.hero-nav__actions:hover .hero-nav__contact,
+.hero-nav__actions:hover .hero-nav__join,
+.hero-nav__actions:focus-within .hero-nav__contact,
+.hero-nav__actions:focus-within .hero-nav__join{
   background:#fff;
   color:#050505;
+}
+.hero-nav__contact:hover,
+.hero-nav__contact:focus-visible,
+.hero-nav__join:hover,
+.hero-nav__join:focus-visible{
+  z-index:1;
+  background:#050505;
+  color:#fff;
 }
 .scroll-topbar{
   border-bottom:1px solid rgba(5,5,5,.2);
