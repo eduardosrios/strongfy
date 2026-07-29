@@ -3542,6 +3542,8 @@ html body .hero #hero-title .hero-title__letter-icon{
   max-width:none;
   height:auto;
   object-fit:contain;
+  transform:scaleY(1.0940919);
+  transform-origin:center;
 }
 html body .hero .hero-title .hero-title__accent{
   color:inherit;
