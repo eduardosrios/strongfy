@@ -3513,7 +3513,7 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 .hero-keywords li:nth-child(2){text-align:center}
 .hero-keywords li:last-child{text-align:right}
 
-/* Compare 23 measured, full-width hero title options. */
+/* Split selected hero titles between primary and comparison heroes. */
 html body .hero .hero__copy .hero-title{
   width:100%;
   max-width:100%;
@@ -3538,9 +3538,16 @@ html body .hero .hero-title .hero-title__accent{
   text-shadow:.085em .115em 0 #fff!important;
 }
 .hero{
-  height:clamp(3600px,280vw,4100px);
-  min-height:3600px;
+  height:clamp(700px,calc(100vh - 28px),760px);
+  min-height:700px;
 }
+.hero--comparison{
+  height:clamp(760px,70vw,940px);
+  min-height:760px;
+  margin-top:28px;
+}
+.hero--comparison .hero-keywords{top:48px}
+.hero--comparison .hero__copy{top:100px}
 .hero-title-options{
   display:grid;
   gap:16px;
@@ -3573,18 +3580,22 @@ html body .hero .hero-title .hero-title__accent{
 
 @media (max-width:991.98px){
   .hero{
-    height:clamp(2650px,310vw,3300px);
-    min-height:2650px;
+    height:720px;
+    min-height:720px;
   }
+  .hero--comparison{height:720px;min-height:720px}
   .hero-title-options{gap:12px}
   .hero-title-option{padding-bottom:12px}
 }
 
 @media (max-width:767.98px){
   .hero{
-    height:clamp(1750px,270vw,2500px);
-    min-height:1750px;
+    height:670px;
+    min-height:670px;
   }
+  .hero--comparison{height:680px;min-height:680px}
+  .hero--comparison .hero-keywords{top:36px}
+  .hero--comparison .hero__copy{top:100px}
   .hero-title-options{gap:10px}
   .hero-title-option{padding-bottom:10px}
   .hero-title-options + .hero__actions{margin-top:30px}
@@ -3592,9 +3603,10 @@ html body .hero .hero-title .hero-title__accent{
 
 @media (max-width:429.98px){
   .hero{
-    height:1900px;
-    min-height:1900px;
+    height:670px;
+    min-height:670px;
   }
+  .hero--comparison{height:660px;min-height:660px}
 }
 
 @media (min-width:1200px){
