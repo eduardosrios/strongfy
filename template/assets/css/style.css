@@ -3674,11 +3674,13 @@ html body .hero .hero-title .hero-title__accent{
 }
 .hero-feature-cards.is-expanded{
   width:100%;
-  padding:1px 0 0 1px;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));
+  padding:0;
+  grid-template-columns:repeat(auto-fill,var(--hero-feature-card-width,230px));
+  justify-content:space-between;
 }
 .hero-feature-cards.is-expanded > .hero-feature-card:nth-child(n){
-  margin:-1px 0 0 -1px;
+  box-sizing:border-box;
+  margin:0;
   border:1px solid #050505;
 }
 .hero:has(.hero-feature-cards.is-expanded){
@@ -3752,7 +3754,6 @@ html body .hero .hero-title .hero-title__accent{
   .hero-feature-card:nth-child(3),
   .hero-feature-card:nth-child(5),
   .hero-feature-card:nth-child(n + 7){border-top:0}
-  .hero-feature-cards.is-expanded{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr))}
   .hero{height:clamp(760px,150vw,900px);min-height:760px}
   .hero--comparison{height:clamp(780px,155vw,920px);min-height:780px}
 
