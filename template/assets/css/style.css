@@ -3513,14 +3513,22 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 .hero-keywords li:nth-child(2){text-align:center}
 .hero-keywords li:last-child{text-align:right}
 
-/* Keep hero slogan on one measured, full-width line. */
-.hero__copy h1{
+/* Compare six measured, full-width hero title options. */
+html body .hero .hero__copy .hero-title{
   width:100%;
   max-width:100%;
-  font-size:var(--hero-title-fit,clamp(28px,10.75vw,154px));
+  margin:0;
+  color:#050505;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-size:var(--hero-title-fit,clamp(28px,10.75vw,154px))!important;
+  font-weight:400;
+  letter-spacing:-.3px;
+  line-height:.9!important;
   white-space:nowrap;
+  transform:scaleY(.914);
+  transform-origin:left top;
 }
-html body #hero-title .hero-title__accent{
+html body .hero .hero-title .hero-title__accent{
   color:inherit;
   font-family:inherit!important;
   font-size:1em!important;
@@ -3528,6 +3536,26 @@ html body #hero-title .hero-title__accent{
   letter-spacing:inherit;
   line-height:inherit!important;
   text-shadow:.085em .115em 0 #fff!important;
+}
+.hero{
+  height:clamp(1180px,100vw,1380px);
+  min-height:1180px;
+}
+.hero-title-options{
+  display:grid;
+  gap:16px;
+}
+.hero-title-option{
+  min-width:0;
+  padding-bottom:16px;
+  border-bottom:1px solid rgba(5,5,5,.18);
+}
+.hero-title-option:last-child{
+  padding-bottom:0;
+  border-bottom:0;
+}
+.hero-title-options + .hero__actions{
+  margin-top:40px;
 }
 
 @media (max-width:767.98px){
@@ -3541,6 +3569,32 @@ html body #hero-title .hero-title__accent{
   .hero-keywords li:first-child{text-align:left}
   .hero-keywords li:nth-child(2){text-align:center}
   .hero-keywords li:last-child{text-align:right}
+}
+
+@media (max-width:991.98px){
+  .hero{
+    height:clamp(930px,115vw,1140px);
+    min-height:930px;
+  }
+  .hero-title-options{gap:12px}
+  .hero-title-option{padding-bottom:12px}
+}
+
+@media (max-width:767.98px){
+  .hero{
+    height:clamp(760px,130vw,1040px);
+    min-height:760px;
+  }
+  .hero-title-options{gap:10px}
+  .hero-title-option{padding-bottom:10px}
+  .hero-title-options + .hero__actions{margin-top:30px}
+}
+
+@media (max-width:429.98px){
+  .hero{
+    height:790px;
+    min-height:790px;
+  }
 }
 
 @media (min-width:1200px){

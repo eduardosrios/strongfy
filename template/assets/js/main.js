@@ -612,11 +612,11 @@
     });
   });
 
-  function fitHeroTitle() {
-    const title = document.getElementById("hero-title");
-    const copy = title?.closest(".hero__copy");
+  function fitHeroTitles() {
+    const titles = [...document.querySelectorAll(".hero-title")];
+    const copy = titles[0]?.closest(".hero__copy");
 
-    if (!title || !copy) {
+    if (!titles.length || !copy) {
       return;
     }
 
@@ -629,20 +629,22 @@
       }
 
       lastWidth = availableWidth;
-      title.style.removeProperty("--hero-title-fit");
+      titles.forEach(function (title) {
+        title.style.removeProperty("--hero-title-fit");
 
-      const baseSize = parseFloat(window.getComputedStyle(title).fontSize);
-      const range = document.createRange();
-      range.selectNodeContents(title);
-      const textWidth = range.getBoundingClientRect().width;
-      range.detach?.();
+        const baseSize = parseFloat(window.getComputedStyle(title).fontSize);
+        const range = document.createRange();
+        range.selectNodeContents(title);
+        const textWidth = range.getBoundingClientRect().width;
+        range.detach?.();
 
-      if (!baseSize || !textWidth) {
-        return;
-      }
+        if (!baseSize || !textWidth) {
+          return;
+        }
 
-      const fittedSize = baseSize * availableWidth / textWidth;
-      title.style.setProperty("--hero-title-fit", fittedSize.toFixed(2) + "px");
+        const fittedSize = baseSize * availableWidth / textWidth;
+        title.style.setProperty("--hero-title-fit", fittedSize.toFixed(2) + "px");
+      });
     };
 
     fit(true);
@@ -670,6 +672,6 @@
   addReferenceLinks();
   buildStickyTopbar();
   bindReferenceSectionInteractions();
-  fitHeroTitle();
+  fitHeroTitles();
   $("[data-day='mon']").trigger("click");
 })(jQuery);
