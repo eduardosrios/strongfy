@@ -3580,7 +3580,7 @@ html body .hero .hero-title .hero-title__accent{
   border-bottom:0;
 }
 .hero-title-options + .hero-feature-cards{
-  margin-top:64px;
+  margin-top:80px;
 }
 .hero-feature-cards{
   --hero-feature-card-width:260px;
@@ -3775,7 +3775,7 @@ html body .hero .hero-feature-more .hero-feature-more__label{
   .hero--comparison .hero__copy{top:100px}
   .hero-title-options{gap:10px}
   .hero-title-option{padding-bottom:10px}
-  .hero-title-options + .hero-feature-cards{margin-top:44px}
+  .hero-title-options + .hero-feature-cards{margin-top:56px}
   .hero-feature-card{padding:12px}
   .hero-feature-card h3{font-size:clamp(12px,3.4vw,16px)}
 }
