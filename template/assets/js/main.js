@@ -680,13 +680,16 @@
           return;
         }
 
-        const fittedSize = baseSize * availableWidth / textWidth * 1.0098;
+        const fittedSize = baseSize * availableWidth / textWidth * 1.014849;
         const fittedSizeValue = fittedSize.toFixed(2) + "px";
+        const titleStyle = window.getComputedStyle(title);
         const hero = title.closest(".hero");
 
         title.style.setProperty("--hero-title-fit", fittedSizeValue);
         if (hero && title === hero.querySelector(".hero-title")) {
           hero.style.setProperty("--hero-slogan-font-size", fittedSizeValue);
+          hero.style.setProperty("--hero-slogan-font-family", titleStyle.fontFamily);
+          hero.style.setProperty("--hero-slogan-font-weight", titleStyle.fontWeight);
         }
       });
     };
