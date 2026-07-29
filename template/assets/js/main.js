@@ -680,7 +680,7 @@
           return;
         }
 
-        const fittedSize = baseSize * availableWidth / textWidth * 1.014849;
+        const fittedSize = baseSize * availableWidth / textWidth * 1.00470051;
         const fittedSizeValue = fittedSize.toFixed(2) + "px";
         const titleStyle = window.getComputedStyle(title);
         const hero = title.closest(".hero");
