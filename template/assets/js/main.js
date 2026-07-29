@@ -5,7 +5,13 @@
 
   $(document).on("click", "a[href^='#']", function (event) {
     const targetId = this.getAttribute("href");
-    const $target = targetId && targetId !== "#" ? $(targetId) : $();
+
+    if (targetId === "#") {
+      event.preventDefault();
+      return;
+    }
+
+    const $target = targetId ? $(targetId) : $();
 
     if (!$target.length) {
       return;

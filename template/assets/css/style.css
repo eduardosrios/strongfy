@@ -3605,6 +3605,8 @@ html body .hero .hero-title .hero-title__accent{
   border-radius:0;
   background:#fff;
   color:#050505;
+  cursor:pointer;
+  text-decoration:none;
   text-align:left;
 }
 .hero-feature-card:not(:nth-child(4n + 1)){
@@ -3629,25 +3631,31 @@ html body .hero .hero-title .hero-title__accent{
 .hero-feature-cards > .hero-feature-card:first-child img{
   filter:invert(1);
 }
-.hero-feature-cards > .hero-feature-card:nth-child(-n + 3){
+.hero-feature-cards > .hero-feature-card{
   transition:background-color .2s ease,color .2s ease;
 }
 .hero-feature-cards > .hero-feature-card:nth-child(-n + 3) h3{
   font-weight:400;
 }
-.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3){
+.hero-feature-cards:has(> .hero-feature-card:hover) > .hero-feature-card,
+.hero-feature-cards:has(> .hero-feature-more:hover) > .hero-feature-card{
   background:#fff;
   color:#050505;
 }
-.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3) img{
+.hero-feature-cards:has(> .hero-feature-card:hover) > .hero-feature-card img,
+.hero-feature-cards:has(> .hero-feature-more:hover) > .hero-feature-card img{
   filter:none;
 }
-.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3):hover{
+.hero-feature-cards:has(> .hero-feature-card:hover) > .hero-feature-card:hover{
   background:#050505;
   color:#fff;
 }
-.hero-feature-cards:has(> .hero-feature-card:nth-child(-n + 3):hover) > .hero-feature-card:nth-child(-n + 3):hover img{
+.hero-feature-cards:has(> .hero-feature-card:hover) > .hero-feature-card:hover img{
   filter:invert(1);
+}
+.hero-feature-card:focus-visible{
+  outline:1px dashed currentColor;
+  outline-offset:-8px;
 }
 .hero-feature-card h3{
   max-width:11ch;
@@ -3677,6 +3685,11 @@ html body .hero .hero-title .hero-title__accent{
   display:flex;
   align-items:center;
   justify-content:center;
+  transition:background-color .2s ease,color .2s ease;
+}
+.hero-feature-more:hover{
+  background:#050505;
+  color:#fff;
 }
 html body .hero .hero-feature-more .hero-feature-more__label{
   display:block;
