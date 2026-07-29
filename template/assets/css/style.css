@@ -3452,7 +3452,7 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 }
 .hero-keywords li{
   color:#050505;
-  font-size:12px!important;
+  font-size:14px!important;
   font-weight:700;
   letter-spacing:.08em;
 }
@@ -3466,7 +3466,8 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 }
 
 /* Requested refinement pass 2: composition and scale corrections. */
-.hero-keywords li:last-child{font-size:12px!important}
+.hero-keywords li:nth-child(2),
+.hero-keywords li:last-child{font-size:14px!important}
 @media (min-width:1200px){
   .rf-41{height:613px;min-height:613px;overflow:hidden}
   .rf-42{height:533px;min-height:533px;overflow:hidden}
