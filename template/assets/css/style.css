@@ -3509,6 +3509,31 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 .footer-wordmark,
 .footer-wordmark .brand__word{font-style:normal!important}
 .footer-wordmark .brand__word{transform:none!important}
+
+/* Keep hero metadata anchored to left, exact center, and right. */
+.hero-keywords{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
+  justify-content:initial;
+}
+.hero-keywords li:first-child{text-align:left}
+.hero-keywords li:nth-child(2){text-align:center}
+.hero-keywords li:last-child{text-align:right}
+
+@media (max-width:767.98px){
+  .hero-keywords{
+    gap:10px;
+    align-items:start;
+  }
+  .hero-keywords li:first-child,
+  .hero-keywords li:nth-child(2),
+  .hero-keywords li:last-child{grid-column:auto}
+  .hero-keywords li:first-child{text-align:left}
+  .hero-keywords li:nth-child(2){text-align:center}
+  .hero-keywords li:last-child{text-align:right}
+}
+
 @media (min-width:1200px){
   .rf-56 .rf-success-stage{margin-top:120px}
   .rf-57 .rf-about>div:first-child>img{width:360px;height:470px}
