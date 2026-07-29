@@ -3620,23 +3620,14 @@ html body .hero .hero-title .hero-title__accent{
   background:transparent;
   color:#050505;
   cursor:pointer;
+  display:grid;
+  place-items:center;
 }
-.hero-feature-more::before,
-.hero-feature-more::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:50%;
-  background:currentColor;
-  transform:translate(-50%,-50%);
-}
-.hero-feature-more::before{
+.hero-feature-more img{
+  display:block;
   width:72%;
-  height:1px;
-}
-.hero-feature-more::after{
-  width:1px;
   height:72%;
+  object-fit:contain;
 }
 .hero-feature-more:focus-visible{
   outline:1px dashed #050505;
