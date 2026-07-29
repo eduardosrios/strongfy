@@ -3450,7 +3450,7 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   top:210px;
   justify-content:space-between;
 }
-.hero-keywords li{
+html body .hero .hero-keywords li{
   color:#050505;
   font-size:15px!important;
   font-weight:500;
