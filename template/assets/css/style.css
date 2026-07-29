@@ -2519,3 +2519,180 @@ body :where(blockquote,strong) {
   .rf-59 .rf-method-title{font-size:72px}
   .rf-59 .rf-method__points{left:660px;right:35px}
 }
+
+/* Sections 37-72: measured reference-comparison corrections */
+.rf-section,
+.rf-section :is(h2,h3,p,span,small,a,button,li,time,strong,b){font-family:var(--font-display)!important}
+.rf-section :is(p,span,small,a,button,li,time){font-size:16px!important}
+.rf-section{width:100%;max-width:100%;overflow-x:clip}
+.rf-section .rf-shell{max-width:1320px}
+
+@media (min-width:1200px){
+  .rf-37 .rf-shell{height:539px;min-height:539px;padding-block:28px}
+  .rf-37 .rf-sport{height:483px;min-height:0;grid-template-columns:1.08fr 1.38fr .92fr;gap:30px}
+  .rf-37 .rf-image-card--hero{height:438px;min-height:0}
+  .rf-37 .rf-sport__side .rf-image-card{height:335px;min-height:0}
+  .rf-37 .rf-sport__copy h2{font-size:43px}
+
+  .rf-38 .rf-mosaic article{border-radius:4px}
+  .rf-38 .rf-mosaic{border-radius:4px}
+
+  .rf-phenomenon .rf-shell{height:1067px;min-height:1067px;padding:42px 0 190px}
+  .rf-phenomenon__stage{grid-template-columns:.62fr 1.15fr .86fr;grid-template-areas:"intro intro intro" "score hero detail";gap:42px 18px}
+  .rf-phenomenon__intro{grid-area:intro;display:grid;grid-template-columns:1.22fr .58fr;grid-template-rows:auto auto;gap:14px 70px;padding-top:24px}
+  .rf-phenomenon__intro h2{grid-row:1/3;max-width:16ch;font-size:57px;line-height:1.02}
+  .rf-phenomenon__intro p{align-self:end}.rf-phenomenon__intro .rf-pill{align-self:start;justify-self:start}
+  .rf-score{grid-area:score}.rf-phenomenon__hero{grid-area:hero;height:555px}.rf-phenomenon__detail{grid-area:detail;height:410px}
+
+  .rf-43 .rf-shell{height:853px;min-height:853px;padding-block:100px}
+  .rf-43 .rf-centered-title{font-size:38px}
+  .rf-43 .rf-price-row article{min-height:510px;border-radius:4px}
+
+  .rf-46 .rf-shell{height:792px;min-height:792px;max-width:1040px!important;padding-block:76px}
+  .rf-46 .rf-benefits{height:640px;grid-template-columns:.92fr 1fr;gap:58px;align-items:center}
+  .rf-46 .rf-benefits h2{font-size:68px;text-align:left}
+  .rf-46 .rf-benefits ul{gap:30px;margin-top:48px}
+  .rf-46 .rf-benefits>img{height:638px;object-position:center top}
+
+  .rf-47 .rf-shell{height:683px;min-height:683px;padding-block:56px}
+  .rf-47 .rf-centered-title{font-size:54px;line-height:.98}
+  .rf-47 .rf-member-row{margin-top:42px;grid-template-columns:1fr .82fr 1.08fr .62fr}
+  .rf-47 .rf-member-row>article,.rf-47 .rf-video-card{min-height:360px}.rf-47 .rf-video-card--small{min-height:300px}
+
+  .rf-49{min-height:780px}
+  .rf-49 .rf-shell{height:716px;min-height:716px;padding-top:48px}
+  .rf-49 .rf-brutal{display:block;min-height:0}
+  .rf-49 .rf-brutal h2{margin-top:54px;font-size:142px;line-height:.76}
+  .rf-49 .rf-brutal__facts{display:none}
+
+  .rf-51 .rf-shell{padding-block:56px}
+  .rf-51 .rf-discipline-row article{min-height:700px;padding-top:395px}
+  .rf-51 .rf-discipline-row img{height:375px}
+
+  .rf-53 .rf-shell{height:1008px;min-height:1008px;max-width:1080px!important;padding-block:122px}
+  .rf-53 .rf-wellness-head h2{font-size:72px}
+  .rf-53 .rf-wellness-feature{height:470px;min-height:470px;margin-top:68px;border-radius:4px;grid-template-columns:1.35fr .65fr}
+  .rf-53 .rf-wellness-feature>img{height:470px;object-fit:fill}
+  .rf-53 .rf-wellness-points{padding:54px}
+
+  .rf-54{min-height:792px}
+  .rf-54 .rf-shell{height:792px;min-height:792px;padding-block:104px}
+  .rf-54 .rf-wellness-head h2{font-size:62px}
+  .rf-54 .rf-service-row{margin-top:62px}
+  .rf-54 .rf-service-row article{min-height:285px;border-radius:4px}
+
+  .rf-56 .rf-shell{height:1208px;min-height:1208px;max-width:1120px!important;padding-block:112px}
+  .rf-56 .rf-wellness-head h2{font-size:70px}
+  .rf-56 .rf-success-stage{height:670px;min-height:0;margin-top:66px}
+  .rf-56 .rf-success-stage__hero{left:0;width:530px;height:670px;object-fit:fill}
+  .rf-56 .rf-success-stage blockquote{left:455px;width:440px;min-height:285px;padding:42px;border-radius:4px}
+  .rf-56 .rf-success-stage__people{width:300px;gap:12px}
+  .rf-56 .rf-success-stage__people img{height:335px}
+
+  .rf-57{min-height:1090px}
+  .rf-57 .rf-shell{height:1090px;min-height:1090px;max-width:1120px!important;padding:90px 0}
+  .rf-57 .rf-about{display:grid;height:910px;grid-template-columns:.82fr 1.18fr;gap:80px;align-items:start}
+  .rf-57 .rf-about>div:first-child{position:relative;height:910px}
+  .rf-57 .rf-about>div:first-child>img{position:absolute;left:0;bottom:0;width:470px;height:610px;object-fit:cover}
+  .rf-57 .rf-about>div:last-child{padding-top:54px}
+  .rf-57 .rf-about h2{font-size:58px;line-height:1.02}
+  .rf-57 .rf-about>div:last-child>p{font-size:22px!important;line-height:1.45}
+  .rf-57 .rf-about__columns{margin-top:46px}
+
+  .rf-59 .rf-shell{height:1317px;min-height:1317px;max-width:1440px!important;padding:0}
+  .rf-59 .rf-method-title{top:27px;left:540px;font-size:76px;line-height:1.02}
+  .rf-59 .rf-method>img{left:0;bottom:0;width:610px;height:1100px;object-fit:fill}
+  .rf-59 .rf-method__points{top:320px;right:32px;left:608px;grid-template-columns:1fr 1fr;gap:24px}
+  .rf-59 .rf-method__points article{min-height:280px;padding:34px 40px;border-radius:4px}
+  .rf-59 .rf-method__points i{margin-bottom:28px;font-size:24px!important}
+  .rf-59 .rf-method__points h3{max-width:16ch;margin-bottom:14px;font-size:33px!important;line-height:1}
+  .rf-59 .rf-method__points p{max-width:32ch;font-size:16px!important;line-height:1.35}
+
+  .rf-60{min-height:1125px}
+  .rf-60 .rf-shell{height:1125px;min-height:1125px;padding-block:96px}
+  .rf-60 .rf-plan-title{margin:42px auto 58px;font-size:72px;line-height:.98}
+  .rf-60 .rf-coach-row{height:590px;gap:0}
+  .rf-60 .rf-coach-row article{height:590px;background:#050706}
+  .rf-60 .rf-coach-row img{height:550px;object-fit:contain;object-position:center bottom;filter:grayscale(1)}
+
+  .rf-62 .rf-shell{height:844px;min-height:844px;max-width:1120px!important;padding:54px 0 0}
+  .rf-62 .rf-plan-title{margin:24px auto 20px;font-size:64px}
+  .rf-62 .rf-transform{height:570px}
+  .rf-62 .rf-transform>img{width:420px;height:570px;object-fit:fill}
+  .rf-62 .rf-transform blockquote{left:400px;width:445px;min-height:270px;padding:38px;border-radius:4px 4px 0 0}
+  .rf-62 .rf-transform>div{width:330px}.rf-62 .rf-transform>div img{height:300px}
+
+  .rf-class-panel .rf-shell{height:1100px;min-height:1100px;max-width:1000px!important;padding:102px 0 70px}
+  .rf-class-panel h2{font-size:86px;line-height:.9}
+  .rf-class-panel .rf-class-tabs{margin:40px 0 46px}
+  .rf-class-panel .rf-class-stage{height:610px;min-height:610px;grid-template-columns:.7fr 1.15fr 82px;align-items:stretch}
+  .rf-class-panel .rf-class-stage>div{padding:68px 36px 42px 0}
+  .rf-class-panel .rf-class-stage h3{font-size:48px}
+  .rf-class-panel .rf-class-stage>img{height:610px;grid-column:2;object-fit:cover}
+  .rf-class-panel .rf-class-stage>strong{right:14px;top:80px;font-size:48px}
+  .rf-class-panel .rf-class-stage>button{right:5px;bottom:28px}
+
+  .rf-65 .rf-trainer-accordion>article,.rf-65 .rf-trainer-accordion>button{border-radius:4px}
+
+  .rf-67 .rf-shell{height:833px;min-height:833px;padding-block:72px}
+  .rf-67 .rf-service-intro{grid-template-columns:1fr 220px;gap:44px}
+  .rf-67 .rf-service-intro>div{grid-template-columns:.28fr 1fr .55fr;gap:34px}
+  .rf-67 .rf-service-intro h2{font-size:52px}
+  .rf-67 .rf-service-images{margin-top:42px}
+  .rf-67 .rf-service-images img{height:285px}
+
+  .rf-68 .rf-shell{height:806px;min-height:806px;padding:0}
+  .rf-68 .rf-floating-quote{height:806px;min-height:806px}
+  .rf-68 .rf-floating-quote h2{max-width:19ch;font-size:58px}
+
+  .rf-69 .rf-shell{height:1056px;min-height:1056px;max-width:1120px!important;padding-block:118px}
+  .rf-69 .rf-membership{height:820px;min-height:820px;grid-template-columns:.9fr 1.1fr}
+  .rf-69 .rf-membership>img{height:820px;object-position:center top}
+  .rf-69 .rf-membership>div{padding:54px 58px}
+  .rf-69 .rf-membership h2{font-size:62px}
+
+  .rf-70 .rf-featured-classes article:nth-child(n){clip-path:polygon(13% 0,87% 0,100% 50%,87% 100%,13% 100%,0 50%)}
+  .rf-72 .rf-stack-showcase>article{height:460px}
+}
+
+@media (min-width:768px) and (max-width:1199px){
+  .rf-59 .rf-shell{padding:80px 24px}
+  .rf-59 .rf-method-title{margin-bottom:50px;font-size:58px;text-align:left}
+  .rf-59 .rf-method{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px}
+  .rf-59 .rf-method>img{height:720px;align-self:end;object-fit:fill}
+  .rf-59 .rf-method__points{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .rf-59 .rf-method__points article{min-height:230px;padding:28px;border-radius:4px}
+  .rf-class-panel .rf-shell{padding-block:80px}
+}
+
+@media (max-width:767px){
+  .rf-section :is(p,span,small,a,button,li,time){font-size:16px!important}
+  .rf-59 .rf-method-title{font-size:42px;line-height:1.04;text-align:left}
+  .rf-59 .rf-method>img{height:610px;object-fit:fill}
+  .rf-59 .rf-method__points article{min-height:220px;padding:26px;border-radius:4px}
+  .rf-class-panel .rf-class-stage{min-height:0}
+}
+@media (min-width:1200px){.rf-59 .rf-method>img{width:590px;height:1240px}}
+@media (min-width:1200px){
+  .rf-49 .rf-brutal h2{font-size:220px;line-height:.76}
+  .rf-51 .rf-shell{height:858px;min-height:858px}
+  .rf-53 .rf-wellness-feature>img{object-fit:cover;object-position:center 12%}
+}
+/* ETAPA 04 normalization for the new reference set */
+.rf-section{--rf-red:#ff3b30;--rf-yellow:#ffd400;--rf-blue:#baff00}
+.rf-section :is(article,div,a,button,img,input,select,textarea){border-radius:4px}
+.rf-section :is(a,button){min-height:48px}
+.rf-section :is(.rf-arrow-row button,.rf-image-card>a,.rf-phenomenon__hero>a,.rf-location-row__intro>a,.rf-video-card>i,.rf-class-stage>button,.rf-class-avatars img,.rf-trainer-accordion>article img){border-radius:50%}
+.rf-70 .rf-featured-classes i,.rf-70 .concept-icon{color:var(--lime);filter:none}
+.rf-section a:hover,.rf-section a:focus-visible,.rf-section button:hover,.rf-section button:focus-visible{color:currentColor}
+.rf-section :is(a,button):focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.rf-section .concept-icon{width:42px;height:42px;object-fit:contain;filter:invert(88%) sepia(95%) saturate(997%) hue-rotate(26deg) brightness(106%) contrast(104%)}.media-modal figure>video{width:100%;height:100%;max-height:720px;object-fit:cover;background:#000}
+.rf-55 .rf-trainer-lineup img[role="button"],.rf-60 .rf-coach-row img[role="button"],.rf-67 .rf-service-images img[role="button"],.rf-68 .rf-floating-quote img[role="button"],.rf-69 .rf-membership>img[role="button"],.rf-71 .rf-news-row img[role="button"],.rf-72 .rf-stack-showcase img[role="button"]{cursor:zoom-in}
+.rf-70 .rf-featured-classes article{cursor:pointer;transition:transform .22s ease,filter .22s ease}
+.rf-70 .rf-featured-classes article:hover,.rf-70 .rf-featured-classes article.is-selected{filter:drop-shadow(0 12px 20px rgba(90,110,120,.18));transform:translateY(-6px)}
+@media(max-width:767px){.media-modal figure>video{height:52vh}}
+.body-section.rf-section :is(p,span,small,a,button,li,time){font-size:16px!important}
+
+html body main.page-shell .body-section.rf-section :is(p,span,small,a,button,li,time){font-size:16px!important}
+
+@media(max-width:767px){.body-section.rf-section>.rf-shell{padding-top:145px}}

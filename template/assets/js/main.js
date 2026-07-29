@@ -219,13 +219,21 @@
 
   const $modal = $("#mediaModal");
   const $modalImage = $("#mediaModalImage");
+  const $modalVideo = $("#mediaModalVideo");
   let modalItems = [];
   let modalIndex = 0;
   let modalTrigger = null;
 
   function renderModalItem() {
     const item = modalItems[modalIndex];
-    $modalImage.attr({ src: item.src, alt: item.alt });
+    if (item.video) {
+      $modalImage.prop("hidden", true);
+      $modalVideo.attr({ src: item.video, "aria-label": item.alt }).prop("hidden", false);
+    } else {
+      $modalVideo[0]?.pause();
+      $modalVideo.prop("hidden", true).removeAttr("src");
+      $modalImage.attr({ src: item.src, alt: item.alt }).prop("hidden", false);
+    }
     $("#mediaModalKicker").text(item.kicker);
     $("#mediaModalTitle").text(item.title);
     $("#mediaModalCopy").text(item.copy);
@@ -247,6 +255,7 @@
   function closeModal() {
     $modal.prop("hidden", true);
     $(document.body).removeClass("is-modal-open");
+    $modalVideo[0]?.pause();
     if (modalTrigger) modalTrigger.focus();
     $("#siteInteractionStatus").text("Media viewer closed.");
   }
@@ -311,12 +320,12 @@
 
   function buildVideoVariants() {
     const variants = [
-      ["04", "assets/videos/personal-coaching.mp4", "Personal coaching session"],
-      ["06", "assets/videos/treadmill-cardio.mp4", "Treadmill conditioning session"],
-      ["13", "assets/videos/boxing-drills.mp4", "Boxing performance drills"],
-      ["17", "assets/videos/battle-ropes.mp4", "High-intensity battle ropes session"],
-      ["29", "assets/videos/mobility-stretch.mp4", "Mobility and stretching session"],
-      ["32", "assets/videos/strength-barbell.mp4", "Barbell strength session"]
+      ["41", "assets/videos/personal-coaching.mp4", "Personal coaching program"],
+      ["42", "assets/videos/treadmill-cardio.mp4", "Cardio training branch"],
+      ["45", "assets/videos/boxing-drills.mp4", "Boxing habit session"],
+      ["46", "assets/videos/battle-ropes.mp4", "High-intensity gym training"],
+      ["66", "assets/videos/mobility-stretch.mp4", "Mobility coaching session"],
+      ["72", "assets/videos/strength-barbell.mp4", "Purposeful strength training"]
     ];
 
     variants.forEach(function ([sectionNumber, source, label]) {
@@ -356,7 +365,7 @@
       ["assets/images/icons/trainer.png", "Personal coaching"],
       ["assets/images/icons/stopwatch.png", "Timed performance"]
     ];
-    const icons = document.querySelectorAll(".benefits-grid__items article > i, .amenities-index__grid article > i, .feature-manifesto__points article > i, .workout-categories__grid article > i, .power-pillars__grid article > i, .coaching-steps__list i, .journey-process__line i");
+    const icons = document.querySelectorAll(".benefits-grid__items article > i, .amenities-index__grid article > i, .feature-manifesto__points article > i, .workout-categories__grid article > i, .power-pillars__grid article > i, .coaching-steps__list i, .journey-process__line i, .rf-54 .rf-service-row article > i, .rf-70 .rf-featured-classes article > i");
     icons.forEach(function (icon, index) {
       const item = sources[index % sources.length];
       const image = document.createElement("img");
@@ -560,6 +569,48 @@
         $(this).contents().first()[0].nodeValue = prices[index];
         $(this).find("small").text(annual ? "/year" : "/month");
       });
+    });
+    const zoneSlides = [
+      { hero:"assets/images/body/bright-power-zone.webp", side:"assets/images/body/water-aerobics.webp", heroText:"Space for working with free weights", sideText:"Space for focused cardio work" },
+      { hero:"assets/images/body/personal-training.webp", side:"assets/images/body/gym-machines.webp", heroText:"Coaching space for precise strength work", sideText:"Equipment for structured conditioning" },
+      { hero:"assets/images/body/training-floor.webp", side:"assets/images/body/dumbbell-rack.webp", heroText:"A focused floor built for progress", sideText:"Free weights for measurable strength" }
+    ];
+    let zoneSlideIndex = 0;
+    $(document).on("click", ".rf-37 .rf-arrow-row button", function () {
+      zoneSlideIndex = (zoneSlideIndex + ($(this).index() === 0 ? -1 : 1) + zoneSlides.length) % zoneSlides.length;
+      const slide = zoneSlides[zoneSlideIndex];
+      const $section = $(this).closest(".rf-37");
+      $section.find(".rf-image-card--hero img").attr("src", slide.hero);
+      $section.find(".rf-image-card--hero p").text(slide.heroText);
+      $section.find(".rf-sport__side .rf-image-card img").attr("src", slide.side);
+      $section.find(".rf-sport__side .rf-image-card p").text(slide.sideText);
+      $("#siteInteractionStatus").text("Training zone " + (zoneSlideIndex + 1) + " of " + zoneSlides.length + ".");
+    });
+
+    const storyVideos = ["assets/videos/personal-coaching.mp4", "assets/videos/treadmill-cardio.mp4"];
+    $(document).on("click", ".rf-47 .rf-video-card", function () {
+      const index = $(this).index(".rf-47 .rf-video-card");
+      const image = this.querySelector("img");
+      openModal([{ video:storyVideos[index % storyVideos.length], src:image.src, alt:image.alt, kicker:"Member story", title:this.querySelector("span")?.childNodes[0]?.textContent.trim() || "Strongfy member", copy:"A real Strongfy training story." }], 0, this);
+    });
+
+    const referenceMedia = [...document.querySelectorAll(".rf-55 .rf-trainer-lineup img, .rf-60 .rf-coach-row img, .rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img")];
+    const referenceItems = referenceMedia.map(function (image) {
+      image.tabIndex = 0;
+      image.setAttribute("role", "button");
+      image.setAttribute("aria-label", "Open " + image.alt + " in media viewer");
+      return { src:image.src, alt:image.alt, kicker:"Strongfy", title:image.alt, copy:"Explore the Strongfy experience." };
+    });
+    referenceMedia.forEach(function (image, index) {
+      function activate() { openModal(referenceItems, index, image); }
+      image.addEventListener("click", activate);
+      image.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activate(); }
+      });
+    });
+
+    $(document).on("click", ".rf-70 .rf-featured-classes article", function () {
+      $(this).toggleClass("is-selected").attr("aria-pressed", String($(this).hasClass("is-selected")));
     });
   }
 
