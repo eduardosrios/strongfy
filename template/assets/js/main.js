@@ -681,7 +681,13 @@
         }
 
         const fittedSize = baseSize * availableWidth / textWidth * 1.02;
-        title.style.setProperty("--hero-title-fit", fittedSize.toFixed(2) + "px");
+        const fittedSizeValue = fittedSize.toFixed(2) + "px";
+        const hero = title.closest(".hero");
+
+        title.style.setProperty("--hero-title-fit", fittedSizeValue);
+        if (hero && title === hero.querySelector(".hero-title")) {
+          hero.style.setProperty("--hero-slogan-font-size", fittedSizeValue);
+        }
       });
     };
 

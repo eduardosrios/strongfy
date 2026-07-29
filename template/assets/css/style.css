@@ -3672,7 +3672,7 @@ html body .hero .hero-title .hero-title__accent{
 .hero-feature-more__label{
   display:block;
   font-family:var(--font-display);
-  font-size:clamp(64px,7vw,112px);
+  font-size:var(--hero-slogan-font-size,clamp(64px,7vw,112px));
   font-weight:400;
   letter-spacing:-.06em;
   line-height:1;
