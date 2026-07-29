@@ -3602,7 +3602,7 @@ html body .hero .hero-title .hero-title__accent{
 }
 .hero-feature-cards > .hero-feature-card:first-child{
   background:#050505;
-  color:#050505;
+  color:#fff;
 }
 .hero-feature-cards > .hero-feature-card:first-child img{
   filter:invert(1);
