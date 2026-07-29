@@ -3503,6 +3503,11 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
 
 /* Requested refinement pass 3: final static-reference alignment. */
 .rf-section .reveal-ready{opacity:1!important;transform:none!important}
+.hero-brand,
+.hero-brand span,
+.rf-brutal-bar span:first-child,
+.footer-wordmark,
+.footer-wordmark .brand__word{font-style:normal!important}
 @media (min-width:1200px){
   .rf-56 .rf-success-stage{margin-top:120px}
   .rf-57 .rf-about>div:first-child>img{width:360px;height:470px}
