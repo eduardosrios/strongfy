@@ -3626,8 +3626,8 @@ html body .hero .hero-title .hero-title__accent{
 }
 .hero-feature-more img{
   display:block;
-  width:36px;
-  height:36px;
+  width:140px;
+  height:140px;
   object-fit:contain;
 }
 .hero-feature-more:focus-visible{
