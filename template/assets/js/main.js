@@ -179,7 +179,7 @@
         observer.unobserve(entry.target);
       });
     }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
-    $(".section-head, .body-section .content-wrap > :not(.section-head), .footer-cta__content, .footer-identity, .footer-newsletter").each(function () {
+    $(".section-head, .body-section .content-wrap > :not(.section-head), .rf-section .rf-shell > *, .footer-cta__content, .footer-identity, .footer-newsletter").each(function () {
       this.classList.add("reveal-ready");
       revealObserver.observe(this);
     });
@@ -380,13 +380,30 @@
 
   function addBootstrapStructure() {
     document.querySelectorAll(".content-wrap").forEach(function (container) { container.classList.add("container"); });
-    document.querySelectorAll("[class*='__grid'], [class*='__layout'], [class*='__cards'], [class*='__list'], [class*='__rail'], .feature-manifesto__points").forEach(function (layout) {
+    const referenceLayouts = [
+      ".rf-sport", ".rf-mosaic", ".rf-phenomenon__stage", ".rf-program",
+      ".rf-location-row", ".rf-price-row", ".rf-habits__stage", ".rf-benefits",
+      ".rf-member-row", ".rf-brutal__facts", ".rf-info-strip", ".rf-discipline-row",
+      ".rf-wellness-feature", ".rf-service-row", ".rf-trainer-lineup", ".rf-success-stage__people", ".rf-about",
+      ".rf-service-accordion", ".rf-method__points", ".rf-coach-row", ".rf-transform>div", ".rf-class-stage",
+      ".rf-trainer-accordion", ".rf-help-row", ".rf-service-intro", ".rf-service-images",
+      ".rf-membership", ".rf-featured-classes", ".rf-news-row",
+      ".rf-stack-showcase"
+    ].join(", ");
+    document.querySelectorAll("[class*='__grid'], [class*='__layout'], [class*='__cards'], [class*='__list'], [class*='__rail'], .feature-manifesto__points, " + referenceLayouts).forEach(function (layout) {
       if (!layout.children.length || layout.closest(".nav-submenu")) return;
       layout.classList.add("row", "g-4", "bootstrap-grid");
       const count = layout.children.length;
       layout.querySelectorAll(":scope > *").forEach(function (child) {
+        if (layout.matches(".rf-class-stage") && child.matches("strong, button")) return;
         child.classList.add("col-12", count >= 4 ? "col-md-6" : "col-md");
       });
+    });
+    document.querySelectorAll(".rf-section a:not([aria-label])").forEach(function (link) {
+      if (link.textContent.trim() || link.querySelector("img[alt]")) return;
+      const target = link.getAttribute("href") || "";
+      link.setAttribute("aria-label", target.includes("trainer") ? "View Strongfy trainers" : "Explore Strongfy spaces");
+      link.querySelectorAll("i").forEach(function (icon) { icon.setAttribute("aria-hidden", "true"); });
     });
   }
 
