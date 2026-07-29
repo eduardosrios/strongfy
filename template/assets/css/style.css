@@ -2387,7 +2387,6 @@ body :where(blockquote,strong) {
   .rf-50 .rf-info-strip{padding:20px;outline:1px solid #343735;outline-offset:18px;box-shadow:none}
 
   .rf-52 .rf-shell{display:grid;min-height:267px;place-items:center;padding:0;overflow:hidden}
-  .rf-52 .rf-logo-source{display:block;width:100%;height:100%;object-fit:cover;border-radius:0}
 
   .rf-55 .rf-trainer-lineup{gap:10px;padding:0 36px}
   .rf-55 .rf-trainer-lineup article{background:linear-gradient(145deg,#151814 0 45%,#c7f900 45% 100%)}
@@ -2444,7 +2443,6 @@ body :where(blockquote,strong) {
 }
 
 @media (max-width:1199px){
-  .rf-52 .rf-logo-source{width:100%;height:auto;border-radius:0}
   .rf-59 .rf-method__points i{display:block;margin-bottom:18px;color:#cddd59}
 }
 /* Reference fidelity rebuild 2: asset and measured-coordinate corrections */
@@ -3173,4 +3171,53 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   .hero__copy h1 {
     font-size: clamp(48px, 14.6vw, 62px);
   }
+}
+/* Section 52: individual brand assets in a real responsive rail. */
+.rf-52 .rf-shell{
+  display:grid;
+  min-height:267px;
+  place-items:center;
+  padding-block:0;
+}
+.rf-52 .rf-logo-rail{
+  display:grid;
+  width:100%;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  align-items:center;
+  gap:clamp(18px,3vw,52px);
+  margin:0;
+  padding:0;
+  border:0;
+  list-style:none;
+}
+.rf-52 .rf-logo-rail li{
+  display:grid;
+  min-width:0;
+  min-height:96px;
+  place-items:center;
+}
+.rf-52 .rf-logo-rail img{
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:78px;
+  border-radius:0;
+  filter:grayscale(1) contrast(1.55) brightness(1.75);
+  mix-blend-mode:screen;
+  object-fit:contain;
+}
+@media (max-width:767.98px){
+  .rf-52 .rf-shell{min-height:300px;padding-block:36px}
+  .rf-52 .rf-logo-rail{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 26px}
+  .rf-52 .rf-logo-rail li{min-height:84px}
+}
+/* Section 52 measured desktop logo alignment. */
+@media (min-width:768px){
+  .rf-52 .rf-logo-rail li:nth-child(1){transform:translateX(41px)}
+  .rf-52 .rf-logo-rail li:nth-child(2){transform:translateX(11px)}
+  .rf-52 .rf-logo-rail li:nth-child(3){transform:translateX(-21px)}
+  .rf-52 .rf-logo-rail li:nth-child(4){transform:translateX(-51px)}
+  .rf-52 .rf-logo-rail li:nth-child(5){transform:translateX(-48px)}
+  .rf-52 .rf-logo-rail li:nth-child(6){transform:translateX(-44px)}
 }
