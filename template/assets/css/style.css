@@ -3613,20 +3613,21 @@ html body .hero .hero-title .hero-title__accent{
   position:relative;
   min-width:0;
   aspect-ratio:1.15;
-  padding:0;
+  padding:clamp(16px,2vw,24px);
   border:0;
   border-radius:0;
   appearance:none;
   background:transparent;
   color:#050505;
   cursor:pointer;
-  display:grid;
-  place-items:center;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
 }
 .hero-feature-more img{
   display:block;
-  width:72%;
-  height:72%;
+  width:36px;
+  height:36px;
   object-fit:contain;
 }
 .hero-feature-more:focus-visible{
