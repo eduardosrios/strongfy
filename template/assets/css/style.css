@@ -3659,18 +3659,38 @@ html body .hero .hero-title .hero-title__accent{
   width:100%;
   height:100%;
   object-fit:contain;
+  transform:rotate(0);
+  transition:transform .25s ease;
+}
+.hero-feature-more:hover img{
+  transform:rotate(90deg);
+}
+.hero-feature-more[hidden]{
+  display:none!important;
 }
 .hero-feature-more:focus-visible{
   outline:1px dashed #050505;
   outline-offset:-8px;
 }
-.hero.has-expanded-cards{
-  height:1120px;
-  min-height:1120px;
+.hero-feature-cards.is-expanded{
+  width:100%;
+  grid-template-columns:repeat(11,minmax(0,1fr));
 }
-.hero--comparison.has-expanded-cards{
-  height:1260px;
-  min-height:1260px;
+.hero-feature-cards.is-expanded > .hero-feature-card{
+  border-top:1px solid #050505;
+  border-left:0;
+  padding:clamp(8px,1vw,14px);
+}
+.hero-feature-cards.is-expanded > .hero-feature-card:first-child{
+  border-left:1px solid #050505;
+}
+.hero-feature-cards.is-expanded > .hero-feature-card img{
+  width:clamp(26px,2.4vw,36px);
+  height:clamp(26px,2.4vw,36px);
+}
+.hero-feature-cards.is-expanded > .hero-feature-card h3{
+  max-width:100%;
+  font-size:clamp(10px,.95vw,14px);
 }
 @media (max-width:767.98px){
   .hero-keywords{
@@ -3723,15 +3743,7 @@ html body .hero .hero-title .hero-title__accent{
   .rf-57 .rf-about>div:first-child>img{width:360px;height:470px}
   .rf-57 .rf-about>div:last-child h2{max-width:17ch}
 }
-/* Expandable hero feature-card rail. */
-@media (max-width:991.98px){
-  .hero.has-expanded-cards{height:900px;min-height:900px}
-  .hero--comparison.has-expanded-cards{height:980px;min-height:980px}
-}
-@media (max-width:767.98px){
-  .hero.has-expanded-cards,
-  .hero--comparison.has-expanded-cards{height:960px;min-height:960px}
-}
+
 @media (max-width:575.98px){
   .hero-feature-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero-feature-more{margin-left:clamp(12px,4vw,20px)}
@@ -3743,20 +3755,14 @@ html body .hero .hero-title .hero-title__accent{
   .hero-feature-card:nth-child(3),
   .hero-feature-card:nth-child(5),
   .hero-feature-card:nth-child(n + 7){border-top:0}
+  .hero-feature-cards.is-expanded > .hero-feature-card:nth-child(n){border-top:1px solid #050505;border-left:0}
+  .hero-feature-cards.is-expanded > .hero-feature-card:first-child{border-left:1px solid #050505}
   .hero{height:clamp(760px,150vw,900px);min-height:760px}
   .hero--comparison{height:clamp(780px,155vw,920px);min-height:780px}
-  .hero.has-expanded-cards,
-  .hero--comparison.has-expanded-cards{
-    height:clamp(1300px,calc(261vw + 420px),1920px);
-    min-height:1300px;
-  }
+
 }
 @media (max-width:429.98px){
   .hero{height:760px;min-height:760px}
   .hero--comparison{height:780px;min-height:780px}
-  .hero.has-expanded-cards,
-  .hero--comparison.has-expanded-cards{
-    height:clamp(1300px,calc(261vw + 420px),1920px);
-    min-height:1300px;
-  }
+
 }

@@ -615,20 +615,16 @@
   function bindHeroFeatureCardToggles() {
     document.querySelectorAll(".hero-feature-more").forEach(function (button) {
       const grid = button.closest(".hero-feature-cards");
-      const hero = button.closest(".hero");
       const cards = [...grid.querySelectorAll(".hero-feature-card--extra")];
-      const label = button.querySelector(".visually-hidden");
 
       button.addEventListener("click", function () {
-        const expanded = button.getAttribute("aria-expanded") !== "true";
-
-        button.setAttribute("aria-expanded", String(expanded));
+        button.setAttribute("aria-expanded", "true");
         cards.forEach(function (card) {
-          card.hidden = !expanded;
+          card.hidden = false;
         });
-        hero.classList.toggle("has-expanded-cards", expanded);
-        label.textContent = expanded ? "Hide 8 additional training advantages" : "Show 8 more training advantages";
-      });
+        grid.classList.add("is-expanded");
+        button.hidden = true;
+      }, { once: true });
     });
   }
 
