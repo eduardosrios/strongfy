@@ -3589,8 +3589,8 @@ html body .hero .hero-title .hero-title__accent{
 }
 .hero-feature-card img{
   display:block;
-  width:clamp(28px,3vw,40px);
-  height:clamp(28px,3vw,40px);
+  width:46px;
+  height:46px;
   object-fit:contain;
 }
 .hero-feature-card h3{
