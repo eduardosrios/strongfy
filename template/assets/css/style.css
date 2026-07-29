@@ -3566,6 +3566,7 @@ html body .hero .hero-title .hero-title__accent{
   margin-top:64px;
 }
 .hero-feature-cards{
+  --hero-feature-card-width:260px;
   display:grid;
   width:min(100%,920px);
   grid-template-columns:repeat(4,minmax(0,1fr));
@@ -3675,7 +3676,7 @@ html body .hero .hero-title .hero-title__accent{
 .hero-feature-cards.is-expanded{
   width:100%;
   padding:0;
-  grid-template-columns:repeat(var(--hero-feature-columns,1),var(--hero-feature-card-width,230px));
+  grid-template-columns:repeat(var(--hero-feature-columns,1),var(--hero-feature-card-width,260px));
   justify-content:start;
   gap:0;
 }

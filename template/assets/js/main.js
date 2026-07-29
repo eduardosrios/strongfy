@@ -631,10 +631,7 @@
       }
 
       button.addEventListener("click", function () {
-        const sourceCard = grid.querySelector(".hero-feature-card:not(.hero-feature-card--extra)");
-        cardWidth = sourceCard?.getBoundingClientRect().width || 230;
-
-        grid.style.setProperty("--hero-feature-card-width", cardWidth + "px");
+        cardWidth = parseFloat(getComputedStyle(grid).getPropertyValue("--hero-feature-card-width")) || 260;
         button.setAttribute("aria-expanded", "true");
         cards.forEach(function (card) {
           card.hidden = false;
