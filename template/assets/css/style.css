@@ -3536,6 +3536,14 @@ html body .hero #hero-title{
   transform:translateX(-50%) scaleY(.914);
   transform-origin:center top;
 }
+html body .hero #hero-title .hero-title__letter-icon{
+  display:inline-block;
+  width:120px!important;
+  max-width:none;
+  height:auto;
+  vertical-align:-.08em;
+  object-fit:contain;
+}
 html body .hero .hero-title .hero-title__accent{
   color:inherit;
   font-family:inherit!important;
