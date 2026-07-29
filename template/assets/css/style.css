@@ -3520,9 +3520,14 @@ html body main.page-shell .body-section.rf-section .rf-trainer-accordion>button>
   font-size:var(--hero-title-fit,clamp(28px,10.75vw,154px));
   white-space:nowrap;
 }
-.hero-title__accent{
-  font-weight:700;
-  text-shadow:.045em .06em 0 rgba(5,5,5,.28);
+html body #hero-title .hero-title__accent{
+  color:inherit;
+  font-family:inherit!important;
+  font-size:1em!important;
+  font-weight:900!important;
+  letter-spacing:inherit;
+  line-height:inherit!important;
+  text-shadow:.055em .075em 0 var(--lime)!important;
 }
 
 @media (max-width:767.98px){
