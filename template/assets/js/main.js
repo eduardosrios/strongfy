@@ -634,6 +634,7 @@
           card.classList.toggle("is-row-start", index % columns === 0);
           card.classList.toggle("is-first-row", index < columns);
         });
+        grid.dispatchEvent(new CustomEvent("hero-feature-layout"));
       }
 
       button.addEventListener("click", function () {
@@ -653,6 +654,97 @@
           window.addEventListener("resize", layoutExpandedCards);
         }
       }, { once: true });
+    });
+  }
+
+  function bindHeroFeatureCardHighlights() {
+    document.querySelectorAll(".hero-feature-cards").forEach(function (grid) {
+      const targets = [...grid.querySelectorAll(".hero-feature-card, .hero-feature-more")];
+      const firstCard = grid.querySelector(".hero-feature-card");
+      let activeTarget = firstCard;
+      let staticFrame = 0;
+
+      function isVisible(target) {
+        return target && !target.hidden && target.offsetParent !== null;
+      }
+
+      function setHighlight(target, animate) {
+        const nextTarget = isVisible(target) ? target : firstCard;
+
+        if (!nextTarget) {
+          return;
+        }
+
+        grid.classList.toggle("is-highlight-static", !animate);
+        grid.style.setProperty("--hero-feature-highlight-x", nextTarget.offsetLeft + "px");
+        grid.style.setProperty("--hero-feature-highlight-y", nextTarget.offsetTop + "px");
+        grid.style.setProperty("--hero-feature-highlight-width", nextTarget.offsetWidth + "px");
+        grid.style.setProperty("--hero-feature-highlight-height", nextTarget.offsetHeight + "px");
+        grid.classList.add("has-feature-highlight");
+
+        targets.forEach(function (item) {
+          item.classList.toggle("is-feature-highlight-active", item === nextTarget);
+        });
+
+        activeTarget = nextTarget;
+
+        if (!animate) {
+          cancelAnimationFrame(staticFrame);
+          staticFrame = requestAnimationFrame(function () {
+            staticFrame = requestAnimationFrame(function () {
+              grid.classList.remove("is-highlight-static");
+            });
+          });
+        }
+      }
+
+      targets.forEach(function (target) {
+        target.addEventListener("pointerenter", function () {
+          if (target !== activeTarget && isVisible(target)) {
+            setHighlight(target, true);
+          }
+        });
+        target.addEventListener("focus", function () {
+          if (isVisible(target)) {
+            setHighlight(target, true);
+          }
+        });
+        target.addEventListener("pointerleave", function (event) {
+          const nextTarget = event.relatedTarget instanceof Element
+            ? event.relatedTarget.closest(".hero-feature-card, .hero-feature-more")
+            : null;
+
+          if (!nextTarget || !grid.contains(nextTarget)) {
+            setHighlight(firstCard, true);
+          }
+        });
+      });
+
+      grid.addEventListener("pointerleave", function () {
+        setHighlight(firstCard, true);
+      });
+
+      grid.addEventListener("focusout", function (event) {
+        if (!grid.contains(event.relatedTarget)) {
+          setHighlight(firstCard, true);
+        }
+      });
+
+      grid.addEventListener("hero-feature-layout", function () {
+        setHighlight(activeTarget, false);
+      });
+
+      setHighlight(firstCard, false);
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(function () {
+          setHighlight(activeTarget, false);
+        }).observe(grid);
+      } else {
+        window.addEventListener("resize", function () {
+          setHighlight(activeTarget, false);
+        }, { passive: true });
+      }
     });
   }
 
@@ -726,6 +818,7 @@
   buildStickyTopbar();
   bindReferenceSectionInteractions();
   bindHeroFeatureCardToggles();
+  bindHeroFeatureCardHighlights();
   fitHeroTitles();
   $("[data-day='mon']").trigger("click");
 })(jQuery);
