@@ -680,7 +680,7 @@
           return;
         }
 
-        const fittedSize = baseSize * availableWidth / textWidth;
+        const fittedSize = baseSize * availableWidth / textWidth * 1.02;
         title.style.setProperty("--hero-title-fit", fittedSize.toFixed(2) + "px");
       });
     };
