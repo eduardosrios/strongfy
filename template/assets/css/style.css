@@ -3535,11 +3535,12 @@ html body .hero .hero-title .hero-title__accent{
   font-weight:inherit!important;
   letter-spacing:inherit;
   line-height:inherit!important;
-  text-shadow:.085em .115em 0 #fff!important;
+  text-shadow:none!important;
 }
 .hero{
   height:clamp(700px,calc(100vh - 28px),760px);
   min-height:700px;
+  background:#fff;
 }
 .hero--comparison{
   height:clamp(760px,70vw,940px);
