@@ -287,52 +287,6 @@
     }
   });
 
-  function buildVideoVariants() {
-    const variants = [
-      ["41", "assets/videos/personal-coaching.mp4", "Personal coaching program"],
-      ["42", "assets/videos/treadmill-cardio.mp4", "Cardio training branch"],
-      ["45", "assets/videos/boxing-drills.mp4", "Boxing habit session"],
-      ["46", "assets/videos/battle-ropes.mp4", "High-intensity gym training"],
-      ["66", "assets/videos/mobility-stretch.mp4", "Mobility coaching session"],
-      ["72", "assets/videos/strength-barbell.mp4", "Purposeful strength training"],
-      ["78", "assets/videos/personal-coaching.mp4", "Private training service"],
-      ["82", "assets/videos/treadmill-cardio.mp4", "Performance comparison"],
-      ["84", "assets/videos/boxing-drills.mp4", "Transformation coaching"],
-      ["87", "assets/videos/battle-ropes.mp4", "Coach directory"],
-      ["89", "assets/videos/mobility-stretch.mp4", "Strongfy member event"],
-      ["80", "assets/videos/strength-barbell.mp4", "Kinetic training manifesto"]
-    ];
-
-    variants.forEach(function ([sectionNumber, source, label]) {
-      const original = document.querySelector(".body-section[data-section='" + sectionNumber + "']");
-      if (!original || document.querySelector(".body-section[data-video-section='" + sectionNumber + "']")) return;
-      const duplicate = original.cloneNode(true);
-      duplicate.removeAttribute("id");
-      duplicate.dataset.section = sectionNumber + "-video";
-      duplicate.dataset.videoSource = source;
-      duplicate.dataset.videoSection = sectionNumber;
-      duplicate.classList.add("video-variant");
-      duplicate.querySelectorAll("[id]").forEach(function (node) { node.removeAttribute("id"); });
-      duplicate.querySelectorAll(".reveal-ready").forEach(function (node) {
-        node.classList.remove("reveal-ready");
-        node.classList.add("is-revealed");
-      });
-      duplicate.querySelectorAll("img:not(.concept-icon):not(.brand__mark)").forEach(function (image) {
-        const video = document.createElement("video");
-        video.src = source;
-        video.autoplay = true;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-        video.preload = "metadata";
-        video.setAttribute("aria-label", label);
-        image.replaceWith(video);
-      });
-      const index = duplicate.querySelector(".section-index");
-      if (index) index.textContent = sectionNumber + "V / 36";
-      original.insertAdjacentElement("afterend", duplicate);
-    });
-  }
 
   function replaceComplexConceptIcons() {
     const sources = [
@@ -554,17 +508,7 @@
         .siblings("[data-rf-service]").removeClass("is-active").attr("aria-pressed", "false");
     });
 
-    $(document).on("click", ".rf-class-tabs button", function () {
-      $(this).addClass("is-active").attr("aria-selected", "true")
-        .siblings().removeClass("is-active").attr("aria-selected", "false");
-    });
 
-    $(document).on("click", ".rf-65 [data-rf-trainer]", function () {
-      $(this).toggleClass("is-active");
-      const expanded = $(this).hasClass("is-active");
-      $(this).attr("aria-expanded", String(expanded));
-      $(this).find("i").toggleClass("fa-arrow-down", !expanded).toggleClass("fa-arrow-up", expanded);
-    });
 
     $(document).on("click", ".rf-61 .rf-billing button", function () {
       const $button = $(this);
@@ -999,7 +943,6 @@
     });
 
   }
-  buildVideoVariants();
   replaceComplexConceptIcons();
   addBootstrapStructure();
   addReferenceLinks();
