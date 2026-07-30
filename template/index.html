@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260730-reference-lock-4">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260730-premium-rebuild-11">
 </head>
 <body>
   <a class="skip-link" href="#hero-title">Skip to main content</a>
@@ -206,18 +206,25 @@
       </div>
     </section>
 
-    <!-- Body 10 — benefits grid, inspired by top08 -->
-    <section class="body-section section--ink benefits-grid" data-section="10" data-source="top08">
+    <!-- Body 10 — adaptive benefit system -->
+    <section class="body-section section--ink benefits-grid" data-section="10" aria-labelledby="benefitsTitle">
       <div class="container content-wrap">
-        <header class="section-head section-head--light section-head--split"><div><span class="section-kicker">Why Strongfy</span><span class="section-index">10 / 36</span></div><h2>Every detail supports the next rep.</h2></header>
-        <div class="benefits-grid__layout">
-          <div class="benefits-grid__list">
-            <article><span>01</span><div><strong>Intentional programming</strong><p>Every block has a clear purpose and measurable progression.</p></div></article>
-            <article><span>02</span><div><strong>Coaches who pay attention</strong><p>Real feedback, practical cues, zero theater.</p></div></article>
-            <article><span>03</span><div><strong>Room to train properly</strong><p>Purpose-built zones reduce friction and keep sessions moving.</p></div></article>
-            <article><span>04</span><div><strong>Recovery made visible</strong><p>Readiness data shapes volume before fatigue shapes you.</p></div></article>
+        <header class="benefits-grid__intro">
+          <div><span class="section-kicker">Why Strongfy</span><span class="section-index">10 / 36</span></div>
+          <h2 id="benefitsTitle">Four decisions that keep progress moving.</h2>
+          <p>Programming, coaching, space, and recovery work as one system—so every session has a reason and every week has a next step.</p>
+        </header>
+        <div class="benefits-stage">
+          <figure class="benefits-stage__media">
+            <img src="assets/images/body/personal-training.webp" alt="Strongfy athlete following a structured strength session" data-benefit-image>
+            <figcaption><span data-benefit-number>01</span><p data-benefit-caption>Built around your goal, schedule, and training history.</p></figcaption>
+          </figure>
+          <div class="benefits-stage__menu" role="tablist" aria-label="Strongfy benefits">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-benefit-tab data-image="assets/images/body/personal-training.webp" data-alt="Strongfy athlete following a structured strength session" data-number="01" data-caption="Built around your goal, schedule, and training history."><span>01</span><strong>Intentional programming</strong><small>Every block has a clear purpose and measurable progression.</small></button>
+            <button type="button" role="tab" aria-selected="false" data-benefit-tab data-image="assets/images/body/coach-floor.webp" data-alt="Strongfy coach observing an athlete on the training floor" data-number="02" data-caption="Useful cues, close attention, and adjustments that happen in real time."><span>02</span><strong>Coaches who pay attention</strong><small>Real feedback, practical cues, zero theater.</small></button>
+            <button type="button" role="tab" aria-selected="false" data-benefit-tab data-image="assets/images/body/training-floor.webp" data-alt="Purpose-built Strongfy training floor" data-number="03" data-caption="Clear zones and thoughtful equipment placement keep the session flowing."><span>03</span><strong>Room to train properly</strong><small>Less friction between you and the work.</small></button>
+            <button type="button" role="tab" aria-selected="false" data-benefit-tab data-image="assets/images/body/gym-motion.webp" data-alt="Strongfy member completing controlled recovery work" data-number="04" data-caption="Readiness shapes the work before fatigue makes the decision for you."><span>04</span><strong>Recovery made visible</strong><small>Train with today’s capacity and tomorrow’s progress in mind.</small></button>
           </div>
-          <img src="assets/images/body/personal-training.webp" alt="Athlete performing a controlled bodyweight movement">
         </div>
       </div>
     </section>
@@ -262,11 +269,28 @@
       </div>
     </section>
 
-    <!-- Body 15 — amenities index, inspired by top10 -->
-    <section class="body-section section--ink amenities-index" data-section="15" data-source="top10">
-      <div class="container content-wrap"><header class="section-head section-head--light"><span class="section-kicker">The useful extras</span><span class="section-index">15 / 36</span><h2>Everything around the workout, handled.</h2></header>
-        <div class="amenities-index__grid">
-          <article><i class="fa-solid fa-shower"></i><strong>Rain showers</strong><span>7 stations</span></article><article><i class="fa-solid fa-lock"></i><strong>Smart lockers</strong><span>180 units</span></article><article><i class="fa-solid fa-bottle-water"></i><strong>Refuel bar</strong><span>Fresh daily</span></article><article><i class="fa-solid fa-person-swimming"></i><strong>Recovery room</strong><span>Compression + mobility</span></article><article><i class="fa-solid fa-car"></i><strong>Secure parking</strong><span>90 minutes included</span></article><article><i class="fa-solid fa-child-reaching"></i><strong>Kids studio</strong><span>Selected hours</span></article><article class="amenities-index__image"><img src="assets/images/body/gym-machines.webp" alt="Bright Strongfy equipment studio"></article><article class="amenities-index__number"><strong>28</strong><span>amenities across every club</span></article>
+    <!-- Body 15 — club amenities blueprint -->
+    <section class="body-section section--ink amenities-index" data-section="15" aria-labelledby="amenitiesTitle">
+      <div class="container content-wrap">
+        <header class="amenities-index__intro">
+          <div><span class="section-kicker">Beyond the session</span><span class="section-index">15 / 36</span></div>
+          <h2 id="amenitiesTitle">The details that make showing up easier.</h2>
+          <p>From arrival to recovery, every club touchpoint is designed to remove friction from a serious training day.</p>
+        </header>
+        <div class="amenities-map">
+          <figure class="amenities-map__visual">
+            <img src="assets/images/body/gym-machines.webp" alt="Bright Strongfy club training floor">
+            <span>Club floor / open daily 05:30–23:00</span>
+            <figcaption><strong>28</strong><small>member amenities across every Strongfy club</small></figcaption>
+          </figure>
+          <div class="amenities-map__catalog" aria-label="Featured club amenities">
+            <article><i class="fa-solid fa-shower" aria-hidden="true"></i><div><strong>Rain showers</strong><small>7 private stations</small></div><span>01</span></article>
+            <article><i class="fa-solid fa-lock" aria-hidden="true"></i><div><strong>Smart lockers</strong><small>180 secure units</small></div><span>02</span></article>
+            <article><i class="fa-solid fa-bottle-water" aria-hidden="true"></i><div><strong>Refuel bar</strong><small>Fresh daily</small></div><span>03</span></article>
+            <article><i class="fa-solid fa-person-swimming" aria-hidden="true"></i><div><strong>Recovery suite</strong><small>Compression + mobility</small></div><span>04</span></article>
+            <article><i class="fa-solid fa-car" aria-hidden="true"></i><div><strong>Secure parking</strong><small>90 minutes included</small></div><span>05</span></article>
+            <article><i class="fa-solid fa-child-reaching" aria-hidden="true"></i><div><strong>Kids studio</strong><small>Selected club hours</small></div><span>06</span></article>
+          </div>
         </div>
       </div>
     </section>
@@ -295,10 +319,24 @@
       </div>
     </section>
 
-    <!-- Body 17 — feature manifesto, inspired by top19 -->
-    <section class="body-section section--ink feature-manifesto" data-section="17" data-source="top19">
-      <div class="container content-wrap"><header class="feature-manifesto__headline"><span class="section-kicker">Why it works</span><span class="section-index">17 / 36</span><h2>Inspired to train.<br><em>Built to continue.</em></h2></header>
-        <div class="feature-manifesto__panel"><img src="assets/images/body/personal-training.webp" alt="Athlete completing controlled strength work"><div class="feature-manifesto__points"><article><i class="fa-solid fa-circle-check"></i><strong>No random workouts</strong><p>A plan with a beginning, middle, and next block.</p></article><article><i class="fa-solid fa-circle-check"></i><strong>Expert eyes</strong><p>Technique feedback before bad patterns settle in.</p></article><article><i class="fa-solid fa-circle-check"></i><strong>Progress tracking</strong><p>Useful data, explained in plain language.</p></article><article><i class="fa-solid fa-circle-check"></i><strong>People who show up</strong><p>A focused room changes what effort feels like.</p></article></div></div>
+    <!-- Body 17 — cinematic training manifesto -->
+    <section class="body-section section--ink feature-manifesto" data-section="17" aria-labelledby="manifestoTitle">
+      <div class="container content-wrap">
+        <header class="feature-manifesto__intro"><span class="section-kicker">Why it works</span><span class="section-index">17 / 36</span><p>Strongfy operating standard</p></header>
+        <div class="manifesto-stage">
+          <img src="assets/images/body/trainer-floor-session.webp" alt="Strongfy coach guiding a focused training session">
+          <div class="manifesto-stage__statement">
+            <span>Built for the long game</span>
+            <h2 id="manifestoTitle">Inspired to train.<em>Built to continue.</em></h2>
+            <a href="#journey">See the training process <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <div class="manifesto-stage__proofs">
+            <article><span>01</span><strong>No random workouts</strong><p>Every block leads somewhere useful.</p></article>
+            <article><span>02</span><strong>Expert eyes</strong><p>Technique gets attention before habits settle.</p></article>
+            <article><span>03</span><strong>Visible progress</strong><p>Useful data, reviewed in plain language.</p></article>
+            <article><span>04</span><strong>A focused room</strong><p>The people around you raise the standard.</p></article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -335,9 +373,27 @@
       </div>
     </section>
 
-    <!-- Body 21 — editorial about, inspired by top24 -->
-    <section class="body-section section--paper about-editorial" data-section="21" data-source="top24">
-      <div class="container content-wrap"><span class="section-kicker">About Strongfy</span><span class="section-index">21 / 36</span><div class="about-editorial__grid"><h2>Empowering every body to move stronger, live better, and go further.</h2><div class="about-editorial__copy"><p>We believe fitness is less about chasing confidence and more about earning it. The room matters. The plan matters. The people beside you matter.</p><div class="about-editorial__fact"><strong>2018</strong><span>Founded around one simple rule: coach what matters.</span></div></div><img src="assets/images/body/boxing-training.webp" alt="Coach spotting an athlete during a dumbbell press"></div></div>
+    <!-- Body 21 — editorial brand composition -->
+    <section class="body-section section--paper about-editorial" data-section="21" aria-labelledby="aboutEditorialTitle">
+      <div class="container content-wrap">
+        <div class="about-composition">
+          <div class="about-composition__lead">
+            <div><span class="section-kicker">About Strongfy</span><span class="section-index">21 / 36</span></div>
+            <h2 id="aboutEditorialTitle">We coach the life around the workout.</h2>
+            <p>Strength should change what the rest of your day feels like. Our job is to make the work clear, sustainable, and worth returning to.</p>
+            <a href="#services">How we coach <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+          <figure class="about-composition__portrait">
+            <img src="assets/images/body/boxing-training.webp" alt="Strongfy coach supporting an athlete through a dumbbell set">
+            <figcaption>Coach-led since day one</figcaption>
+          </figure>
+          <div class="about-composition__facts">
+            <article><strong>2018</strong><span>Founded around one rule: coach what matters.</span></article>
+            <article><strong>06</strong><span>disciplines connected by one coaching standard.</span></article>
+            <blockquote>“The plan adapts to the person—not the other way around.”</blockquote>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Body 22 — services accordion, inspired by top24 -->
@@ -371,9 +427,23 @@
       </div>
     </section>
 
-    <!-- Body 26 — testimonial split, inspired by top24 -->
-    <section class="body-section section--paper testimonial-split" data-section="26" data-source="top24">
-      <div class="container content-wrap testimonial-split__grid"><div class="testimonial-split__title"><span class="section-kicker">What members say</span><span class="section-index">26 / 36</span><h2>Real stories.<br>Real people.<br>Real transformations.</h2></div><img src="assets/images/body/strength-lift.webp" alt="Member training with dumbbells"><blockquote>“Strongfy gave me a way to be ambitious without burning out. The coaches keep the standard high and the plan realistic.”<footer><strong>Jordan Price</strong><span>Member · 21 months</span></footer></blockquote></div>
+    <!-- Body 26 — member story feature -->
+    <section class="body-section section--paper testimonial-split" data-section="26" aria-labelledby="testimonialTitle">
+      <div class="container content-wrap">
+        <div class="testimonial-stage">
+          <figure class="testimonial-stage__portrait">
+            <img src="assets/images/body/barbell-athlete.webp" alt="Strongfy member Jordan training with a barbell">
+            <figcaption><span>Member story / 042</span><strong>Jordan Price</strong><small>Strength + capacity</small></figcaption>
+          </figure>
+          <div class="testimonial-stage__quote">
+            <header><span class="section-kicker">What members say</span><span class="section-index">26 / 36</span></header>
+            <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+            <blockquote id="testimonialTitle">Strongfy gave me a way to be ambitious without burning out.</blockquote>
+            <p>The coaches keep the standard high, the plan realistic, and every next step clear.</p>
+            <footer><div><strong>21</strong><span>months training</span></div><div><strong>+54kg</strong><span>combined lifts</span></div><div><strong>3×</strong><span>sessions weekly</span></div></footer>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Body 27 — class tabs, inspired by D024 -->
@@ -384,29 +454,95 @@
       </div>
     </section>
 
-    <!-- Body 28 — journey process, inspired by D024 -->
-    <section class="body-section section--paper journey-process" id="journey" data-section="28" data-source="D024">
-      <div class="container content-wrap"><header class="section-head section-head--split"><div><span class="section-kicker">Your fitness journey</span><span class="section-index">28 / 36</span></div><h2>A path that stays clear when motivation gets noisy.</h2></header>
-        <div class="journey-process__line"><article><span>01</span><i class="fa-solid fa-clipboard-check"></i><h3>First session</h3><p>Assessment, goals, and a useful starting point.</p></article><article><span>02</span><i class="fa-solid fa-calendar-check"></i><h3>First block</h3><p>Four weeks of repeatable training and clean technique.</p></article><article><span>03</span><i class="fa-solid fa-chart-line"></i><h3>First review</h3><p>Measure what changed, then sharpen the next block.</p></article><article><span>04</span><i class="fa-solid fa-medal"></i><h3>Long game</h3><p>Capability that grows without taking over your life.</p></article></div>
+    <!-- Body 28 — guided training journey -->
+    <section class="body-section section--paper journey-process" id="journey" data-section="28" aria-labelledby="journeyTitle">
+      <div class="container content-wrap">
+        <div class="journey-stage">
+          <aside class="journey-stage__intro">
+            <div><span class="section-kicker">Your fitness journey</span><span class="section-index">28 / 36</span></div>
+            <strong>04</strong>
+            <h2 id="journeyTitle">One process.<br>Four clear checkpoints.</h2>
+            <p>You always know what is happening now, what success looks like, and what comes next.</p>
+            <a href="#contact">Start at checkpoint one <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </aside>
+          <ol class="journey-stage__steps">
+            <li><span>01 / DAY 01</span><h3>Set the baseline</h3><p>Movement, training history, schedule, and goals.</p><strong>Leave with a useful starting point.</strong></li>
+            <li><span>02 / WEEKS 01–04</span><h3>Build the rhythm</h3><p>Repeatable sessions, clean technique, manageable load.</p><strong>Consistency before complexity.</strong></li>
+            <li><span>03 / REVIEW 01</span><h3>Read the signal</h3><p>Measure what changed and where the plan needs pressure.</p><strong>Evidence shapes the next block.</strong></li>
+            <li><span>04 / THE LONG GAME</span><h3>Keep compounding</h3><p>Strength and capacity that grow without taking over your life.</p><strong>A system you can sustain.</strong></li>
+          </ol>
+        </div>
       </div>
     </section>
 
-    <!-- Body 29 — trainer spotlight, inspired by D024 -->
-    <section class="body-section section--lime trainer-spotlight" data-section="29" data-source="D024">
-      <div class="container content-wrap trainer-spotlight__grid"><div><span class="section-kicker">Professional trainer</span><span class="section-index">29 / 36</span><h2>Technique first. Intensity earned.</h2><p>Samira specializes in rebuilding strong movement after setbacks and turning it into confident performance.</p><div class="trainer-spotlight__tags"><span>Return to sport</span><span>Strength</span><span>Mobility</span></div><a class="pill pill--light" href="#contact">Book a consult</a></div><img src="assets/images/body/coach-floor.webp" alt="Strongfy performance coach Samira Cole"></div>
-    </section>
-
-    <!-- Body 30 — coaching choice, inspired by D024 -->
-    <section class="body-section section--ink coaching-choice" data-section="30" data-source="D024">
-      <div class="container content-wrap"><header class="section-head section-head--light section-head--split"><div><span class="section-kicker">How we can help</span><span class="section-index">30 / 36</span></div><h2>Choose the format. Keep the standard.</h2></header>
-        <div class="coaching-choice__grid"><article><img src="assets/images/body/personal-training.webp" alt="In-person coaching"><div><span>01</span><h3>In-person coaching</h3><p>Hands-on technique, real-time adjustment, focused accountability.</p><a href="#contact">Train in club <i class="fa-solid fa-arrow-right"></i></a></div></article><article><img src="assets/images/body/barbell-athlete.webp" alt="Online coaching"><div><span>02</span><h3>Online coaching</h3><p>A precise program, video review, and weekly coach feedback anywhere.</p><a href="#contact">Train anywhere <i class="fa-solid fa-arrow-right"></i></a></div></article></div>
+    <!-- Body 29 — trainer profile feature -->
+    <section class="body-section section--ink trainer-spotlight" data-section="29" aria-labelledby="trainerSpotlightTitle">
+      <div class="container content-wrap">
+        <div class="trainer-profile">
+          <figure class="trainer-profile__portrait">
+            <img src="assets/images/body/coach-floor.webp" alt="Strongfy performance coach Samira Cole">
+            <figcaption><strong>Samira Cole</strong><span>DPT · Performance coach</span></figcaption>
+          </figure>
+          <div class="trainer-profile__story">
+            <header><span class="section-kicker">Professional trainer</span><span class="section-index">29 / 36</span></header>
+            <h2 id="trainerSpotlightTitle">Technique first.<br><em>Intensity earned.</em></h2>
+            <blockquote>“My job is to make hard training feel clear—not reckless.”</blockquote>
+            <p>Samira specializes in rebuilding strong movement after setbacks, then turning that foundation into confident performance.</p>
+            <div class="trainer-profile__facts"><span><strong>07</strong> years coaching</span><span><strong>DPT</strong> return-to-sport</span><span><strong>3</strong> focus disciplines</span></div>
+            <div class="trainer-profile__actions"><div><span>Return to sport</span><span>Strength</span><span>Mobility</span></div><a href="#contact">Book with Samira <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Body 31 — power pillars, inspired by D027 -->
-    <section class="body-section section--ink power-pillars" data-section="31" data-source="D027">
-      <div class="container content-wrap"><header class="section-head section-head--light"><span class="section-kicker">PowerBlast method</span><span class="section-index">31 / 36</span><h2>Everything you need to train smarter, build strength, and perform better.</h2></header>
-        <div class="power-pillars__grid"><article><span>01</span><i class="fa-solid fa-bolt"></i><h3>Power</h3><p>Produce force quickly and control it completely.</p></article><article><span>02</span><i class="fa-solid fa-fire-flame-curved"></i><h3>Engine</h3><p>Repeat hard efforts without losing movement quality.</p></article><article><span>03</span><i class="fa-solid fa-crosshairs"></i><h3>Skill</h3><p>Make technique reliable when pressure rises.</p></article><article><span>04</span><i class="fa-solid fa-shield-heart"></i><h3>Recovery</h3><p>Protect the capacity you work so hard to build.</p></article></div>
+    <!-- Body 30 — coaching format switcher -->
+    <section class="body-section section--ink coaching-choice" data-section="30" aria-labelledby="coachingChoiceTitle">
+      <div class="container content-wrap">
+        <header class="coaching-choice__intro">
+          <div><span class="section-kicker">How we can help</span><span class="section-index">30 / 36</span></div>
+          <h2 id="coachingChoiceTitle">One standard.<br>Two ways to train.</h2>
+          <p>Choose the coaching environment that fits your week. Your plan, feedback, and progression stay equally precise.</p>
+        </header>
+        <div class="coaching-switcher">
+          <div class="coaching-switcher__tabs" role="tablist" aria-label="Coaching formats">
+            <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="coachingClub" data-coaching-tab="coachingClub"><span>01</span><strong>In club</strong><small>Hands-on coaching</small></button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="coachingRemote" data-coaching-tab="coachingRemote"><span>02</span><strong>Remote</strong><small>Coach in your pocket</small></button>
+            <p data-coaching-status aria-live="polite">In-club coaching selected.</p>
+          </div>
+          <div class="coaching-switcher__stage">
+            <article class="coaching-switcher__panel is-active" id="coachingClub" role="tabpanel">
+              <img src="assets/images/body/personal-training.webp" alt="In-person Strongfy coaching session">
+              <div><span>In-person coaching</span><h3>Feedback while the rep is happening.</h3><p>Real-time technique, load changes, and focused accountability in a room built for the work.</p><ul><li>Movement screen</li><li>Live technique cues</li><li>Monthly progress review</li></ul><a href="#contact">Train in club <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+            </article>
+            <article class="coaching-switcher__panel" id="coachingRemote" role="tabpanel" hidden>
+              <img src="assets/images/body/training-pushup.webp" alt="Athlete following Strongfy remote coaching">
+              <div><span>Online coaching</span><h3>Clear direction, wherever you train.</h3><p>A precise program, video review, and weekly coach feedback built around your equipment and schedule.</p><ul><li>Weekly program updates</li><li>Video technique review</li><li>Direct coach messaging</li></ul><a href="#contact">Train anywhere <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Body 31 — PowerBlast method console -->
+    <section class="body-section section--ink power-pillars" data-section="31" aria-labelledby="powerPillarsTitle">
+      <div class="container content-wrap">
+        <header class="power-pillars__intro">
+          <div><span class="section-kicker">PowerBlast method</span><span class="section-index">31 / 36</span></div>
+          <h2 id="powerPillarsTitle">Four capacities.<br>One complete athlete.</h2>
+          <p>Every session balances output with control, then earns the recovery needed to repeat it.</p>
+        </header>
+        <div class="method-console">
+          <figure class="method-console__visual">
+            <img src="assets/images/body/woman-resistance-band.webp" alt="Strongfy athlete training power and control">
+            <figcaption><span>45 min / coached format</span><strong>PowerBlast</strong><small>Move well under pressure.</small></figcaption>
+          </figure>
+          <div class="method-console__system">
+            <article><span>01 / OUTPUT</span><i class="fa-solid fa-bolt" aria-hidden="true"></i><div><h3>Power</h3><p>Produce force quickly. Control where it goes.</p></div><strong>25%</strong></article>
+            <article><span>02 / CAPACITY</span><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i><div><h3>Engine</h3><p>Repeat hard efforts without losing quality.</p></div><strong>25%</strong></article>
+            <article><span>03 / CONTROL</span><i class="fa-solid fa-crosshairs" aria-hidden="true"></i><div><h3>Skill</h3><p>Make technique reliable when pressure rises.</p></div><strong>25%</strong></article>
+            <article><span>04 / ADAPTATION</span><i class="fa-solid fa-shield-heart" aria-hidden="true"></i><div><h3>Recovery</h3><p>Protect the capacity you worked to build.</p></div><strong>25%</strong></article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -956,6 +1092,6 @@
 
   <script src="assets/vendor/jquery/jquery-4.0.0.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js?v=20260730-premium-sections-1"></script>
+  <script src="assets/js/main.js?v=20260730-premium-rebuild-2"></script>
 </body>
 </html>
