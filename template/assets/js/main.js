@@ -54,13 +54,6 @@
     });
   });
 
-  $(".story-card").on("click", function () {
-    const $button = $(this);
-    const $section = $button.closest(".member-stories");
-    $section.find(".story-status").text($button.data("story"));
-    $button.attr("aria-pressed", "true").siblings().attr("aria-pressed", "false");
-  });
-
   $("[data-class-filter]").on("click", function () {
     const $button = $(this);
     const $section = $button.closest(".class-tabs");
@@ -245,11 +238,6 @@
     figure.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activate(); }
     });
-  });
-
-  $(".story-card").on("click", function () {
-    const image = this.querySelector("img");
-    openModal([{ src: image.src, alt: image.alt, kicker: "Member story", title: $(this).find("strong").text(), copy: $(this).data("story") + " " + $(this).find("small").text() + "." }], 0, this);
   });
 
   $("[data-modal-direction]").on("click", function () {
