@@ -295,7 +295,7 @@
       ["assets/images/icons/trainer.png", "Personal coaching"],
       ["assets/images/icons/stopwatch.png", "Timed performance"]
     ];
-    const icons = document.querySelectorAll(".benefits-grid__items article > i, .amenities-index__grid article > i, .feature-manifesto__points article > i, .workout-categories__grid article > i, .power-pillars__grid article > i, .coaching-steps__list i, .journey-process__line i, .rf-54 .rf-service-row article > i, .rf-70 .rf-featured-classes article > i");
+    const icons = document.querySelectorAll(".benefits-grid__items article > i, .amenities-index__grid article > i, .feature-manifesto__points article > i, .workout-categories__grid article > i, .power-pillars__grid article > i, .coaching-steps__list i, .journey-process__line i, .rf-54 .rf-service-row article > i");
     icons.forEach(function (icon, index) {
       const item = sources[index % sources.length];
       const image = document.createElement("img");

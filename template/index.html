@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260729-sections96-1">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260730-fidelity-1">
 </head>
 <body>
   <a class="skip-link" href="#hero-title">Skip to main content</a>
@@ -440,15 +440,16 @@
     <!-- Body 38 — facility feature mosaic -->
     <section class="body-section rf-section rf-38" data-section="38" data-source="section-38">
       <div class="container rf-shell"><div class="rf-mosaic">
-        <article><i class="fa-solid fa-star-of-life"></i><p>Professional coaches, each with at least five years of experience.</p></article>
-        <article><i class="fa-solid fa-wifi"></i><p>Wi-Fi free</p></article>
-        <article class="rf-mosaic__image"><img src="assets/images/body/bright-power-zone.webp" alt="Strongfy studio interior"><strong>·T</strong></article>
-        <article><i class="fa-solid fa-cross"></i><p>On-site medical professional.</p></article>
-        <article><i class="fa-solid fa-stopwatch"></i><p>Fitness trackers and smart analysis.</p></article>
-        <article><strong>4</strong><p>sports zones</p></article>
-        <article><p>A bar serving wholesome drinks.</p></article>
-        <article><p>Multiple massage options.</p></article>
-        <article><strong>500M²</strong></article>
+        <article class="rf-mosaic__coach"><i class="fa-solid fa-star-of-life" aria-hidden="true"></i><p>Professional coaches, each with at least five years of experience.</p></article>
+        <article class="rf-mosaic__image"><img src="assets/images/body/bright-power-zone.webp" alt="Strongfy studio interior"><strong>.T</strong></article>
+        <article class="rf-mosaic__wifi"><i class="fa-solid fa-wifi" aria-hidden="true"></i><p>Wi-Fi free</p></article>
+        <article class="rf-mosaic__tanning"><p>Tanning bed</p></article>
+        <article class="rf-mosaic__medical"><i class="fa-solid fa-plus" aria-hidden="true"></i><p>On-site medical professional.</p></article>
+        <article class="rf-mosaic__trackers"><i class="fa-regular fa-clock" aria-hidden="true"></i><p>Fitness trackers and smart analysis.</p></article>
+        <article class="rf-mosaic__zones"><strong>4</strong><p>sports zones</p></article>
+        <article class="rf-mosaic__bar"><p>A bar serving wholesome drinks.</p></article>
+        <article class="rf-mosaic__massage"><p>Multiple massage options.</p></article>
+        <article class="rf-mosaic__area"><strong>500M²</strong></article>
       </div></div>
     </section>
 
@@ -469,21 +470,29 @@
 
     <!-- Body 42 — location cards -->
     <section class="body-section rf-section rf-42" data-section="42" data-source="section-42">
-      <div class="container rf-shell"><div class="rf-location-row"><article class="rf-location-row__intro"><h2>Location of our various <em>branches</em></h2><a href="#spaces"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><div><strong>+1200</strong><span>Join professional athletes</span></div></article><article class="rf-location-row__main"><img src="assets/images/body/training-floor.webp" alt="Strongfy flagship branch"><h3>Pleasant experience <small>with focused cardio training</small></h3><a href="#spaces">Join</a></article><article class="rf-location-row__side"><img src="assets/images/body/group-training.webp" alt="Strongfy equipment studio"><h3>Unlimited fitness in our gym</h3><p>Focused training with complete equipment.</p></article></div></div>
+      <div class="container rf-shell"><div class="rf-location-row">
+        <article class="rf-location-row__intro"><h2><em>Location</em> of our various branches</h2><a href="#spaces" aria-label="Explore locations"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><div><strong>+1200</strong><span>Join professional athletes</span><span class="rf-location-avatars"><img src="assets/images/body/trainer-blake-source.webp" alt="Strongfy athlete"><img src="assets/images/body/trainer-liam-source.webp" alt="Strongfy athlete"><img src="assets/images/body/trainer-logan-source.webp" alt="Strongfy athlete"></span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></div></article>
+        <article class="rf-location-row__main"><img src="assets/images/body/water-aerobics.webp" alt="Strongfy water aerobics branch"><h3>Pleasant experience <small>with water aerobics</small></h3><a href="#spaces">Join <i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
+        <article class="rf-location-row__side"><img src="assets/images/body/gym-machines.webp" alt="Strongfy equipment studio"><h3>Unlimited fitness in our gym</h3><p>Our fitness club provides varied facilities and sports equipment.</p></article>
+      </div></div>
     </section>
 
     <!-- Body 43 — compact membership cards -->
     <section class="body-section rf-section rf-43" data-section="43" data-source="section-43">
-      <div class="container rf-shell"><h2 class="rf-centered-title">Choose The Best Membership For You</h2><div class="rf-price-row"><article><h3>Basic / <em>$50</em><small> month</small></h3><b>★★★</b><ul><li>Get all courses</li><li>Private trainer</li><li>Free consultation</li><li>Free diet</li></ul><a href="#contact">Start</a></article><article class="is-featured"><h3>Professional / <em>$75</em><small> month</small></h3><b>★★★★</b><ul><li>Get all courses</li><li>Group classes</li><li>Private coach</li><li>Free soft drinks</li></ul><a href="#contact">Start</a></article><article><h3>VIP / <em>$95</em><small> month</small></h3><b>★★★★★</b><ul><li>Get all courses</li><li>Personal coaching</li><li>Progress tracking</li><li>Recovery access</li></ul><a href="#contact">Start</a></article></div></div>
+      <div class="container rf-shell"><p class="rf-price-kicker">Get Fit Today</p><h2 class="rf-centered-title">Choose The Best Membership For You</h2><div class="rf-price-row">
+        <article><h3>Basic / <em>$50</em><small> Month</small></h3><div class="rf-rating" aria-label="Three out of five stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><ul><li>Get All Courses</li><li>Group Classes</li><li>Free Consultation</li><li>Free Diet</li><li class="is-muted">Private Coach</li><li class="is-muted">Free Towel</li><li class="is-muted">Free Soft Drinks</li></ul><a href="#contact">Start <i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
+        <article class="is-featured"><h3>Professional / <em>$75</em><small> Month</small></h3><div class="rf-rating" aria-label="Four out of five stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><ul><li>Get All Courses</li><li>Group Classes</li><li>Free Consultation</li><li>Free Diet</li><li>Private Coach</li><li class="is-muted">Free Towel</li><li class="is-muted">Free Soft Drinks</li></ul><a href="#contact">Start <i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
+        <article><h3>VIP / <em>$95</em><small> Month</small></h3><div class="rf-rating" aria-label="Five out of five stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><ul><li>Get All Courses</li><li>Group Classes</li><li>Free Consultation</li><li>Free Diet</li><li>Private Coach</li><li>Free Towel</li><li>Free Soft Drinks</li></ul><a href="#contact">Start <i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
+      </div></div>
     </section>
 
     <!-- Body 44 — phenomenon landing composition -->
     <section class="body-section rf-section rf-phenomenon" data-section="44" data-source="section-44">
       <div class="container rf-shell"><div class="rf-phenomenon__top"><span>Home</span><span>Store</span><span>Training</span><a href="#contact">Contact</a></div><div class="rf-phenomenon__stage">
-        <div class="rf-phenomenon__intro"><h2>Keep your body <em>in shape</em> and be <em>healthy</em> at Strongfy</h2><p>Take care of your fitness remotely and become the best version of you.</p><a class="rf-pill rf-pill--acid" href="#contact">Try for free</a></div>
-        <div class="rf-score"><article><small>Experienced</small><strong>+70</strong><span>professional coaches</span></article><article><small>Happy</small><strong>+500</strong><span>satisfied athletes</span></article><article><small>Perfect</small><strong>+100</strong><span>sports programs</span></article></div>
+        <div class="rf-phenomenon__intro"><h2>Keep your body <em>in shape</em><br>and be <em>healthy</em> at<br><em>Phenomenon</em></h2><p>Take care of your fitness remotely and become the best version of you.</p><div class="rf-phenomenon__actions"><a class="rf-pill rf-pill--acid" href="#contact">Try for free</a><a href="#services">All Programs</a></div></div>
+        <div class="rf-score"><article><small>Experienced</small><strong>+70</strong><span>Professional coach</span></article><article><small>Happy</small><strong>+500</strong><span>Satisfied athlete</span></article><article><small>Perfect</small><strong>+100</strong><span>Sports and food program</span></article></div>
         <article class="rf-phenomenon__hero"><img src="assets/images/body/training-pushup.webp" alt="Strongfy coaching session"><h3>Stay Fit With Our <em>Best Coach</em></h3><a href="#trainer-roster"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
-        <article class="rf-phenomenon__detail"><div><span>Details</span><a href="#contact">Start</a><p>Experience focused movement in your own rhythm.</p></div><img src="assets/images/body/seated-athlete.webp" alt="Athlete completing mobility work"></article>
+        <article class="rf-phenomenon__detail"><div><span>Details <i class="fa-solid fa-arrow-up-right-from-square"></i></span><a href="#contact">Start <i class="fa-solid fa-arrow-up-right-from-square"></i></a><p>Experience a major improvement in your consistency and focus with Pilates.</p></div><img src="assets/images/body/woman-resistance-band.webp" alt="Athlete completing Pilates work"></article>
       </div></div>
     </section>
 
@@ -570,12 +579,21 @@
 
     <!-- Body 61 — flexible pricing -->
     <section class="body-section rf-section rf-61" data-section="61" data-source="section-61">
-      <div class="container rf-shell"><span class="rf-dot-kicker">Meet Your Coaches</span><h2 class="rf-plan-title">Flexible Options for<br>Beginners, Regulars,<br>and Hardcore Athletes</h2><div class="rf-billing"><button class="is-active" type="button">Monthly</button><button type="button">Annually</button></div><div class="rf-price-row rf-price-row--outline"><article><h3>Basic</h3><strong>$15<small>/month</small></strong><ul><li>3 group classes/week</li><li>Basic gym access</li><li>Locker use</li></ul><a href="#contact">Join Now</a></article><article class="is-featured"><h3>Pro</h3><strong>$30<small>/month</small></strong><ul><li>Unlimited group classes</li><li>Progress tracking</li><li>Training sessions</li></ul><a href="#contact">Get Started</a></article><article><h3>Elite</h3><strong>$55<small>/month</small></strong><ul><li>Personalized plan</li><li>Weekly coaching</li><li>VIP booking</li></ul><a href="#contact">Go Elite Now</a></article></div></div>
+      <div class="container rf-shell"><span class="rf-dot-kicker">Meet Your Coaches</span><h2 class="rf-plan-title">Flexible Options for<br>Beginners, Regulars,<br>and Hardcore Athletes</h2><div class="rf-billing"><button class="is-active" type="button">Monthly</button><button type="button">Annually</button></div><div class="rf-price-row rf-price-row--outline">
+        <article><i class="fa-solid fa-earth-americas" aria-hidden="true"></i><h3>Basic</h3><p>For beginners taking their first steps into fitness.</p><strong>$15<small>/month</small></strong><h4>Features</h4><ul><li>3 Group Classes/Week</li><li>Basic Gym Access</li><li>Free Intro Session</li><li>Locker Use</li></ul><a href="#contact">Join Now</a></article>
+        <article class="is-featured"><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>Pro</h3><p>For consistent trainers building momentum.</p><strong>$30<small>/month</small></strong><h4>Features</h4><ul><li>All Basic Features</li><li>Unlimited Group Classes</li><li>Progress &amp; Body Tracking</li><li>2 Personal Training Sessions/Month</li></ul><a href="#contact">Get Started</a></article>
+        <article><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i><h3>Elite</h3><p>For goal-driven athletes who want full support.</p><strong>$55<small>/month</small></strong><h4>Features</h4><ul><li>All Pro Features</li><li>Personalized Nutrition Plan</li><li>Weekly Personal Coaching</li><li>VIP Booking &amp; Priority Support</li></ul><a href="#contact">Go Elite Now</a></article>
+      </div></div>
     </section>
 
     <!-- Body 62 — transformation testimonial -->
     <section class="body-section rf-section rf-62" data-section="62" data-source="section-62">
-      <div class="container rf-shell"><span class="rf-dot-kicker">What Our Members Say</span><h2 class="rf-plan-title">Real Stories. Real People.<br>Real Transformations.</h2><div class="rf-transform"><img src="assets/images/body/athlete-source-clean.webp" alt="Member David R"><blockquote><span>David R.<small>Group Training Enthusiast</small></span>“After years of struggling with consistency, this place changed everything. I feel stronger, healthier, and more confident.”</blockquote><div><img src="assets/images/body/athlete-curl.webp" alt="Strongfy member"><img src="assets/images/body/barbell-athlete.webp" alt="Strongfy member"></div></div></div>
+      <div class="container rf-shell"><span class="rf-dot-kicker">What Our Members Say</span><h2 class="rf-plan-title">Real Stories. Real People.<br>Real Transformations.</h2><div class="rf-transform">
+        <img src="assets/images/body/athlete-source-clean.webp" alt="Member David R">
+        <div class="rf-transform-controls"><button type="button" aria-label="Previous member"><i class="fa-solid fa-arrow-left"></i></button><button type="button" aria-label="Next member"><i class="fa-solid fa-arrow-right"></i></button></div>
+        <blockquote><span><img src="assets/images/body/trainer-blake-source.webp" alt="David R.">David R.<small>Group Training Enthusiast</small></span>“After years of struggling with consistency, this place changed everything. I feel stronger, healthier, and more confident in my daily life.”</blockquote>
+        <div class="rf-transform-members"><figure><img src="assets/images/body/trainer-liam-source.webp" alt="Member Nathan R."><figcaption>Nathan R.</figcaption></figure><figure><img src="assets/images/body/trainer-logan-source.webp" alt="Member Chris A."><figcaption>Chris A.</figcaption></figure></div>
+      </div></div>
     </section>
 
     <!-- Body 67 — service pillars -->
@@ -605,7 +623,11 @@
 
     <!-- Body 72 — stacked program showcase -->
     <section class="body-section rf-section rf-72 rf-light" data-section="72" data-source="section-72">
-      <div class="container rf-shell rf-stack-showcase"><header><span>TRAIN WITH PURPOSE</span><h2>More Than a Gym—A Space<br>Built for Progress</h2></header><article><img src="assets/images/body/strength-lift.webp" alt="Functional training"><div><h3>Functional Training</h3><p>Strength, mobility, and power for real-world movement.</p><a href="#schedule">Discover all <i class="fa-solid fa-arrow-right"></i></a></div></article><article><img src="assets/images/body/training-floor.webp" alt="Cardio area"><div><h3>Cardio Area</h3><p>Build endurance with focused, measurable training.</p><a href="#schedule">Discover all <i class="fa-solid fa-arrow-right"></i></a></div></article><article><img src="assets/images/body/group-training.webp" alt="Fitness and Pilates"><div><h3>Fitness &amp; Pilates</h3><p>Move with control, confidence, and greater range.</p><a href="#schedule">Discover all <i class="fa-solid fa-arrow-right"></i></a></div></article></div>
+      <div class="container rf-shell rf-stack-showcase"><header><span>DESIGNED FOR PERFORMANCE</span><h2>More Than a Gym—A Space<br>Built for Progress</h2></header>
+        <article><img src="assets/images/body/athlete-curl.webp" alt="Functional training"><div><span>01</span><h3>Functional Training</h3><p>A specialized space for functional training, mobility work, stretching, and recovery.</p><a href="#schedule">Explore more <i class="fa-solid fa-arrow-right"></i></a></div></article>
+        <article><img src="assets/images/body/smiling-runner.webp" alt="Cardio area"><div><span>02</span><h3>Cardio Area</h3><p>A modern cardio area equipped with treadmills, bikes, rowers, and ellipticals.</p><a href="#schedule">Explore more <i class="fa-solid fa-arrow-right"></i></a></div></article>
+        <article><img src="assets/images/body/woman-resistance-band.webp" alt="Fitness and Pilates"><div><span>03</span><h3>Fitness &amp; Pilates</h3><p>A fully equipped strength and fitness area featuring free weights, machines, and functional equipment.</p><a href="#schedule">Explore more <i class="fa-solid fa-arrow-right"></i></a></div></article>
+      </div>
     </section>
 
     <!-- Body 73 — weekly training timeline -->
