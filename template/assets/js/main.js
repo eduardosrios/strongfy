@@ -517,23 +517,6 @@
         $(this).find("small").text(annual ? "/year" : "/month");
       });
     });
-    const zoneSlides = [
-      { hero:"assets/images/body/bright-power-zone.webp", side:"assets/images/body/water-aerobics.webp", heroText:"Space for working with free weights", sideText:"Space for focused cardio work" },
-      { hero:"assets/images/body/personal-training.webp", side:"assets/images/body/gym-machines.webp", heroText:"Coaching space for precise strength work", sideText:"Equipment for structured conditioning" },
-      { hero:"assets/images/body/training-floor.webp", side:"assets/images/body/dumbbell-rack.webp", heroText:"A focused floor built for progress", sideText:"Free weights for measurable strength" }
-    ];
-    let zoneSlideIndex = 0;
-    $(document).on("click", ".rf-37 .rf-arrow-row button", function () {
-      zoneSlideIndex = (zoneSlideIndex + ($(this).index() === 0 ? -1 : 1) + zoneSlides.length) % zoneSlides.length;
-      const slide = zoneSlides[zoneSlideIndex];
-      const $section = $(this).closest(".rf-37");
-      $section.find(".rf-image-card--hero img").attr("src", slide.hero);
-      $section.find(".rf-image-card--hero p").text(slide.heroText);
-      $section.find(".rf-sport__side .rf-image-card img").attr("src", slide.side);
-      $section.find(".rf-sport__side .rf-image-card p").text(slide.sideText);
-      $("#siteInteractionStatus").text("Training zone " + (zoneSlideIndex + 1) + " of " + zoneSlides.length + ".");
-    });
-
     const storyVideos = ["assets/videos/personal-coaching.mp4", "assets/videos/treadmill-cardio.mp4"];
     $(document).on("click", ".rf-47 .rf-video-card", function () {
       const index = $(this).index(".rf-47 .rf-video-card");
@@ -541,7 +524,7 @@
       openModal([{ video:storyVideos[index % storyVideos.length], src:image.src, alt:image.alt, kicker:"Member story", title:this.querySelector(".rf-video-meta strong")?.textContent.trim() || "Strongfy member", copy:"A real Strongfy training story." }], 0, this);
     });
 
-    const referenceMedia = [...document.querySelectorAll(".rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-equipment-visual img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
+    const referenceMedia = [...document.querySelectorAll(".rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-equipment-visual img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
     const referenceItems = referenceMedia.map(function (image) {
       image.tabIndex = 0;
       image.setAttribute("role", "button");
