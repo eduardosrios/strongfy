@@ -504,11 +504,6 @@
       $section.find(".rf-program__visual b").text($button.text().trim() + " program");
     });
 
-    $(document).on("click", ".rf-58 [data-rf-service]", function () {
-      $(this).addClass("is-active").attr("aria-pressed", "true")
-        .siblings("[data-rf-service]").removeClass("is-active").attr("aria-pressed", "false");
-    });
-
 
 
     $(document).on("click", ".rf-61 .rf-billing button", function () {
@@ -543,7 +538,7 @@
     $(document).on("click", ".rf-47 .rf-video-card", function () {
       const index = $(this).index(".rf-47 .rf-video-card");
       const image = this.querySelector("img");
-      openModal([{ video:storyVideos[index % storyVideos.length], src:image.src, alt:image.alt, kicker:"Member story", title:this.querySelector("span")?.childNodes[0]?.textContent.trim() || "Strongfy member", copy:"A real Strongfy training story." }], 0, this);
+      openModal([{ video:storyVideos[index % storyVideos.length], src:image.src, alt:image.alt, kicker:"Member story", title:this.querySelector(".rf-video-meta strong")?.textContent.trim() || "Strongfy member", copy:"A real Strongfy training story." }], 0, this);
     });
 
     const referenceMedia = [...document.querySelectorAll(".rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-equipment-visual img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
