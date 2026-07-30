@@ -441,7 +441,8 @@
     if (hero && !hero.querySelector(".reference-link")) hero.append(link("C", base + "hero/cutted-section/hero-cropped.webp", 80, "Open cropped hero reference"), link("O", base + "hero/original/hero-original.jpg", 10, "Open original hero reference"));
     document.querySelectorAll(".body-section").forEach(function (section) {
       if (section.querySelector(".reference-link")) return;
-      const n = Number(String(section.dataset.section).split("-")[0]);
+      const sectionNumber = String(section.dataset.section);
+      const n = Number.parseInt(sectionNumber, 10);
       if (n >= 73 && n <= 96) {
         const part = n - 72;
         const suffix = n === 76 || n === 83 ? "-a" : "";
@@ -450,7 +451,7 @@
         section.append(
           link("C", folder + "cutted-section/section-" + n + "-reference" + suffix + ".jpg", 80, "Open cropped reference for section " + n),
           link("O", finalBase + "parte " + part + "/" + suppliedFile, 10, "Open original supplied reference for section " + n),
-          sectionLink(section, n),
+          sectionLink(section, sectionNumber),
           multiCopyButton()
         );
         return;
@@ -459,7 +460,7 @@
       const folder = n > 36 ? base + "body-content/0 New Sections/section " + n + "/" : base + "body-content/section " + n + "/";
       const file = "section-" + String(sourceNumber).padStart(2,"0");
       const croppedFile = n === 72 ? "fYp7zuaT7PTQ.jpg" : file + "-cropped.webp";
-      section.append(link("C", folder + "cutted-section/" + croppedFile, 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[sourceNumber], 10, "Open original reference for section " + n), sectionLink(section, n), multiCopyButton());
+      section.append(link("C", folder + "cutted-section/" + croppedFile, 80, "Open cropped reference for section " + n), link("O", folder + "original/" + file + "-original." + originalExtensions[sourceNumber], 10, "Open original reference for section " + n), sectionLink(section, sectionNumber), multiCopyButton());
     });
     const footer = document.querySelector(".site-footer");
     if (footer && !footer.querySelector(".reference-link")) footer.append(link("C", base + "footer/cutted-section/footer-cropped.webp", 80, "Open cropped footer reference"), link("O", base + "footer/original/footer-original.png", 10, "Open original footer reference"));
@@ -1007,9 +1008,23 @@
     });
 
   }
-  replaceComplexConceptIcons();
-  addBootstrapStructure();
+  function setupInfiniteGalleryMarquee() {
+    const track = document.querySelector(".gallery-marquee__track");
+    if (!track || track.dataset.loopReady === "true") return;
+    [...track.children].forEach(function (figure) {
+      const clone = figure.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      clone.removeAttribute("role");
+      clone.removeAttribute("tabindex");
+      clone.removeAttribute("aria-label");
+      clone.querySelectorAll("img").forEach(function (image) { image.alt = ""; });
+      track.append(clone);
+    });
+    track.dataset.loopReady = "true";
+  }
   bindNewSectionInteractions();
+  setupInfiniteGalleryMarquee();
+  addReferenceLinks();
   buildStickyTopbar();
   bindReferenceSectionInteractions();
   bindHeroFeatureCardToggles();
