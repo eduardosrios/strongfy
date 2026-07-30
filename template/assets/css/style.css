@@ -6190,3 +6190,22 @@ html body main.page-shell .rf-43 .rf-rating .is-muted{color:#f3f3ee!important;op
 }@media(max-width:1199.98px){html body main.page-shell .rf-47 .rf-member-viewport{scrollbar-width:none}html body main.page-shell .rf-47 .rf-member-viewport::-webkit-scrollbar{display:none}}
 @media(max-width:767.98px){html body main.page-shell .nf-85 .nf-class-library header h2{max-width:none;font-size:38px!important}}
 @media(max-width:379.98px){html body main.page-shell .nf-85 .nf-class-library header h2{max-width:none;font-size:31px!important}}
+/* Section breathing-room guardrails: preserve intentional full-bleed layouts. */
+@media (min-width:1200px){
+  html body .hero--primary{
+    height:clamp(748px,calc(100vh + 20px),808px);
+    min-height:748px;
+  }
+  html body main.page-shell .rf-38{
+    height:710px;
+    min-height:710px;
+  }
+  html body main.page-shell .rf-38>.rf-shell{
+    min-height:710px;
+    padding:54px 10px!important;
+  }
+}
+html body main.page-shell :is(.nf-74,.nf-75)>.nf-shell{
+  padding-top:48px;
+  padding-bottom:48px;
+}
