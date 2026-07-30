@@ -686,18 +686,19 @@
       </div>
     </section>
 
-    <!-- Body 75 — discipline navigation -->
+    <!-- Body 75 — discipline logo rail -->
     <section class="body-section rf-section nf-section nf-75" data-section="75" data-source="section-75">
       <div class="container nf-shell">
         <div class="nf-discipline" role="tablist" aria-label="Training disciplines">
-          <button class="is-active" type="button" role="tab" aria-selected="true" data-discipline="Strength"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i><span>Strength</span></button>
+          <button type="button" role="tab" aria-selected="false" data-discipline="Strength"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i><span>Strength</span></button>
           <button type="button" role="tab" aria-selected="false" data-discipline="Cardio"><i class="fa-solid fa-person-running" aria-hidden="true"></i><span>Cardio</span></button>
           <button type="button" role="tab" aria-selected="false" data-discipline="Mobility"><i class="fa-solid fa-person-walking" aria-hidden="true"></i><span>Mobility</span></button>
-          <button type="button" role="tab" aria-selected="false" data-discipline="Cross Training"><i class="fa-solid fa-bolt" aria-hidden="true"></i><span>Cross Training</span></button>
+          <button class="is-active" type="button" role="tab" aria-selected="true" data-discipline="Cross Training"><i class="fa-solid fa-bolt" aria-hidden="true"></i><span>Cross Training</span></button>
           <button type="button" role="tab" aria-selected="false" data-discipline="Recovery"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i><span>Recovery</span></button>
           <button type="button" role="tab" aria-selected="false" data-discipline="Coaching"><i class="fa-solid fa-user-group" aria-hidden="true"></i><span>Coaching</span></button>
+          <button type="button" role="tab" aria-selected="false" data-discipline="Performance"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><span>Performance</span></button>
         </div>
-        <p class="nf-discipline__status" aria-live="polite">Strength programming selected.</p>
+        <p class="nf-discipline__status" aria-live="polite">Cross Training programming selected.</p>
       </div>
     </section>
 
@@ -705,21 +706,26 @@
     <section class="body-section rf-section nf-section nf-76 nf-light" data-section="76" data-source="section-76">
       <div class="container nf-shell">
         <div class="nf-commerce-block" data-commerce-rail>
-          <header><div><p class="nf-kicker">Find your setup</p><h2>Categories</h2></div><div class="nf-arrow-controls"><button type="button" data-rail-direction="prev" aria-label="Previous categories"><i class="fa-solid fa-arrow-left"></i></button><button type="button" data-rail-direction="next" aria-label="Next categories"><i class="fa-solid fa-arrow-right"></i></button></div></header>
-          <div class="row nf-category-rail" data-rail-track>
-            <article class="col-6 col-lg-3"><img src="assets/images/icons/stopwatch.png" alt="Cardio equipment"><h3>Cardio</h3></article>
-            <article class="col-6 col-lg-3"><img src="assets/images/icons/trainer.png" alt="Cross-training equipment"><h3>Cross Training</h3></article>
-            <article class="col-6 col-lg-3"><img src="assets/images/icons/kettlebell.png" alt="Free weights"><h3>Free Weights</h3></article>
-            <article class="col-6 col-lg-3"><img src="assets/images/icons/strength-kit.png" alt="Strength equipment"><h3>Strength</h3></article>
+          <header><h2>Categories</h2><div class="nf-arrow-controls"><button type="button" data-rail-direction="prev" aria-label="Previous categories"><i class="fa-solid fa-arrow-left"></i></button><button type="button" data-rail-direction="next" aria-label="Next categories"><i class="fa-solid fa-arrow-right"></i></button></div></header>
+          <div class="nf-category-rail">
+            <div class="nf-equipment-visual"><img src="assets/images/body/equipment-categories-lineup.png" alt="Treadmill, cross trainer, and colorful dumbbell equipment lineup"></div>
+            <div class="nf-category-labels" data-rail-track>
+              <article><h3>Treadmills</h3></article>
+              <article><h3>Cross Trainers</h3></article>
+              <article><h3>Dumbbells</h3></article>
+            </div>
           </div>
         </div>
         <div class="nf-commerce-block nf-commerce-block--products" data-commerce-rail>
-          <header><div><p class="nf-kicker">Train better</p><h2>Best Products</h2></div><div class="nf-arrow-controls"><button type="button" data-rail-direction="prev" aria-label="Previous products"><i class="fa-solid fa-arrow-left"></i></button><button type="button" data-rail-direction="next" aria-label="Next products"><i class="fa-solid fa-arrow-right"></i></button></div></header>
-          <div class="row nf-product-rail" data-rail-track>
-            <article class="col-6 col-lg-3"><img src="assets/images/body/gym-machines.webp" alt="Cable training station"><h3>Cable Station</h3><p>$1,399</p><button type="button" aria-label="Add Cable Station to favorites"><i class="fa-regular fa-heart"></i></button></article>
-            <article class="col-6 col-lg-3"><img src="assets/images/body/dumbbell-rack.webp" alt="Dumbbell collection"><h3>Hex Dumbbells</h3><p>$189</p><button type="button" aria-label="Add Hex Dumbbells to favorites"><i class="fa-regular fa-heart"></i></button></article>
-            <article class="col-6 col-lg-3"><img src="assets/images/body/seated-athlete.webp" alt="Adjustable training bench"><h3>Training Bench</h3><p>$459</p><button type="button" aria-label="Add Training Bench to favorites"><i class="fa-regular fa-heart"></i></button></article>
-            <article class="col-6 col-lg-3"><img src="assets/images/body/strength-lift.webp" alt="Performance barbell"><h3>Power Bar</h3><p>$329</p><button type="button" aria-label="Add Power Bar to favorites"><i class="fa-regular fa-heart"></i></button></article>
+          <header><h2>Best Products</h2><div class="nf-arrow-controls"><button type="button" data-rail-direction="prev" aria-label="Previous products"><i class="fa-solid fa-arrow-left"></i></button><button type="button" data-rail-direction="next" aria-label="Next products"><i class="fa-solid fa-arrow-right"></i></button></div></header>
+          <div class="nf-product-rail">
+            <div class="nf-equipment-visual"><img src="assets/images/body/equipment-products-lineup.png" alt="Cable tower, multi gym, indoor cycle, and folding bench lineup"></div>
+            <div class="nf-product-labels" data-rail-track>
+              <article><h3>Power Cable Tower</h3><p>$1,299</p><button type="button" aria-label="Save Power Cable Tower"><i class="fa-regular fa-heart"></i></button></article>
+              <article><h3>Strongfy Multi Gym</h3><p>$1,595</p><button type="button" aria-label="Save Strongfy Multi Gym"><i class="fa-regular fa-heart"></i></button></article>
+              <article><h3>Studio Indoor Cycle</h3><p>$229</p><button type="button" aria-label="Save Studio Indoor Cycle"><i class="fa-regular fa-heart"></i></button></article>
+              <article><h3>Folding Utility Bench</h3><p>$229</p><button type="button" aria-label="Save Folding Utility Bench"><i class="fa-regular fa-heart"></i></button></article>
+            </div>
           </div>
         </div>
       </div>
@@ -738,49 +744,55 @@
       </div>
     </section>
 
-    <!-- Body 78 — training service mosaic -->
+    <!-- Body 78 — alternating training service mosaic -->
     <section class="body-section rf-section nf-section nf-78" data-section="78" data-source="section-78">
       <div class="container-fluid p-0">
-        <div class="row g-0 nf-service-mosaic">
-          <article class="col-12 col-md-6 col-xl-4 nf-service-mosaic__image"><img src="assets/images/body/boxing-training.webp" alt="Boxing conditioning session"></article>
-          <article class="col-12 col-md-6 col-xl-4 nf-service-mosaic__copy"><p class="nf-kicker">Focused coaching</p><h2>Private Training</h2><p>One coach, one plan, and every rep built around your goals.</p><a href="#contact">Book a session</a></article>
-          <article class="col-12 col-md-6 col-xl-4 nf-service-mosaic__image"><img src="assets/images/body/gym-machines.webp" alt="Strongfy gym floor"></article>
-          <article class="col-12 col-md-6 col-xl-4 nf-service-mosaic__copy"><p class="nf-kicker">Work together</p><h2>Team Sessions</h2><p>High-energy small groups with coaching that keeps form sharp.</p><a href="#schedule">View classes</a></article>
-          <article class="col-12 col-md-6 col-xl-4 nf-service-mosaic__image"><img src="assets/images/body/runner-stretch.webp" alt="Mobility recovery session"></article>
-          <article class="col-12 col-md-6 col-xl-4 nf-service-mosaic__copy"><p class="nf-kicker">Move better</p><h2>Recovery Lab</h2><p>Mobility, reset, and guided recovery for sustainable performance.</p><a href="#services">Explore recovery</a></article>
+        <div class="nf-service-mosaic">
+          <article class="nf-service-mosaic__image"><img src="assets/images/body/strength-lift.webp" alt="Athlete preparing for weight lifting"></article>
+          <article class="nf-service-mosaic__copy"><h2>Weight Lifting</h2><p>Build precise, repeatable strength through coached compound movement.</p><a href="#schedule">View class</a></article>
+          <article class="nf-service-mosaic__image"><img src="assets/images/body/training-floor.webp" alt="Strongfy training floor"></article>
+          <article class="nf-service-mosaic__copy"><h2>Cross Training</h2><p>Train power, conditioning, and movement skill in one focused session.</p><a href="#schedule">View class</a></article>
+          <article class="nf-service-mosaic__copy"><h2>Mobility</h2><p>Restore useful range, control, and confidence through every joint.</p><a href="#schedule">View class</a></article>
+          <article class="nf-service-mosaic__image"><img src="assets/images/body/woman-resistance-band.webp" alt="Mobility training session"></article>
+          <article class="nf-service-mosaic__copy"><h2>Recovery</h2><p>Reset with guided movement that prepares you for the next session.</p><a href="#services">View class</a></article>
+          <article class="nf-service-mosaic__image"><img src="assets/images/body/runner-stretch.webp" alt="Athlete completing a recovery session"></article>
         </div>
       </div>
     </section>
     <!-- Body 79 — training design process -->
     <section class="body-section rf-section nf-section nf-79" data-section="79" data-source="section-79">
       <div class="container nf-shell">
-        <div class="row align-items-start nf-process-head"><div class="col-12 col-lg-5"><p class="nf-kicker">About the process</p><h2>Progress Is Designed,<br>Not Guessed</h2></div><div class="col-12 col-lg-5 offset-lg-2"><h3>Training Process</h3><p>Every Strongfy plan moves from assessment to measurable progression. Each step earns the next.</p></div></div>
+        <div class="row align-items-start nf-process-head"><div class="col-12 col-lg-5"><h2>About the Program</h2><p>Strongfy creates clear, convenient training plans that build lasting strength, useful movement, and confidence.</p></div><div class="col-12 col-lg-5 offset-lg-2"><h3>Training Process</h3><p>Assessment, program design, coached execution, and measurable review.</p></div></div>
         <ol class="nf-process-path" aria-label="Strongfy coaching process">
-          <li><button type="button" data-process-step="1"><span>01</span>Discover</button></li>
-          <li><button type="button" data-process-step="2"><span>02</span>Assess</button></li>
-          <li><button type="button" data-process-step="3"><span>03</span>Program</button></li>
-          <li><button type="button" data-process-step="4"><span>04</span>Coach</button></li>
-          <li><button type="button" data-process-step="5"><span>05</span>Progress</button></li>
+          <li><button type="button" data-process-step="1"><span>01</span>Goals</button></li>
+          <li><button type="button" data-process-step="2"><span>02</span>Movement Screen</button></li>
+          <li><button type="button" data-process-step="3"><span>03</span>Baseline</button></li>
+          <li><button type="button" data-process-step="4"><span>04</span>Program Design</button></li>
+          <li><button type="button" data-process-step="5"><span>05</span>Technique</button></li>
+          <li><button type="button" data-process-step="6"><span>06</span>Progressive Load</button></li>
+          <li><button type="button" data-process-step="7"><span>07</span>Recovery</button></li>
+          <li><button type="button" data-process-step="8"><span>08</span>Review</button></li>
+          <li><button type="button" data-process-step="9"><span>09</span>Results</button></li>
         </ol>
-        <p class="nf-process-note" data-process-note>We start with your goals, movement history, and real schedule.</p>
+        <p class="nf-process-note" data-process-note>We begin with your goals, movement history, and real weekly schedule.</p>
       </div>
     </section>
 
     <!-- Body 80 — split fitness manifesto -->
     <section class="body-section rf-section nf-section nf-80" data-section="80" data-source="section-80">
       <div class="container-fluid nf-manifesto">
-        <h2><b class="nf-manifesto-line"><em>SEE YOURSELF</em><img src="assets/images/body/athlete-curl.webp" alt="Athlete building strength"><em>FROM</em></b><b class="nf-manifesto-line"><em>ANOTHER</em><img src="assets/images/body/boxing-training.webp" alt="Boxer training with focus"><em>ANGLE</em><img src="assets/images/body/runner-stretch.webp" alt="Athlete recovering after training"></b></h2>
+        <h2><b class="nf-manifesto-line"><em>OPEN</em><img src="assets/images/body/athlete-curl.webp" alt="Athlete building strength"><em>YOURSELF</em><img src="assets/images/body/boxing-training.webp" alt="Boxer training with focus"></b><b class="nf-manifesto-line"><em>FROM ANOTHER</em><img src="assets/images/body/runner-stretch.webp" alt="Athlete recovering after training"><em>ANGLE</em></b></h2>
       </div>
     </section>
 
     <!-- Body 81 — Strongfy service pillars -->
     <section class="body-section rf-section nf-section nf-81" data-section="81" data-source="section-81">
       <div class="container nf-shell">
-        <header class="nf-centered-head"><p class="nf-kicker">What is in Strongfy?</p><h2>Everything Your Progress Needs</h2></header>
+        <header class="nf-centered-head"><h2>What Is in Strongfy?</h2></header>
         <div class="row nf-pillar-icons">
-          <article class="col-12 col-md-4"><img src="assets/images/icons/kettlebell.png" alt="Strength icon"><h3>Strength</h3><p>Progressive resistance work for capable, resilient movement.</p></article>
-          <article class="col-12 col-md-4"><img src="assets/images/icons/trainer.png" alt="Coaching icon"><h3>Coaching</h3><p>Clear expert guidance and accountability at every stage.</p></article>
-          <article class="col-12 col-md-4"><img src="assets/images/icons/stopwatch.png" alt="Conditioning icon"><h3>Conditioning</h3><p>Purposeful cardio that supports health and performance.</p></article>
+          <article class="col-12 col-md-4"><img src="assets/images/icons/kettlebell.png" alt="Fitness icon"><h3>Fitness</h3></article>
+          <article class="col-12 col-md-4"><img src="assets/images/icons/trainer.png" alt="Mobility icon"><h3>Mobility</h3></article>
+          <article class="col-12 col-md-4"><img src="assets/images/icons/stopwatch.png" alt="Recovery icon"><h3>Recovery</h3></article>
         </div>
       </div>
     </section>
@@ -810,8 +822,8 @@
     <section class="body-section rf-section nf-section nf-84" data-section="84" data-source="section-84">
       <div class="container nf-shell">
         <div class="row nf-transformation">
-          <div class="col-12 col-lg-5 nf-transformation__copy"><p class="nf-kicker">Your transformation</p><h2>Focus. Muscle.<br>Discipline.</h2><p>Structured coaching transforms more than your training. Build a stronger body, sharper habits, and repeatable confidence.</p><a href="#contact">Meet your coach</a><img src="assets/images/body/coach-floor.webp" alt="Coach guiding a floor session"></div>
-          <div class="col-12 col-lg-7 nf-transformation__visual"><img src="assets/images/body/personal-training.webp" alt="Strongfy personal trainer"><div><img src="assets/images/body/athlete-curl.webp" alt="Member strength training"><p>Personal plans.<br>Visible progress.<br>Zero guesswork.</p></div></div>
+          <div class="col-12 col-lg-5 nf-transformation__copy"><p class="nf-kicker">About us</p><h2>Strength. Power. Transformation.</h2><p>Focus, results, discipline, consistency, endurance, performance.</p><a href="#contact">Get started</a><img src="assets/images/body/coach-floor.webp" alt="Coaches guiding a floor session"></div>
+          <div class="col-12 col-lg-7 nf-transformation__visual"><img src="assets/images/body/personal-training.webp" alt="Strongfy personal trainer"><div><img src="assets/images/body/athlete-curl.webp" alt="Member strength training"><p>Work with personal training programs for strength, endurance, and confidence.</p></div></div>
         </div>
       </div>
     </section>
@@ -819,11 +831,11 @@
     <section class="body-section rf-section nf-section nf-85 nf-light" data-section="85" data-source="section-85">
       <div class="container-fluid nf-class-library">
         <div class="row g-0">
-          <header class="col-12 col-lg-4"><p class="nf-kicker">Move with intent</p><h2>Sessions That Find Balance and Inner Power</h2><p>Choose the training style your body and goals need today.</p><a href="#schedule">Explore schedule</a></header>
-          <article class="col-12 col-sm-6 col-lg-2 is-active" tabindex="0"><span>01</span><i class="fa-solid fa-person-praying" aria-hidden="true"></i><h3>Mobility Flow</h3><p>Restore control and range.</p><a href="#contact">Reserve</a></article>
-          <article class="col-12 col-sm-6 col-lg-2" tabindex="0"><span>02</span><i class="fa-solid fa-person-running" aria-hidden="true"></i><h3>Conditioning</h3><p>Build lasting work capacity.</p><a href="#contact">Reserve</a></article>
-          <article class="col-12 col-sm-6 col-lg-2" tabindex="0"><span>03</span><i class="fa-solid fa-dumbbell" aria-hidden="true"></i><h3>Power Lift</h3><p>Train technical strength.</p><a href="#contact">Reserve</a></article>
-          <article class="col-12 col-sm-6 col-lg-2" tabindex="0"><span>04</span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i><h3>Recovery</h3><p>Reset for your next session.</p><a href="#contact">Reserve</a></article>
+          <header><h2>Yoga Sessions That Find Balance and Inner Peace</h2><p>Explore mindful movement practices designed to build control, restore energy, and create lasting balance.</p><a href="#schedule">Read more</a></header>
+          <article tabindex="0"><span>01</span><i class="fa-solid fa-person-praying" aria-hidden="true"></i><h3>Vinyasa Flow</h3><p>Link breath and movement with purpose.</p><a href="#contact">Reserve</a></article>
+          <article tabindex="0"><span>02</span><i class="fa-solid fa-spa" aria-hidden="true"></i><h3>Kundalini Yoga</h3><p>Awaken focus through rhythm and breath.</p><a href="#contact">Reserve</a></article>
+          <article tabindex="0"><span>03</span><i class="fa-solid fa-person" aria-hidden="true"></i><h3>Hatha Yoga</h3><p>Build calm strength through steady poses.</p><a href="#contact">Reserve</a></article>
+          <article tabindex="0"><span>04</span><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i><h3>Restorative Flow</h3><p>Release tension and renew your energy.</p><a href="#contact">Reserve</a></article>
         </div>
       </div>
     </section>
@@ -831,8 +843,8 @@
     <!-- Body 86 — member quote -->
     <section class="body-section rf-section nf-section nf-86" data-section="86" data-source="section-86">
       <div class="container nf-shell nf-quote-stage" data-quote-stage>
-        <span class="nf-quote-mark" aria-hidden="true">“</span>
-        <blockquote><p data-quote-copy>Strongfy made training clear. I move better, lift with confidence, and never waste a session.</p><footer data-quote-author>— Maya, member since 2024</footer></blockquote>
+        <p class="nf-quote-eyebrow">Built for better training</p>
+        <blockquote><p data-quote-copy>Our space combines professional equipment, expert coaches, and a motivating atmosphere to help you train smarter, move better, and grow stronger—every day.</p><footer data-quote-author>— Strongfy training community</footer></blockquote>
         <div class="nf-quote-dots" role="group" aria-label="Choose member quote"><button class="is-active" type="button" data-quote="0" aria-label="Quote 1"></button><button type="button" data-quote="1" aria-label="Quote 2"></button><button type="button" data-quote="2" aria-label="Quote 3"></button></div>
       </div>
     </section>
@@ -840,23 +852,20 @@
     <!-- Body 87 — interactive coach directory -->
     <section class="body-section rf-section nf-section nf-87" data-section="87" data-source="section-87">
       <div class="container nf-shell">
-        <header class="nf-coach-head"><p class="nf-kicker">Expert coaching</p><h2>Dedicated to<br>Your Success</h2></header>
-        <div class="row nf-coach-directory" data-coach-directory>
-          <div class="col-12 col-lg-5 nf-coach-list" role="tablist" aria-label="Choose a coach">
-            <button class="is-active" type="button" role="tab" aria-selected="true" data-coach-name="Maya Blake" data-coach-role="Strength & Mobility" data-coach-image="assets/images/body/personal-training.webp">Maya Blake <span>Strength & Mobility</span></button>
-            <button type="button" role="tab" aria-selected="false" data-coach-name="Christian Grant" data-coach-role="Power & Conditioning" data-coach-image="assets/images/body/trainer-floor-session.webp">Christian Grant <span>Power & Conditioning</span></button>
-            <button type="button" role="tab" aria-selected="false" data-coach-name="Sandra Lee" data-coach-role="Mobility & Recovery" data-coach-image="assets/images/body/smiling-runner.webp">Sandra Lee <span>Mobility & Recovery</span></button>
-            <button type="button" role="tab" aria-selected="false" data-coach-name="Mary Patterson" data-coach-role="Functional Fitness" data-coach-image="assets/images/body/woman-training.webp">Mary Patterson <span>Functional Fitness</span></button>
+        <header class="nf-coach-head"><p class="nf-kicker">Coaches and results</p><h2>Our Expert Coaches Dedicated<br>to Your Success</h2></header>
+        <div class="nf-coach-directory" data-coach-directory>
+          <div class="nf-coach-list" role="tablist" aria-label="Choose a coach">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-coach-name="Maya Blake" data-coach-role="Strength & Mobility" data-coach-image="assets/images/body/trainer-liam-source.webp"><strong>Maya Blake</strong><span>Strength & Mobility</span><em>Read more</em></button>
+            <button type="button" role="tab" aria-selected="false" data-coach-name="Christian Grant" data-coach-role="Power & Conditioning" data-coach-image="assets/images/body/personal-training.webp"><strong>Christian Grant</strong><span>Power & Conditioning</span><em>Read more</em></button>
+            <button type="button" role="tab" aria-selected="false" data-coach-name="Sandra Lee" data-coach-role="Mobility & Recovery" data-coach-image="assets/images/body/smiling-runner.webp"><strong>Sandra Lee</strong><span>Mobility & Recovery</span><em>Read more</em></button>
+            <button type="button" role="tab" aria-selected="false" data-coach-name="Mary Patterson" data-coach-role="Functional Fitness" data-coach-image="assets/images/body/woman-training.webp"><strong>Mary Patterson</strong><span>Functional Fitness</span><em>Read more</em></button>
           </div>
-          <div class="col-12 col-lg-7 nf-coach-profile"><img src="assets/images/body/personal-training.webp" alt="Maya Blake, Strongfy coach" data-coach-photo><div><p class="nf-kicker">Now viewing</p><h3 data-coach-title>Maya Blake</h3><p data-coach-specialty>Strength & Mobility</p><a href="#contact">Book a consultation</a></div></div>
+          <div class="nf-coach-profile"><img src="assets/images/body/trainer-liam-source.webp" alt="Maya Blake, Strongfy coach" data-coach-photo><div><h3 data-coach-title>Maya Blake</h3><p data-coach-specialty>Strength & Mobility</p><a href="#contact">Book a consultation</a></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Body 88 — thank-you conversion panel -->
-    <section class="body-section rf-section nf-section nf-88" data-section="88" data-source="section-88">
-      <div class="container-fluid nf-thank-you"><h2>THANK <em>YOU</em></h2><a href="#contact" aria-label="Start your Strongfy membership"><i class="fa-solid fa-arrow-right"></i></a></div>
-    </section>
+
 
     <!-- Body 89 — event carousel -->
     <section class="body-section rf-section nf-section nf-89" data-section="89" data-source="section-89">
@@ -889,10 +898,10 @@
     <section class="body-section rf-section nf-section nf-91" data-section="91" data-source="section-91">
       <div class="container nf-shell">
         <div class="row nf-category-orbits">
-          <a class="col-6 col-lg-3" href="#schedule-new"><span><img src="assets/images/icons/kettlebell.png" alt="Kettlebell training"></span><h3>Strength Training</h3></a>
-          <a class="col-6 col-lg-3" href="#schedule-new"><span><img src="assets/images/icons/trainer.png" alt="Personal coaching"></span><h3>Personal Coaching</h3></a>
-          <a class="col-6 col-lg-3" href="#schedule-new"><span><img src="assets/images/icons/strength-kit.png" alt="Functional fitness"></span><h3>Functional Fitness</h3></a>
-          <a class="col-6 col-lg-3" href="#schedule-new"><span><img src="assets/images/icons/stopwatch.png" alt="Conditioning training"></span><h3>Conditioning</h3></a>
+          <a class="col-6 col-lg-3" href="#schedule-new"><span><small>Personal Trainer</small><img src="assets/images/icons/kettlebell.png" alt="Kettlebell training"><b>Healthy Body</b></span></a>
+          <a class="col-6 col-lg-3" href="#schedule-new"><span><small>Hypertrophy</small><img src="assets/images/icons/trainer.png" alt="Personal coaching"><b>Let's Go</b></span></a>
+          <a class="col-6 col-lg-3" href="#schedule-new"><span><small>Strength Training</small><img src="assets/images/icons/strength-kit.png" alt="Functional fitness"><b>Get in Shape</b></span></a>
+          <a class="col-6 col-lg-3" href="#schedule-new"><span><small>Build Your Body</small><img src="assets/images/icons/stopwatch.png" alt="Conditioning training"><b>Fitness Gym</b></span></a>
         </div>
       </div>
     </section>
@@ -900,11 +909,11 @@
     <!-- Body 92 — member testimonials -->
     <section class="body-section rf-section nf-section nf-92" data-section="92" data-source="section-92">
       <div class="container nf-shell">
-        <header class="nf-centered-head"><p class="nf-kicker">Real momentum</p><h2>What Our<br>Members Say</h2></header>
+        <header class="nf-centered-head"><h2>What Our<br>Members Say</h2><p>Real experiences from the Strongfy community.</p></header>
         <div class="row nf-testimonials">
-          <blockquote class="col-12 col-lg-4"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><p>Coaching finally gave my training structure. I am stronger and more consistent than ever.</p><footer><strong>Alex Morgan</strong><span>Strength member</span></footer></blockquote>
-          <blockquote class="col-12 col-lg-4"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><p>I arrived intimidated. The team made every session clear, welcoming, and genuinely challenging.</p><footer><strong>Priya Shah</strong><span>Group training member</span></footer></blockquote>
-          <blockquote class="col-12 col-lg-4"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><p>My back feels better, my lifts moved up, and training now fits my life instead of fighting it.</p><footer><strong>Daniel Kim</strong><span>Personal training member</span></footer></blockquote>
+          <blockquote class="col-12 col-lg-4"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><div class="nf-rating" aria-label="Five out of five stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div><p>Strongfy completely changed the way I approach fitness. The trainers are supportive, the programs are structured, and the environment keeps me motivated every single week.</p><footer><strong>Alex Morgan</strong><span>Strength member</span></footer></blockquote>
+          <blockquote class="col-12 col-lg-4"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><div class="nf-rating" aria-label="Five out of five stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div><p>I finally found a gym that understands my goals. The personalized workouts and progress tracking helped me stay consistent and see real results.</p><footer><strong>Priya Shah</strong><span>Group training member</span></footer></blockquote>
+          <blockquote class="col-12 col-lg-4"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><div class="nf-rating" aria-label="Five out of five stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div><p>The group classes are full of energy and the coaches push you in the best way. I have never felt stronger or more confident.</p><footer><strong>Daniel Kim</strong><span>Personal training member</span></footer></blockquote>
         </div>
       </div>
     </section>
@@ -923,22 +932,9 @@
       </div>
     </section>
 
-    <!-- Body 94 — premium gym features -->
-    <section class="body-section rf-section nf-section nf-94" data-section="94" data-source="section-94">
-      <div class="container nf-shell">
-        <div class="row nf-feature-strip">
-          <article class="col-12 col-sm-6 col-lg-3"><img src="assets/images/icons/trainer.png" alt="Expert coaching"><h3>Expert Coaching</h3><a href="#contact">Meet the team</a></article>
-          <article class="col-12 col-sm-6 col-lg-3"><img src="assets/images/icons/strength-kit.png" alt="Premium equipment"><h3>Premium Equipment</h3><a href="#spaces">Explore the floor</a></article>
-          <article class="col-12 col-sm-6 col-lg-3"><img src="assets/images/icons/stopwatch.png" alt="Flexible schedule"><h3>Flexible Schedule</h3><a href="#schedule-new">View sessions</a></article>
-          <article class="col-12 col-sm-6 col-lg-3"><img src="assets/images/icons/kettlebell.png" alt="Goal-based programming"><h3>Goal-Based Plans</h3><a href="#membership">Compare plans</a></article>
-        </div>
-      </div>
-    </section>
 
-    <!-- Body 95 — oversized play callout -->
-    <section class="body-section rf-section nf-section nf-95 nf-light" data-section="95" data-source="section-95">
-      <div class="container-fluid nf-play-callout"><button type="button" data-play-callout aria-label="Open Strongfy training video">PLAY<strong>STRONG</strong><i class="fa-solid fa-circle-play" aria-hidden="true"></i></button></div>
-    </section>
+
+
 
     <!-- Body 96 — discipline ticker -->
     <section class="body-section rf-section nf-section nf-96" data-section="96" data-source="section-96">

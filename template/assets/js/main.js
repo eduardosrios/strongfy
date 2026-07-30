@@ -601,7 +601,7 @@
       openModal([{ video:storyVideos[index % storyVideos.length], src:image.src, alt:image.alt, kicker:"Member story", title:this.querySelector("span")?.childNodes[0]?.textContent.trim() || "Strongfy member", copy:"A real Strongfy training story." }], 0, this);
     });
 
-    const referenceMedia = [...document.querySelectorAll(".rf-55 .rf-trainer-lineup img, .rf-60 .rf-coach-row img, .rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-product-rail article>img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
+    const referenceMedia = [...document.querySelectorAll(".rf-55 .rf-trainer-lineup img, .rf-60 .rf-coach-row img, .rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-equipment-visual img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
     const referenceItems = referenceMedia.map(function (image) {
       image.tabIndex = 0;
       image.setAttribute("role", "button");
@@ -905,11 +905,15 @@
     });
 
     const processNotes = [
-      "We start with your goals, movement history, and real schedule.",
-      "A focused movement and capacity screen establishes the right starting point.",
-      "Your coach turns evidence into a progressive plan with clear milestones.",
-      "Every session combines technical feedback, intent, and useful accountability.",
-      "We review outcomes, adjust intelligently, and keep progress moving."
+      "We begin with your goals, movement history, and real weekly schedule.",
+      "A movement screen identifies the safest and most useful starting point.",
+      "Baseline strength, mobility, and conditioning make progress measurable.",
+      "Your coach turns the evidence into a practical progressive program.",
+      "Technical coaching makes every repetition clearer and more effective.",
+      "Training load rises intelligently as your capacity improves.",
+      "Recovery work protects consistency and prepares the next session.",
+      "Regular reviews keep the plan aligned with your real results.",
+      "The process produces strength, confidence, and progress you can sustain."
     ];
     document.querySelectorAll("[data-process-step]").forEach(function (button, index) {
       button.addEventListener("click", function () {
@@ -927,7 +931,7 @@
     });
 
     const quotes = [
-      ["Strongfy made training clear. I move better, lift with confidence, and never waste a session.", "— Maya, member since 2024"],
+      ["Our space combines professional equipment, expert coaches, and a motivating atmosphere to help you train smarter, move better, and grow stronger—every day.", "— Strongfy training community"],
       ["The coaching is detailed without being overwhelming. Every week has a purpose I can feel.", "— Elliot, performance member"],
       ["I came for strength and stayed for the community. Progress here feels demanding and sustainable.", "— Jordan, group training member"]
     ];
@@ -994,11 +998,6 @@
       });
     });
 
-    document.querySelectorAll("[data-play-callout]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        openModal([{ video:"assets/videos/strength-barbell.mp4", src:"assets/images/body/strength-lift.webp", alt:"Strongfy strength training", kicker:"Inside Strongfy", title:"Play Strong", copy:"Focused coaching, purposeful movement, and strength that carries into real life." }], 0, button);
-      });
-    });
   }
   buildVideoVariants();
   replaceComplexConceptIcons();
