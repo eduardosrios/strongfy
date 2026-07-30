@@ -2,19 +2,19 @@
 
 Strongfy is a responsive HTML, CSS, and JavaScript website template for gyms, fitness centers, workout studios, personal trainers, strength coaches, and performance-focused fitness brands.
 
-The one-page experience presents training programs, memberships, coaches, fitness classes, club spaces, schedules, member stories, and measurable performance transformation.
+The one-page experience presents training programs, memberships, coaches, fitness classes, club spaces, schedules, training journeys, and measurable performance transformation.
 
 ## Project Status
 
-The responsive hero, 84-section page body, footer, design system, and premium interaction layer are complete and release-ready.
+The responsive hero, curated 55-section page body, footer, design system, and premium interaction layer are complete and release-ready.
 
 ## Current Features
 
-- Responsive one-page layout with 84 distinct body sections
+- Responsive one-page layout with 55 distinct body sections
 - Program, class, membership, schedule, coach, journal, and conversion content
 - Interactive program selector, billing toggle, class filters, schedule reservations, accordion, carousel, and trial form
 - Scroll progress, section reveals, animated metrics, active navigation, rotating hero guidance, and contextual trial CTA
-- Keyboard-accessible training gallery and member-story media viewer with focus management
+- Keyboard-accessible training gallery, content rails, and focus-managed interactive controls
 - Local Bootstrap 5.3.8, jQuery 4.0.0, and Font Awesome Free 7.2.0 assets
 - Responsive validation from 320 px phones through 1920 px ultra-wide displays
 - Swipeable mobile content rails, keyboard support, and reduced-motion support
@@ -32,8 +32,7 @@ Serve the repository through any static web server, then open `template/index.ht
 
 ## Design System
 
-- Manrope for display typography
-- DM Sans for body copy and controls
+- Manrope across display typography, body copy, and controls
 - Near-black and warm-white surfaces
 - Strongfy acid lime (`#baff00`) as the single brand accent
 
