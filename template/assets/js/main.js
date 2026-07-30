@@ -996,53 +996,8 @@
     });
     track.dataset.loopReady = "true";
   }
-  function bindPremiumSectionInteractions() {
-    const benefitSection = document.querySelector('[data-section="10"]');
-    if (benefitSection) {
-      const image = benefitSection.querySelector('[data-benefit-image]');
-      const number = benefitSection.querySelector('[data-benefit-number]');
-      const caption = benefitSection.querySelector('[data-benefit-caption]');
-      benefitSection.querySelectorAll('[data-benefit-tab]').forEach(function (button) {
-        button.addEventListener('click', function () {
-          benefitSection.querySelectorAll('[data-benefit-tab]').forEach(function (item) {
-            const active = item === button;
-            item.classList.toggle('is-active', active);
-            item.setAttribute('aria-selected', String(active));
-          });
-          image.src = button.dataset.image;
-          image.alt = button.dataset.alt;
-          number.textContent = button.dataset.number;
-          caption.textContent = button.dataset.caption;
-          const status = document.getElementById('siteInteractionStatus');
-          if (status) status.textContent = button.querySelector('strong').textContent + ' benefit selected.';
-        });
-      });
-    }
-
-    const coachingSection = document.querySelector('[data-section="30"]');
-    if (coachingSection) {
-      const tabs = [...coachingSection.querySelectorAll('[data-coaching-tab]')];
-      const panels = [...coachingSection.querySelectorAll('.coaching-switcher__panel')];
-      const status = coachingSection.querySelector('[data-coaching-status]');
-      tabs.forEach(function (button) {
-        button.addEventListener('click', function () {
-          tabs.forEach(function (item) {
-            const active = item === button;
-            item.classList.toggle('is-active', active);
-            item.setAttribute('aria-selected', String(active));
-          });
-          panels.forEach(function (panel) {
-            const active = panel.id === button.dataset.coachingTab;
-            panel.hidden = !active;
-            panel.classList.toggle('is-active', active);
-          });
-          if (status) status.textContent = button.querySelector('strong').textContent + ' coaching selected.';
-        });
-      });
-    }
-  }
   bindNewSectionInteractions();
-  bindPremiumSectionInteractions();
+
   setupInfiniteGalleryMarquee();
   addReferenceLinks();
   buildStickyTopbar();
