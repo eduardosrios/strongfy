@@ -545,7 +545,7 @@
       openModal([{ video:storyVideos[index % storyVideos.length], src:image.src, alt:image.alt, kicker:"Member story", title:this.querySelector("span")?.childNodes[0]?.textContent.trim() || "Strongfy member", copy:"A real Strongfy training story." }], 0, this);
     });
 
-    const referenceMedia = [...document.querySelectorAll(".rf-55 .rf-trainer-lineup img, .rf-60 .rf-coach-row img, .rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-equipment-visual img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
+    const referenceMedia = [...document.querySelectorAll(".rf-67 .rf-service-images img, .rf-68 .rf-floating-quote img, .rf-69 .rf-membership>img, .rf-71 .rf-news-row img, .rf-72 .rf-stack-showcase>article>img, .nf-equipment-visual img, .nf-collection-cards article>img, .nf-service-mosaic__image img, .nf-manifesto img, .nf-transformation img, .nf-coach-profile>img, .nf-event-carousel article>img")];
     const referenceItems = referenceMedia.map(function (image) {
       image.tabIndex = 0;
       image.setAttribute("role", "button");
