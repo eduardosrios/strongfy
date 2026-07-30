@@ -561,9 +561,6 @@
       });
     });
 
-    $(document).on("click", ".rf-70 .rf-featured-classes article", function () {
-      $(this).toggleClass("is-selected").attr("aria-pressed", String($(this).hasClass("is-selected")));
-    });
   }
 
   $(document).on("click", ".submenu-toggle", function (event) {
@@ -849,24 +846,6 @@
       });
     });
 
-    const processNotes = [
-      "We begin by understanding the competitive landscape.",
-      "Audience research clarifies the people, needs, and habits the experience must serve.",
-      "Reference research and a focused mood board establish the visual direction.",
-      "Wireframes turn content priorities into a clear, usable page structure.",
-      "The desktop system establishes hierarchy, rhythm, typography, and interaction.",
-      "Adaptive layouts preserve the experience across tablets and mobile screens.",
-      "Motion adds purposeful feedback without distracting from the main content.",
-      "The final presentation documents the complete design system and experience."
-    ];
-    document.querySelectorAll("[data-process-step]").forEach(function (button, index) {
-      button.addEventListener("click", function () {
-        const section = button.closest(".nf-79");
-        section.querySelectorAll("[data-process-step]").forEach(function (item) { item.classList.toggle("is-active", item === button); });
-        section.querySelector("[data-process-note]").textContent = processNotes[index];
-        announce("Process step " + (index + 1) + " selected.");
-      });
-    });
 
     document.querySelectorAll("[data-before-after]").forEach(function (comparison) {
       const range = comparison.querySelector("[data-compare-range]");
