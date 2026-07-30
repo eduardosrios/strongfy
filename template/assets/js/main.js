@@ -849,15 +849,14 @@
     });
 
     const processNotes = [
-      "We begin with your goals, movement history, and real weekly schedule.",
-      "A movement screen identifies the safest and most useful starting point.",
-      "Baseline strength, mobility, and conditioning make progress measurable.",
-      "Your coach turns the evidence into a practical progressive program.",
-      "Technical coaching makes every repetition clearer and more effective.",
-      "Training load rises intelligently as your capacity improves.",
-      "Recovery work protects consistency and prepares the next session.",
-      "Regular reviews keep the plan aligned with your real results.",
-      "The process produces strength, confidence, and progress you can sustain."
+      "We begin by understanding the competitive landscape.",
+      "Audience research clarifies the people, needs, and habits the experience must serve.",
+      "Reference research and a focused mood board establish the visual direction.",
+      "Wireframes turn content priorities into a clear, usable page structure.",
+      "The desktop system establishes hierarchy, rhythm, typography, and interaction.",
+      "Adaptive layouts preserve the experience across tablets and mobile screens.",
+      "Motion adds purposeful feedback without distracting from the main content.",
+      "The final presentation documents the complete design system and experience."
     ];
     document.querySelectorAll("[data-process-step]").forEach(function (button, index) {
       button.addEventListener("click", function () {
@@ -875,15 +874,15 @@
     });
 
     const quotes = [
-      ["Our space combines professional equipment, expert coaches, and a motivating atmosphere to help you train smarter, move better, and grow stronger—every day.", "— Strongfy training community"],
-      ["The coaching is detailed without being overwhelming. Every week has a purpose I can feel.", "— Elliot, performance member"],
-      ["I came for strength and stayed for the community. Progress here feels demanding and sustainable.", "— Jordan, group training member"]
+      ["Our space combines <strong>professional equipment,</strong> expert coaches, and a motivating atmosphere to help you <strong>train smarter,</strong> move better, and grow stronger—<strong>every day.</strong>", "— Strongfy training community"],
+      ["Detailed coaching turns uncertainty into <strong>clear purpose,</strong> helping every week feel <strong>smarter,</strong> stronger, and more sustainable—<strong>every session.</strong>", "— Elliot, performance member"],
+      ["I came for strength and found a <strong>serious community,</strong> thoughtful recovery, and a plan that helps me <strong>move better,</strong> train hard, and return—<strong>every week.</strong>", "— Jordan, group training member"]
     ];
     document.querySelectorAll("[data-quote-stage]").forEach(function (stage) {
       stage.querySelectorAll("[data-quote]").forEach(function (button) {
         button.addEventListener("click", function () {
           const index = Number(button.dataset.quote);
-          stage.querySelector("[data-quote-copy]").textContent = quotes[index][0];
+          stage.querySelector("[data-quote-copy]").innerHTML = quotes[index][0];
           stage.querySelector("[data-quote-author]").textContent = quotes[index][1];
           stage.querySelectorAll("[data-quote]").forEach(function (dot) { dot.classList.toggle("is-active", dot === button); });
           announce("Member quote " + (index + 1) + " shown.");
@@ -892,16 +891,26 @@
     });
 
     document.querySelectorAll("[data-coach-directory]").forEach(function (directory) {
-      directory.querySelectorAll("[data-coach-name]").forEach(function (button) {
-        button.addEventListener("click", function () {
-          directory.querySelectorAll("[data-coach-name]").forEach(function (item) { item.classList.toggle("is-active", item === button); item.setAttribute("aria-selected", String(item === button)); });
-          const photo = directory.querySelector("[data-coach-photo]");
-          photo.src = button.dataset.coachImage;
-          photo.alt = button.dataset.coachName + ", Strongfy coach";
-          directory.querySelector("[data-coach-title]").textContent = button.dataset.coachName;
-          directory.querySelector("[data-coach-specialty]").textContent = button.dataset.coachRole;
-          announce(button.dataset.coachName + " profile shown.");
+      const profile = directory.querySelector(".nf-coach-profile");
+      function activateCoach(button, announceChange) {
+        if (!button || button.classList.contains("is-active")) return;
+        directory.querySelectorAll("[data-coach-name]").forEach(function (item) {
+          item.classList.toggle("is-active", item === button);
+          item.setAttribute("aria-selected", String(item === button));
         });
+        const photo = directory.querySelector("[data-coach-photo]");
+        profile?.classList.add("is-switching");
+        photo.src = button.dataset.coachImage;
+        photo.alt = button.dataset.coachName + ", Strongfy coach";
+        directory.querySelector("[data-coach-title]").textContent = button.dataset.coachName;
+        directory.querySelector("[data-coach-specialty]").textContent = button.dataset.coachRole;
+        requestAnimationFrame(function () { requestAnimationFrame(function () { profile?.classList.remove("is-switching"); }); });
+        if (announceChange) announce(button.dataset.coachName + " profile shown.");
+      }
+      directory.querySelectorAll("[data-coach-name]").forEach(function (button) {
+        button.addEventListener("pointerenter", function () { activateCoach(button, false); });
+        button.addEventListener("focus", function () { activateCoach(button, false); });
+        button.addEventListener("click", function () { activateCoach(button, true); });
       });
     });
 
@@ -911,6 +920,61 @@
       });
     });
 
+    document.querySelectorAll("[data-member-carousel]").forEach(function (viewport) {
+      const track = viewport.querySelector(".rf-member-row");
+      const items = [...track.children];
+      let index = 0;
+      function metrics() {
+        const first = items[0];
+        if (!first) return { step:0, max:0 };
+        const step = first.getBoundingClientRect().width;
+        const visible = Math.max(1, Math.floor(viewport.clientWidth / step));
+        return { step:step, max:Math.max(0, items.length - visible) };
+      }
+      function show(next) {
+        const value = metrics();
+        index = Math.max(0, Math.min(next, value.max));
+        track.style.setProperty("--member-offset", (-index * value.step) + "px");
+        announce("Member stories " + (index + 1) + " through " + Math.min(index + Math.max(1, Math.floor(viewport.clientWidth / value.step)), items.length) + " shown.");
+      }
+      viewport.closest(".rf-47").querySelectorAll("[data-member-direction]").forEach(function (button) {
+        button.addEventListener("click", function () { show(index + (button.dataset.memberDirection === "next" ? 1 : -1)); });
+      });
+      window.addEventListener("resize", function () { show(index); });
+    });
+
+    document.querySelectorAll("[data-testimonial-carousel]").forEach(function (viewport) {
+      const track = viewport.querySelector(".nf-testimonials");
+      const cards = [...track.children];
+      const section = viewport.closest(".nf-92");
+      const count = section.querySelector("[data-testimonial-count]");
+      const line = section.querySelector(".nf-testimonial-line");
+      let index = 0;
+      function metrics() {
+        const card = cards[0];
+        if (!card) return { step:0, max:0, visible:1 };
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const step = card.getBoundingClientRect().width + gap;
+        const visible = Math.max(1, Math.floor((viewport.clientWidth + gap) / step));
+        return { step:step, max:Math.max(0, cards.length - visible), visible:visible };
+      }
+      function show(next, announceChange) {
+        const value = metrics();
+        index = (next + value.max + 1) % (value.max + 1);
+        track.style.setProperty("--testimonial-offset", (-index * value.step) + "px");
+        line?.style.setProperty("--testimonial-progress", (index * 100) + "%");
+        if (count) count.textContent = String(index + 1).padStart(2,"0") + " / " + String(value.max + 1).padStart(2,"0");
+        if (announceChange) announce("Testimonials page " + (index + 1) + " of " + (value.max + 1) + " shown.");
+      }
+      section.querySelectorAll("[data-testimonial-direction]").forEach(function (button) {
+        button.addEventListener("click", function () { show(index + (button.dataset.testimonialDirection === "next" ? 1 : -1), true); });
+      });
+      viewport.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); show(index + (event.key === "ArrowRight" ? 1 : -1), true); }
+      });
+      window.addEventListener("resize", function () { show(index, false); });
+      show(0, false);
+    });
     document.querySelectorAll("[data-event-carousel]").forEach(function (carousel) {
       const slides = [...carousel.querySelectorAll("[data-event-slide]")];
       const count = carousel.querySelector("[data-event-count]");
@@ -945,7 +1009,6 @@
   }
   replaceComplexConceptIcons();
   addBootstrapStructure();
-  addReferenceLinks();
   bindNewSectionInteractions();
   buildStickyTopbar();
   bindReferenceSectionInteractions();
